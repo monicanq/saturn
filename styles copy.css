@@ -1,0 +1,1143 @@
+/*!
+Theme Name: saturn
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: monica
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+monica is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*-------
+----------------
+----------------
+----------------
+-------.>>> TABL
+E OF CONTENTS:.-
+----------------
+----------------
+----------------
+---------------.
+# Generic..- Nor
+malize..- Box si
+zing.# Base..- T
+ypography..- Ele
+ments..- Links..
+#¿NOMBRE?
+ts..-Top Navbar.
+# Components..-
+Navigation..- Po
+sts and pages..-
+Comments..- Wid
+gets..- Media..-
+Captions..- Gal
+leries..- Site t
+itle and descrip
+tion.# plugins..
+#¿NOMBRE?
+te scroll.# Util
+ities..- Accessi
+bility..- Alignm
+ents..----------
+----------------
+----------------
+----------------
+----*/../*------
+----------------
+----------------
+----------------
+--------.# Gener
+ic.-------------
+----------------
+----------------
+----------------
+-*/../* Normaliz
+e.--------------
+----------------
+---------------
+*/../*! normaliz
+e.css v8.0.1 | M
+IT License | git
+hub.com/necolas/
+normalize.css */
+../* Document..
+================
+================
+================
+================
+========== */../
+**. * 1. Correct
+the line height
+in all browsers
+.. * 2. Prevent
+adjustments of f
+ont size after o
+rientation chang
+es in iOS.. */.h
+tml {..line-heig
+ht: 1.15;..-webk
+it-text-size-adj
+ust: 100%;.}../*
+Sections.. ====
+================
+================
+================
+================
+====== */../**.
+* Remove the mar
+gin in all brows
+ers.. */.body {.
+.margin: 0;.}../
+**. * Render the
+`main` element
+consistently in
+IE.. */.main {..
+display: block;.
+}../**. * Correc
+t the font size
+and margin on `h
+1` elements with
+in `section` and
+. * `article` co
+ntexts in Chrome
+, Firefox, and S
+afari.. */.h1 {.
+.font-size: 2em;
+..margin: 0.67em
+0;.}../* Groupi
+ng content.. ===
+================
+================
+================
+================
+======= */../**.
+* 1. Add the co
+rrect box sizing
+in Firefox.. *
+2. Show the over
+flow in Edge and
+IE.. */.hr {..b
+ox-sizing: conte
+nt-box;..height:
+0;..overflow: v
+isible;.}../**.
+* 1. Correct the
+inheritance and
+scaling of font
+size in all bro
+wsers.. * 2. Cor
+rect the odd `em
+` font sizing in
+all browsers..
+*/.pre {..font-f
+amily: monospace
+, monospace;..fo
+nt-size: 1em;.}.
+./* Text-level s
+emantics.. =====
+================
+================
+================
+================
+===== */../**. *
+Remove the gray
+background on a
+ctive links in I
+E 10.. */.a {..b
+ackground-color:
+transparent;.}.
+./**. * 1. Remov
+e the bottom bor
+der in Chrome 57
+-. * 2. Add the
+correct text dec
+oration in Chrom
+e, Edge, IE, Ope
+ra, and Safari..
+*/.abbr[title]
+{..border-bottom
+: none;..text-de
+coration: underl
+ine;..text-decor
+ation: underline
+dotted;.}../**.
+* Add the corre
+ct font weight i
+n Chrome, Edge,
+and Safari.. */.
+b,.strong {..fon
+t-weight: bolder
+;.}../**. * 1. C
+orrect the inher
+itance and scali
+ng of font size
+in all browsers.
+. * 2. Correct t
+he odd `em` font
+sizing in all b
+rowsers.. */.cod
+e,.kbd,.samp {..
+font-family: mon
+ospace, monospac
+e;..font-size: 1
+em;.}../**. * Ad
+d the correct fo
+nt size in all b
+rowsers.. */.sma
+ll {..font-size:
+80%;.}../**. *
+Prevent `sub` an
+d `sup` elements
+from affecting
+the line height
+in. * all browse
+rs.. */.sub,.sup
+{..font-size: 7
+5%;..line-height
+: 0;..position:
+relative;..verti
+cal-align: basel
+ine;.}..sub {..b
+ottom: -0.25em;.
+}..sup {..top: -
+0.5em;.}../* Emb
+edded content..
+================
+================
+================
+================
+========== */../
+**. * Remove the
+border on image
+s inside links i
+n IE 10.. */.img
+{..border-style
+: none;.}../* Fo
+rms.. ==========
+================
+================
+================
+================
+*/../**. * 1. C
+hange the font s
+tyles in all bro
+wsers.. * 2. Rem
+ove the margin i
+n Firefox and Sa
+fari.. */.button
+,.input,.optgrou
+p,.select,.texta
+rea {..font-fami
+ly: inherit;..fo
+nt-size: 100%;..
+line-height: 1.1
+5;..margin: 0;.}
+../**. * Show th
+e overflow in IE
+.. * 1. Show the
+overflow in Edg
+e.. */.button,.i
+nput {..overflow
+: visible;.}../*
+*. * Remove the
+inheritance of t
+ext transform in
+Edge, Firefox,
+and IE.. * 1. Re
+move the inherit
+ance of text tra
+nsform in Firefo
+x.. */.button,.s
+elect {..text-tr
+ansform: none;.}
+../**. * Correct
+the inability t
+o style clickabl
+e types in iOS a
+nd Safari.. */.b
+utton,.[type="bu
+tton"],.[type="r
+eset"],.[type="s
+ubmit"] {..-webk
+it-appearance: b
+utton;.}../**. *
+Remove the inne
+r border and pad
+ding in Firefox.
+. */.button::-mo
+z-focus-inner,.[
+type="button"]::
+#¿NOMBRE?
+,.[type="reset"]
+::-moz-focus-inn
+er,.[type="submi
+t"]::-moz-focus-
+inner {..border-
+style: none;..pa
+dding: 0;.}../**
+. * Restore the
+focus styles uns
+et by the previo
+us rule.. */.but
+ton:-moz-focusri
+ng,.[type="butto
+n"]:-moz-focusri
+ng,.[type="reset
+"]:-moz-focusrin
+g,.[type="submit
+"]:-moz-focusrin
+g {..outline: 1p
+x dotted ButtonT
+ext;.}../**. * C
+orrect the paddi
+ng in Firefox..
+*/.fieldset {..p
+adding: 0.35em 0
+.75em 0.625em;.}
+../**. * 1. Corr
+ect the text wra
+pping in Edge an
+d IE.. * 2. Corr
+ect the color in
+heritance from `
+fieldset` elemen
+ts in IE.. * 3.
+Remove the paddi
+ng so developers
+are not caught
+out when they ze
+ro out. *..`fiel
+dset` elements i
+n all browsers..
+*/.legend {..bo
+x-sizing: border
+-box;..color: in
+herit;..display:
+table;..max-wid
+th: 100%;..paddi
+ng: 0;..white-sp
+ace: normal;.}..
+/**. * Add the c
+orrect vertical
+alignment in Chr
+ome, Firefox, an
+d Opera.. */.pro
+gress {..vertica
+l-align: baselin
+e;.}../**. * Rem
+ove the default
+vertical scrollb
+ar in IE 10+.. *
+/.textarea {..ov
+erflow: auto;.}.
+./**. * 1. Add t
+he correct box s
+izing in IE 10..
+* 2. Remove the
+padding in IE 1
+0.. */.[type="ch
+eckbox"],.[type=
+"radio"] {..box-
+sizing: border-b
+ox;..padding: 0;
+.}../**. * Corre
+ct the cursor st
+yle of increment
+and decrement b
+uttons in Chrome
+.. */.[type="num
+ber"]::-webkit-i
+nner-spin-button
+,.[type="number"
+]::-webkit-outer
+-spin-button {..
+height: auto;.}.
+./**. * 1. Corre
+ct the odd appea
+rance in Chrome
+and Safari.. * 2
+. Correct the ou
+tline style in S
+afari.. */.[type
+="search"] {..-w
+ebkit-appearance
+: textfield;..ou
+tline-offset: -2
+px;.}../**. * Re
+move the inner p
+adding in Chrome
+and Safari on m
+acOS.. */.[type=
+"search"]::-webk
+it-search-decora
+tion {..-webkit-
+appearance: none
+;.}../**. * 1. C
+orrect the inabi
+lity to style cl
+ickable types in
+iOS and Safari.
+. * 2. Change fo
+nt properties to
+`inherit` in Sa
+fari.. */.::-web
+kit-file-upload-
+button {..-webki
+t-appearance: bu
+tton;..font: inh
+erit;.}../* Inte
+ractive.. ======
+================
+================
+================
+================
+==== */../*. * A
+dd the correct d
+isplay in Edge,
+IE 10+, and Fire
+fox.. */.details
+{..display: blo
+ck;.}../*. * Add
+the correct dis
+play in all brow
+sers.. */.summar
+y {..display: li
+st-item;.}../* M
+isc.. ==========
+================
+================
+================
+================
+*/../**. * Add
+the correct disp
+lay in IE 10+..
+*/.template {..d
+isplay: none;.}.
+./**. * Add the
+correct display
+in IE 10.. */.[h
+idden] {..displa
+y: none;.}../* B
+ox sizing.------
+----------------
+----------------
+------- */../* I
+nherit box-sizin
+g to more easily
+change it's val
+ue on a componen
+t level..@link h
+ttp://css-tricks
+.com/inheriting-
+box-sizing-proba
+bly-slightly-bet
+ter-best-practic
+e/ */.*,.*::befo
+re,.*::after {..
+box-sizing: inhe
+rit;.}..html {..
+box-sizing: bord
+er-box;.}../*---
+----------------
+----------------
+----------------
+-----------.# Ba
+se.-------------
+----------------
+----------------
+----------------
+-*/../* Typograp
+hy.-------------
+----------------
+----------------
+*/.body,.button
+,.input,.select,
+.optgroup,.texta
+rea {..color: #4
+04040;..font-fam
+ily: -apple-syst
+em, BlinkMacSyst
+emFont, "Segoe U
+I", Roboto, Oxyg
+en-Sans, Ubuntu,
+Cantarell, "Hel
+vetica Neue", sa
+ns-serif;..font-
+size: 1rem;..lin
+e-height: 1.5;.}
+..h1,.h2,.h3,.h4
+,.h5,.h6 {..clea
+r: both;.}..p {.
+.margin-bottom:
+1.5em;.}..dfn,.c
+ite,.em,.i {..fo
+nt-style: italic
+;.}..blockquote
+{..margin: 0 1.5
+em;.}..address {
+..margin: 0 0 1.
+5em;.}..pre {..b
+ackground: #eee;
+..font-family: "
+Courier 10 Pitch
+", courier, mono
+space;..line-hei
+ght: 1.6;..margi
+n-bottom: 1.6em;
+..max-width: 100
+%;..overflow: au
+to;..padding: 1.
+6em;.}..code,.kb
+d,.tt,.var {..fo
+nt-family: monac
+o, consolas, "An
+dale Mono", "Dej
+aVu Sans Mono",
+monospace;.}..ab
+br,.acronym {..b
+order-bottom: 1p
+x dotted #666;..
+cursor: help;.}.
+.mark,.ins {..ba
+ckground: #fff9c
+0;..text-decorat
+ion: none;.}..bi
+g {..font-size:
+125%;.}../* Elem
+ents.-----------
+----------------
+----------------
+-- */.body {..ba
+ckground: #fff;.
+}..hr {..backgro
+und-color: #ccc;
+..border: 0;..he
+ight: 1px;..marg
+in-bottom: 1.5em
+;.}..ul,.ol {..m
+argin: 0 0 1.5em
+3em;.}..ul {..l
+ist-style: disc;
+.}..ol {..list-s
+tyle: decimal;.}
+..li > ul,.li >
+ol {..margin-bot
+tom: 0;..margin-
+left: 1.5em;.}..
+dt {..font-weigh
+t: 700;.}..dd {.
+.margin: 0 1.5em
+1.5em;.}../* Ma
+ke sure embeds a
+nd iframes fit t
+heir containers.
+*/.embed,.ifram
+e,.object {..max
+-width: 100%;.}.
+.img {..height:
+auto;..max-width
+: 100%;.}..figur
+e {..margin: 1em
+0;.}..table {..
+margin: 0 0 1.5e
+m;..width: 100%;
+.}../* Links.---
+----------------
+----------------
+---------- */.a
+{..color: #4169e
+1;.}..a:visited
+{..color: #80008
+0;.}..a:hover,.a
+:focus,.a:active
+{..color: #1919
+70;.}..a:focus {
+..outline: thin
+dotted;.}..a:hov
+er,.a:active {..
+outline: 0;.}../
+* Forms.--------
+----------------
+----------------
+----- */.button,
+.input[type="but
+ton"],.input[typ
+e="reset"],.inpu
+t[type="submit"]
+{..border: 1px
+solid;..border-c
+olor: #ccc #ccc
+#bbb;..border-ra
+dius: 3px;..back
+ground: #e6e6e6;
+..color: rgba(0,
+0, 0, 0.8);..li
+ne-height: 1;..p
+adding: 0.6em 1e
+m 0.4em;.}..butt
+on:hover,.input[
+type="button"]:h
+over,.input[type
+="reset"]:hover,
+.input[type="sub
+mit"]:hover {..b
+order-color: #cc
+c #bbb #aaa;.}..
+button:active,.b
+utton:focus,.inp
+ut[type="button"
+]:active,.input[
+type="button"]:f
+ocus,.input[type
+="reset"]:active
+,.input[type="re
+set"]:focus,.inp
+ut[type="submit"
+]:active,.input[
+type="submit"]:f
+ocus {..border-c
+olor: #aaa #bbb
+#bbb;.}..input[t
+ype="text"],.inp
+ut[type="email"]
+,.input[type="ur
+l"],.input[type=
+"password"],.inp
+ut[type="search"
+],.input[type="n
+umber"],.input[t
+ype="tel"],.inpu
+t[type="range"],
+.input[type="dat
+e"],.input[type=
+"month"],.input[
+type="week"],.in
+put[type="time"]
+,.input[type="da
+tetime"],.input[
+type="datetime-l
+ocal"],.input[ty
+pe="color"],.tex
+tarea {..color:
+#666;..border: 1
+px solid #ccc;..
+border-radius: 3
+px;..padding: 3p
+x;.}..input[type
+="text"]:focus,.
+input[type="emai
+l"]:focus,.input
+[type="url"]:foc
+us,.input[type="
+password"]:focus
+,.input[type="se
+arch"]:focus,.in
+put[type="number
+"]:focus,.input[
+type="tel"]:focu
+s,.input[type="r
+ange"]:focus,.in
+put[type="date"]
+:focus,.input[ty
+pe="month"]:focu
+s,.input[type="w
+eek"]:focus,.inp
+ut[type="time"]:
+focus,.input[typ
+e="datetime"]:fo
+cus,.input[type=
+"datetime-local"
+]:focus,.input[t
+ype="color"]:foc
+us,.textarea:foc
+us {..color: #11
+1;.}..select {..
+border: 1px soli
+d #ccc;.}..texta
+rea {..width: 10
+0%;.}../*-------
+----------------
+----------------
+----------------
+-------.# Layout
+s.--------------
+----------------
+----------------
+----------------
+*/./* Top navbar
+.---------------
+----------------
+-------------- *
+/..top-nav{..wid
+th: 100%;..z-ind
+ex: 9;.}../* The
+following style
+s for the menu o
+nly apply to big
+screens */.@med
+ia screen and (m
+in-width: 37.5em
+) {...site-brand
+ing{...display:
+inline-block;..}
+...top-nav > * {
+...vertical-alig
+n:middle;  ..}..
+.left{...float:
+left;..}.....rig
+ht{...float: rig
+ht;..}.}../*----
+----------------
+----------------
+----------------
+----------.# Com
+ponents.--------
+----------------
+----------------
+----------------
+------*/../* Nav
+igation.--------
+----------------
+----------------
+----- */..main-n
+avigation {..mar
+gin: 0;.}...main
+-navigation ul {
+..display: none;
+..list-style: no
+ne;..margin: 0;.
+.padding-left: 0
+;.}...main-navig
+ation ul ul {..b
+ox-shadow: 0 3px
+3px rgba(0, 0,
+0, 0.2);..float:
+left;..position
+: absolute;..top
+: 100%;..left: -
+999em;..z-index:
+99999;.}...main
+#¿NOMBRE?
+l ul {..left: -9
+99em;..top: 0;.}
+...main-navigati
+on ul ul li:hove
+r > ul,..main-na
+vigation ul ul l
+i.focus > ul {..
+display: block;.
+.left: auto;.}..
+.main-navigation
+ul ul a {..widt
+h: 200px;.}...ma
+in-navigation ul
+li:hover > ul,.
+.main-navigation
+ul li.focus > u
+l {..left: auto;
+.}...main-naviga
+tion li {..posit
+ion: relative;..
+padding: 25px;.}
+...main-navigati
+on a {..display:
+block;..text-de
+coration: none;.
+.color: #666;..f
+ont-size: 1.25em
+;..font-weight:
+500;.}..main-nav
+igation a:hover
+{..color: #111;.
+}..#site-navigat
+ion{..display: i
+nline-block;..wi
+dth: 100%;../* f
+loat:right; */.}
+./* Small menu.
+*/.button.menu-t
+oggle{.    borde
+r: none;.    pad
+ding: 1rem 2rem;
+.    margin: 0;.
+text-decorat
+ion: none;.    b
+ackground: inher
+it;.    font-fam
+ily: sans-serif;
+.    font-size:
+1rem;.    cursor
+: pointer;.    t
+ext-align: cente
+r;.    -webkit-a
+ppearance: none;
+..-moz-appearanc
+e: none;..float:
+right;.}...menu
+-toggle,..main-n
+avigation.toggle
+d ul {..display:
+block;.}./* @me
+dia screen and (
+max-width: 37.5e
+m) {....top-nav{
+...display: flex
+;...float: right
+;...position: re
+lative !importan
+t; ..}...main-na
+vigation{...widt
+h: 100%;...}...m
+enu-menu-1-conta
+iner{...text-ali
+gn: center;...wi
+dth: 100%;...z-i
+ndex: 10;...padd
+ing-top: 60px;..
+.}...custom-logo
+-link{...positio
+n: absolute;...h
+eight: 100%;...m
+ax-width: 60%;..
+}.} */..menu-men
+u-1-container{..
+padding-top: 60p
+x;..text-align:
+center;.}..custo
+m-logo-link{..po
+sition: absolute
+;..height: 100%;
+..max-width: 60%
+;.}..@media scre
+en and (min-widt
+h: 37.5em) {..#s
+ite-navigation{.
+..width: auto;..
+}...menu-toggle
+{...all: unset;.
+..display: none;
+..}...main-navig
+ation ul {...dis
+play: flex;..}..
+.custom-logo-lin
+k{...position: r
+elative;...max-h
+eight: 100%;...m
+ax-width: 100%;.
+..}...menu-menu-
+1-container{...p
+adding-top: 0px;
+..}.}...site-mai
+n .comment-navig
+ation,..site-mai
+n..posts-navigat
+ion,..site-main.
+.post-navigation
+{..margin: 0 0
+1.5em;.}...comme
+nt-navigation .n
+av-links,..posts
+#¡CAMPO!
+-links,..post-na
+vigation .nav-li
+nks {..display:
+flex;.}...commen
+t-navigation .na
+v-previous,..pos
+ts-navigation .n
+av-previous,..po
+st-navigation .n
+av-previous {..f
+lex: 1 0 50%;.}.
+..comment-naviga
+tion .nav-next,.
+.posts-navigatio
+n .nav-next,..po
+st-navigation .n
+av-next {..text-
+align: end;..fle
+x: 1 0 50%;.}../
+* Banner.-------
+----------------
+----------------
+------ */...bann
+er {..position:
+relative;..width
+: 100%;.}..banne
+r img{..width :
+100%;.}../* Post
+s and pages.----
+----------------
+----------------
+--------- */..st
+icky {..display:
+block;.}...post
+,..page {..margi
+n: 0 0 1.5em;.}.
+..updated:not(.p
+ublished) {..dis
+play: none;.}...
+page-content,..e
+ntry-content,..e
+ntry-summary {..
+margin: 1.5em 0
+0;.}...page-link
+s {..clear: both
+;..margin: 0 0 1
+.5em;.}../* Comm
+ents.-----------
+----------------
+----------------
+-- */..comment-c
+ontent a {..word
+#¿NOMBRE?
+d;.}...bypostaut
+hor {..display:
+block;.}../* Wid
+gets.-----------
+----------------
+----------------
+-- */..widget {.
+.margin: 0 0 1.5
+em;.}...widget s
+elect {..max-wid
+th: 100%;.}../*
+Media.----------
+----------------
+----------------
+--- */..page-con
+tent .wp-smiley,
+..entry-content
+.wp-smiley,..com
+ment-content .wp
+-smiley {..borde
+r: none;..margin
+-bottom: 0;..mar
+gin-top: 0;..pad
+ding: 0;.}../* M
+ake sure logo li
+nk wraps around
+logo image. */..
+custom-logo-link
+{..display: inl
+ine-block;..padd
+ing: 15px;.}../*
+Captions.------
+----------------
+----------------
+------- */..wp-c
+aption {..margin
+-bottom: 1.5em;.
+.max-width: 100%
+;.}...wp-caption
+img[class*="wp-
+image-"] {..disp
+lay: block;..mar
+gin-left: auto;.
+.margin-right: a
+uto;.}...wp-capt
+ion .wp-caption-
+text {..margin:
+0.8075em 0;.}...
+wp-caption-text
+{..text-align: c
+enter;.}../* Gal
+leries.---------
+----------------
+----------------
+---- */..gallery
+{..margin-botto
+m: 1.5em;..displ
+ay: grid;..grid-
+gap: 1.5em;.}...
+gallery-item {..
+display: inline-
+block;..text-ali
+gn: center;..wid
+th: 100%;.}...ga
+llery-columns-2
+{..grid-template
+#¿NOMBRE?
+(2, 1fr);.}...ga
+llery-columns-3
+{..grid-template
+#¿NOMBRE?
+(3, 1fr);.}...ga
+llery-columns-4
+{..grid-template
+#¿NOMBRE?
+(4, 1fr);.}...ga
+llery-columns-5
+{..grid-template
+#¿NOMBRE?
+(5, 1fr);.}...ga
+llery-columns-6
+{..grid-template
+#¿NOMBRE?
+(6, 1fr);.}...ga
+llery-columns-7
+{..grid-template
+#¿NOMBRE?
+(7, 1fr);.}...ga
+llery-columns-8
+{..grid-template
+#¿NOMBRE?
+(8, 1fr);.}...ga
+llery-columns-9
+{..grid-template
+#¿NOMBRE?
+(9, 1fr);.}...ga
+llery-caption {.
+.display: block;
+.}./* Site title
+and description
+.---------------
+----------------
+-------------- *
+/./* Hide the si
+te title from th
+e view but leave
+it in the page
+for screenreader
+s */..site-title
+, .site-descript
+ion{.    positio
+n: absolute;.
+text-indent: -5
+000px;.}../*----
+----------------
+----------------
+----------------
+----------.# Plu
+gins.-----------
+----------------
+----------------
+----------------
+---*/../* Jetpac
+k infinite scrol
+l.--------------
+----------------
+---------------
+*/../* Hide the
+Posts Navigation
+and the Footer
+when Infinite Sc
+roll is in use.
+*/..infinite-scr
+oll .posts-navig
+ation,..infinite
+#¿NOMBRE?
+ing .site-footer
+{..display: non
+e;.}../* Re-disp
+lay the Theme Fo
+oter when Infini
+te Scroll has re
+ached its end. *
+/..infinity-end.
+neverending .sit
+e-footer {..disp
+lay: block;.}../
+*---------------
+----------------
+----------------
+---------------.
+# Utilities.----
+----------------
+----------------
+----------------
+----------*/../*
+Accessibility.-
+----------------
+----------------
+------------ */.
+./* Text meant o
+nly for screen r
+eaders. */..scre
+en-reader-text {
+..border: 0;..cl
+ip: rect(1px, 1p
+x, 1px, 1px);..c
+lip-path: inset(
+50%);..height: 1
+px;..margin: -1p
+x;..overflow: hi
+dden;..padding:
+0;..position: ab
+solute !importan
+t;..width: 1px;.
+.word-wrap: norm
+al !important;.}
+...screen-reader
+-text:focus {..b
+ackground-color:
+#f1f1f1;..borde
+r-radius: 3px;..
+box-shadow: 0 0
+2px 2px rgba(0,
+0, 0, 0.6);..cli
+p: auto !importa
+nt;..clip-path:
+none;..color: #2
+1759b;..display:
+block;..font-si
+ze: 0.875rem;..f
+ont-weight: 700;
+..height: auto;.
+.left: 5px;..lin
+e-height: normal
+;..padding: 15px
+23px 14px;..tex
+t-decoration: no
+ne;..top: 5px;..
+width: auto;..z-
+index: 100000;.}
+../* Do not show
+the outline on
+the skip link ta
+rget. */.#primar
+y[tabindex="-1"]
+:focus {..outlin
+e: 0;.}../* Alig
+nments.---------
+----------------
+----------------
+---- */..alignle
+ft {.../*rtl:ign
+ore*/..float: le
+ft;.../*rtl:igno
+re*/..margin-rig
+ht: 1.5em;..marg
+in-bottom: 1.5em
+;.}...alignright
+{.../*rtl:ignor
+e*/..float: righ
+t;.../*rtl:ignor
+e*/..margin-left
+: 1.5em;..margin
+-bottom: 1.5em;.
+}...aligncenter
+{..clear: both;.
+.display: block;
+..margin-left: a
+uto;..margin-rig
+ht: auto;..margi
+n-bottom: 1.5em;
+.}....clear::aft
+er{..content: ""
+;..clear: both;.
+.display: block;
+.  }
