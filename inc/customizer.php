@@ -162,7 +162,8 @@ function saturn_customizer_css()
 	<?php if( get_theme_mod( 'navbar_overlay', 'yes' ) == 'yes' ) : ?>
 		<style type="text/css">
 			/* Change position type of navbar and transparency */
-			#site-header { background: transparent;} 			
+			#site-header { background: transparent;} 	
+			/* #top-header {background: transparent;} */
 		</style> 
 	<?php endif; ?>
 
@@ -178,7 +179,16 @@ function saturn_customizer_css()
 			#top-header {	
 				position: sticky; 
 				top : 0; 
-				z-index : 10;}
+				z-index : 10;
+				}
+			/* Make position of dropdown menu absolute for mobile */
+			/* @media screen and (max-width: 37.5em) {
+				#top-header {	
+				position: absolute; 
+				top : 0; 
+				z-index : 10;
+				}
+			} */
 		 </style> 
 	<?php elseif (get_theme_mod( 'sticky_navbar', 'no' ) == 'no' && get_theme_mod( 'navbar_overlay', 'yes' ) == 'yes') : ?>
 		<style type="text/css">

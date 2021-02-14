@@ -48,7 +48,7 @@ function display_element( $element, &$children_elements, $max_depth, $depth=0, $
 	//Adds the 'parent' class to the current item if it has children               
 	if( ! empty( $children_elements[$element->$id_field] ) ) {
 			array_push($element->classes,'parent');
-			$element->title .= ' &gt;';
+			$element->title .= '<span> <i class="fas fa-angle-down"></i> </span>';
 	}
 
 	$cb_args = array_merge( array(&$output, $element, $depth), $args);
