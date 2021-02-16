@@ -85,3 +85,6 @@
 	<!-- <div id='photocount'>
 		<span><?php //echo get_theme_mod( 'header_img_height', 40 ) ?></span>vh
 	</div> -->
+	<div id='photocount'>
+		<span><?php echo get_theme_mod( 'cd_photocount', 0 ) ?></span> photos
+	</div>

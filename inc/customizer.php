@@ -89,7 +89,7 @@ function saturn_customize_register( $wp_customize ) {
 		'panel' => 'theme_options',
 		'priority' => 70,
     ));
-	//Controls and Settings for Test Section
+	//Controls and Settings for Breaks Section
 	// include get_template_directory() . '/inc/customizer/sections/breaks.php';
 
 
@@ -105,7 +105,7 @@ function saturn_customize_register( $wp_customize ) {
 
 	//Include Settings and Controls for Generic Tabs
 	// include get_template_directory() . '/inc/customizer/sections/colors.php';
-	// include get_template_directory() . '/inc/customizer/sections/header-image.php';
+	include get_template_directory() . '/inc/customizer/sections/header-image.php';
 
 
 	$wp_customize->add_section('conditional', array(
@@ -114,6 +114,19 @@ function saturn_customize_register( $wp_customize ) {
         'priority' => 120,
     ));
 
+
+	$wp_customize->add_setting( 'cd_photocount' , array(
+		'default'     => 0,
+		'transport'   => 'postMessage',
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'cd_photocount', array(
+		'label'	=>  'Photo Count',
+		'min' => 10,
+		'max' => 9999,
+		'step' => 10,
+		'section' => 'conditional',
+	) ) );
 	include get_template_directory() . '/inc/customizer/sections/conditional.php';
 	
 }

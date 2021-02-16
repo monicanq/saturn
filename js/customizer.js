@@ -39,4 +39,18 @@
 			}
 		} );
 	} );
+
+	//Sample slider
+	wp.customize( 'cd_photocount', function( value ) {
+		value.bind( function( newval ) {
+			$( '#photocount span' ).html( newval );
+		} );
+	} );
+
+	//Banner slider
+	wp.customize( 'banner_height', function( value ) {
+		value.bind( function( newval ) {
+			$( '#banner' ).height( newval + 'vh');
+		} );
+	} );
 }( jQuery ) );

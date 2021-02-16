@@ -179,17 +179,16 @@ $wp_customize->add_control( 'navbar_text_size', array(
     ),
 ) );
 
-// $wp_customize->add_setting( 'topnav_height' , array(
-// 	'default'     => 60,
-// 	'transport'   => 'postMessage',
-// ) );
 
-// $wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'topnav_height', array(
-// 	'label'	=>  'Top Nav Height',
-// 	'min' => 60,
-// 	'max' => 150,
-// 	'step' => 5,
-// 	'section' => 'navbar',
-// ) ) );
+$wp_customize->add_setting( 'banner_height' , array(
+	'default'     => 60,
+	'transport'   => 'postMessage',
+) );
 
-
+$wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'topnav_height', array(
+	'label'	=>  'Height of the banner',
+	'min' => 0,
+	'max' => 100,
+	'step' => 1,
+	'section' => 'navbar',
+) ) );
