@@ -7,6 +7,9 @@
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
 	const header = document.getElementById( 'site-header' );
+	const topHeader = document.getElementById( 'top-header' );
+	const Navigation = document.getElementById( 'mobile-logo' );
+
 
 	// Return early if the navigation don't exist.
 	if ( ! siteNavigation ) {
@@ -39,11 +42,13 @@
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );
 			header.classList.toggle('menu-color');
-			topHeader.classList.toggle('stick');
+			topHeader.classList.toggle( 'expanded' );
+			Navigation.style.display = 'none';
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
 			header.classList.toggle('menu-color');
-			topHeader.classList.toggle('stick');
+			topHeader.classList.toggle( 'expanded' );
+			Navigation.style.display = 'block';
 		}
 	} );
 
@@ -55,8 +60,8 @@
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
 			button.setAttribute( 'aria-expanded', 'false' );
-			header.classList.toggle('menu-color');
-			topHeader.classList.toggle('stick');
+			header.classList.toggle( 'menu-color' );
+			topHeader.classList.toggle( 'expanded' );
 		}
 	} );
 

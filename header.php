@@ -34,12 +34,11 @@
 						<?php the_custom_logo(); ?>
 					
 						<div class="site-info ">
-							<?php if ( is_front_page() && is_home() ) : ?>
+							<?php //if ( is_front_page() && is_home() ) : ?>
 								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php else : ?>
-								<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php 
-							endif;
+							<!-- <?php// else : ?>
+								<p class="site-title"><a href="<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a></p> -->
+							<?php //endif; 
 							$saturn_description = get_bloginfo( 'description', 'display' );
 							if ( $saturn_description || is_customize_preview() ) :
 								?>
@@ -51,15 +50,18 @@
 				<div class="navigation-block">
 					<nav id="site-navigation" class="main-navigation">
 						<button id='navigation-button' class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars fa-2x"></i></button>
-						<?php
+						<!-- <div id="mobile-logo"> -->
+							<!-- <?php //the_custom_logo(); ?> -->
+							<?php
 							$walker = new Nfr_Menu_Walker();
 							wp_nav_menu(
 								array(
 									'theme_location' => 'menu-1',
 									'menu_id'        => 'primary-menu',
 									'walker'		 => $walker,
-								)
-							);?>
+									)
+								);?>
+						<!-- </div> -->
 					</nav> <!-- #site-navigation -->		
 				</div> <!-- #site-navigation -->
 			</div> <!-- .container -->

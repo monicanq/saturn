@@ -655,6 +655,10 @@ textarea {
 
 /* Top navbar
 .--------------------------------------------- */
+/* #top-header{
+	max-width: 100vw;
+	overflow-x: hidden;
+} */
 .top-nav{
     width: 100%;
     z-index: 9;
@@ -693,23 +697,32 @@ p.site-description{
 	position: absolute;
 	top: -55555px;
 }
-/* Testing area */
 
-@media screen and (max-width: 37.5em) {
-	#main-menu{
-		flex-direction: column;
-		width: 100%;
-	}
-	#site-header{
-		position: absolute;
-	}
-	.navigation-block{
-		width: 100%;
-	}
-	#top-header.stick{
-		position: absolute;
-	}
+#main-menu{
+	max-width: 1160px;
+	margin: auto;
 }
+.navigation-block{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.branding-block{
+	display: block;
+}
+.site-info{
+	display: block;
+}
+#primary-menu{
+	/* flex-wrap: wrap; */
+}
+/* Testing area */
 
 /* End of testing area */
 
@@ -733,6 +746,10 @@ p.site-description{
 	.right-menu{
 		flex-direction: row-reverse;
 	}
+	.left-menu .navigation-block,
+	.left-menu #primary-menu {
+		justify-content: flex-end;
+	}
 	.centered-menu{
 		flex-direction: column;
 	}
@@ -740,10 +757,12 @@ p.site-description{
 		flex-direction: column;
 		margin-right: 0;
 		justify-content: center;
-
 	}
 	.centered-menu .site-branding .site-info{
 		text-align: center;
+	}
+	.centered-menu #primary-menu {
+		justify-content: center;
 	}
 	.site-info{
 		position: relative;
@@ -761,13 +780,17 @@ p.site-description{
 
 }
 
+
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 
 /* Navigation
 --------------------------------------------- */
-
+#top-header{
+	width: 100%;
+}
 .main-navigation {
     margin: 0;
 }
@@ -787,11 +810,10 @@ p.site-description{
     position: absolute;
     top: 100%;
     left: -999em;
-    z-index: 99999;
+    z-index: 9;
 }
 .main-navigation ul ul ul {
     left: -999em;
-    /* top: 0; */
 }
 #main-menu,
 #main-menu .navigation-block,
@@ -854,58 +876,73 @@ p.site-description{
 .main-navigation.toggled ul {
     display: block;
 }
+#site-navigation{
+}
 
-/* @media screen and ( max-width: 37.5em) */
-    /* { */
-		/* .main-navigation ul li:hover > ul, */
-		/* .main-navigation ul li.focus > ul {
-			left: auto; /*This is the padding of the a link that makes it appear so that it shows centered in small screens*/
-		/* }  */
-		/* #main-menu .navigation-block,
-		#site-navigation,
-		#site-navigation div,
-		#primary-menu,
-		#primary-menu li,
-		#primary-menu li ul
-		{
-			width: 100%;
-		} */
+@media screen and (min-width: 37.5em){
+	#mobile-logo a{
+		display: none;
+	}
+}  
 
-		/* #navigation-button{
-			border: none;
-			background-color: transparent;
-			padding: 12px;
-			position: absolute;
-			right: 0;
-		} */
-        /* .top-nav{
-            display: flex;
-            float: right;
-            position: relative !important; 
-        }
-        .main-navigation{
-            width: 100%;
-        }
-        .menu-menu-1-container{
-            text-align: center;
-            width: 100%;
-            z-index: 10;
-            padding-top: 60px;
-        }
-        .custom-logo-link{
-            position: absolute;
-            height: 100%;
-            max-width: 60%;
-        } */
-    /* } */
+@media screen and (max-width: 37.5em) {
+
+	/*Testing area*/
+	#main-menu{
+		flex-direction: column;
+	}
+	.branding-block{
+		position: absolute;
+		width: 100%;
+		top: 0;
+	}
+	.site-branding{
+		display: flex;
+	}
+	#site-header{
+		height: 70px;
+	}
+	#top-header{
+		z-index: 1;
+	}
+	#top-header.expanded{
+		position: fixed;
+
+	}
+	#main-menu{
+		overflow-y: scroll;
+		/* IE and Edge */
+		-ms-overflow-style: none;  
+		/*Firefox */
+		scrollbar-width: none; 
+	}
+	#main-menu::-webkit-scrollbar{
+		display: none;
+	}
+
+	/*End testing area*/
+
+	#navigation-button{
+		border: none;
+		background-color: transparent;
+		position: absolute;
+		right: 0;
+		z-index: 55;
+		padding: 15px;
+	}
+	.site-branding a{
+		position: relative;
+		z-index: 99;
+		max-width: 60%;
+	}
+	#primary-menu{
+		padding-top: 60px;
+	}
+}
 .menu-menu-1-container{
-    padding-top: 60px;
     text-align: center;
 }
-.custom-logo-link{
-    position: absolute;
-    max-width: 60%;
-}
+
 @media screen and (min-width: 37.5em) {
     #site-navigation{
         width: auto;
@@ -916,6 +953,7 @@ p.site-description{
     }
     .main-navigation ul {
         display: flex;
+		flex-wrap: wrap;
     }
     .custom-logo-link{
         position: relative;
@@ -966,6 +1004,12 @@ p.site-description{
 }
 .banner img{
     width :100%;
+}
+#header-caret{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 1%;
 }
 
 /* Posts and pages

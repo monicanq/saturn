@@ -143,7 +143,7 @@ function saturn_customizer_css()
 	<?php if( get_theme_mod( 'mobile_logo_position', 'center' ) == 'center' ) : ?>
 		<style type="text/css">
 			/* Change position of the logo */
-			.custom-logo-link {
+			.site-branding {
 									align-items: center;
 									justify-content: center;
 								}		
@@ -151,7 +151,7 @@ function saturn_customizer_css()
 	<?php else: ?>
 		<style type="text/css">
 			/* Change position of the logo */
-			.custom-logo-link {
+			.site-branding {
 									align-items: center;
 									justify-content: flex-start;
 								}		
@@ -172,6 +172,7 @@ function saturn_customizer_css()
 		<style type="text/css">
 		 	/* Change position type of navbar */
 			 #site-header {	position: fixed; }
+			 #navigation-button{ position: fixed; }
 		 </style> 
 	<?php elseif (get_theme_mod( 'sticky_navbar', 'yes' ) == 'yes' && get_theme_mod( 'navbar_overlay', 'no' ) == 'no') : ?>
 		<style type="text/css">
@@ -181,14 +182,8 @@ function saturn_customizer_css()
 				top : 0; 
 				z-index : 10;
 				}
-			/* Make position of dropdown menu absolute for mobile */
-			/* @media screen and (max-width: 37.5em) {
-				#top-header {	
-				position: absolute; 
-				top : 0; 
-				z-index : 10;
-				}
-			} */
+
+				#navigation-button{ position: fixed; }
 		 </style> 
 	<?php elseif (get_theme_mod( 'sticky_navbar', 'no' ) == 'no' && get_theme_mod( 'navbar_overlay', 'yes' ) == 'yes') : ?>
 		<style type="text/css">
