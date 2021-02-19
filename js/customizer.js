@@ -41,16 +41,30 @@
 	} );
 
 	//Sample slider
-	wp.customize( 'cd_photocount', function( value ) {
-		value.bind( function( newval ) {
-			$( '#photocount span' ).html( newval );
-		} );
-	} );
+	// wp.customize( 'cd_photocount', function( value ) {
+	// 	value.bind( function( newval ) {
+	// 		$( '#photocount span' ).html( newval );
+	// 	} );
+	// } );
 
 	//Banner slider
 	wp.customize( 'banner_height', function( value ) {
 		value.bind( function( newval ) {
 			$( '#banner' ).height( newval + 'vh');
+		} );
+	} );
+
+	//Break One slider
+	wp.customize( 'break_one_height', function( value ) {
+		value.bind( function( newval ) {
+			$( '#break-1' ).height( newval + 'vh');
+		} );
+	} );
+
+	//Break Two slider
+	wp.customize( 'break_two_height', function( value ) {
+		value.bind( function( newval ) {
+			$( '#break-2' ).height( newval + 'vh');
 		} );
 	} );
 }( jQuery ) );

@@ -9,17 +9,36 @@
  * Add Breaks Settings and Controls
  *
  */
+ 
+ 
+?>
+<!-- Styles for the break sections -->
 
+<style>
+    /* Styling for parallax effects */
+    /* Break-1 image */
+	<?php if( get_theme_mod( 'parallax_break_one', 'yes' ) == 'yes') : ?>
+        #break-1{
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+        }
+	<?php else : ?>
+        #break-1{
+            /* Create the parallax scrolling effect */
+            background-attachment: scroll;
+        }
+	<?php endif;?>
 
-//  $wp_customize->add_setting( 'banner_height' , array(
-// 	'default'     => 60,
-// 	'transport'   => 'postMessage',
-// ) );
-
-// $wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'topnav_height', array(
-// 	'label'	=>  'Height of the banner',
-// 	'min' => 0,
-// 	'max' => 100,
-// 	'step' => 1,
-// 	'section' => 'navbar',
-// ) ) );
+    /* Break-2 image */
+	<?php if( get_theme_mod( 'parallax_break_two', 'yes' ) == 'yes') : ?>
+        #break-2{
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+        }
+	<?php else : ?>
+        #break-2{
+            /* Create the parallax scrolling effect */
+            background-attachment: scroll;
+        }
+	<?php endif;?>
+</style>

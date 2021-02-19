@@ -29,9 +29,13 @@ function saturn_sanitize_radio( $input, $setting ){
 
 //checkbox sanitization function
 function saturn_sanitize_checkbox( $input ){
-            
+    if ( $input === true || $input === '1' ) :
+        return '1';
+    else:
+        return '';
+    endif;
     //returns true if checkbox is checked
-    return ( isset( $input ) ? true : false );
+    // return ( isset( $input ) ? true : false );
 }
 
 

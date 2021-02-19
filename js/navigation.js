@@ -8,7 +8,6 @@
 	const siteNavigation = document.getElementById( 'site-navigation' );
 	const header = document.getElementById( 'site-header' );
 	const topHeader = document.getElementById( 'top-header' );
-	const Navigation = document.getElementById( 'mobile-logo' );
 
 
 	// Return early if the navigation don't exist.
@@ -37,18 +36,17 @@
 
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener( 'click', function() {
+		console.log('I clicked the button');
 		siteNavigation.classList.toggle( 'toggled' );
 
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );
-			header.classList.toggle('menu-color');
+			header.classList.remove('menu-color');
 			topHeader.classList.toggle( 'expanded' );
-			Navigation.style.display = 'none';
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
-			header.classList.toggle('menu-color');
+			header.classList.add('menu-color');
 			topHeader.classList.toggle( 'expanded' );
-			Navigation.style.display = 'block';
 		}
 	} );
 
@@ -60,7 +58,7 @@
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
 			button.setAttribute( 'aria-expanded', 'false' );
-			header.classList.toggle( 'menu-color' );
+			header.classList.remove('menu-color');
 			topHeader.classList.toggle( 'expanded' );
 		}
 	} );

@@ -100,7 +100,7 @@ function saturn_customize_register( $wp_customize ) {
         'priority' => 120,
     ));
 	//Controls and Settings for Test Section
-	// include get_template_directory() . '/inc/customizer/sections/test.php';
+	include get_template_directory() . '/inc/customizer/sections/test.php';
 
 
 	//Include Settings and Controls for Generic Tabs
@@ -115,18 +115,6 @@ function saturn_customize_register( $wp_customize ) {
     ));
 
 
-	$wp_customize->add_setting( 'cd_photocount' , array(
-		'default'     => 0,
-		'transport'   => 'postMessage',
-	) );
-	
-	$wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'cd_photocount', array(
-		'label'	=>  'Photo Count',
-		'min' => 10,
-		'max' => 9999,
-		'step' => 10,
-		'section' => 'conditional',
-	) ) );
 	include get_template_directory() . '/inc/customizer/sections/conditional.php';
 	
 }
@@ -150,6 +138,37 @@ function saturn_customizer_css()
 		:root { --navbar-color: <?php echo get_theme_mod('navbar_color', '#ccc'); ?>; }
 		/* Style for parallax effect */
 		#header-caret a i{ color : <?php echo get_theme_mod('caret_color', '#fff'); ?>; }
+		#banner{
+			background-image: url(<?php echo esc_url( get_header_image() ); ?>);
+			height: <?php echo get_theme_mod( 'header_img_height', 40 ) ?>vh;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			-moz-background-size: cover;
+			-webkit-background-size: cover;
+			-o-background-size: cover;
+		}
+		#break-1{
+			background-image: url(<?php echo esc_url( get_theme_mod( 'break_one_img' ) ); ?>);
+			height: <?php echo get_theme_mod( 'break_one_height', 40 ) ?>vh;
+			background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+		}
+		#break-2{
+			background-image: url(<?php echo esc_url( get_theme_mod( 'break_two_img' ) ); ?>);
+			height: <?php echo get_theme_mod( 'break_two_height', 40 ) ?>vh;
+			background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+		}
+
 	</style> 
 
 	<!-- Styling for position of logo on mobile menu -->
@@ -220,63 +239,52 @@ function saturn_customizer_css()
 			<?php	break;
 		}?>
 	</style> 
-	<!-- Styling for parallax effect of header image -->
+	<!-- Styling for parallax effects image -->
 	<?php if( get_theme_mod( 'parallax_header', 'yes' ) == 'yes') : ?>
 		<style type="text/css">
 			 #banner{
-			/* The image used */
-			background-image: url(<?php echo esc_url( get_header_image() ); ?>);
-
-			/* Set a specific height */
-			height: <?php echo get_theme_mod( 'header_img_height', 40 ) ?>vh;
-
 			/* Create the parallax scrolling effect */
 			background-attachment: fixed;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			-moz-background-size: cover;
-			-webkit-background-size: cover;
-			-o-background-size: cover;
 			}
 
 		 </style> 
 	<?php else : ?>
 		<style type="text/css">
 			#banner{
-				/* The image used */
-				background-image: url(<?php echo esc_url( get_header_image() ); ?> );
-
-				/* Set a specific height */
-				height: <?php echo get_theme_mod( 'header_img_height', 40 ) ?>vh;
-
 				/* Create the parallax scrolling effect */
 				background-attachment: scroll;
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-				-moz-background-size: cover;
-				-webkit-background-size: cover;
-				-o-background-size: cover;
 			}
 		 </style> 
 	<?php endif;?>
 	<style>
-		#break-1{
-			/* The image used */
-			background-image: url(<?php echo esc_url( get_theme_mod( 'break_one_img' ) ); ?>);
+		/* Styling for parallax effects */
+		/* Break-1 image */
+		<?php if( get_theme_mod( 'parallax_break_one', 'yes' ) == 'yes') : ?>
+			#break-1{
+				/* Create the parallax scrolling effect */
+				background-attachment: fixed;
+			}
+		<?php else : ?>
+			#break-1{
+				/* Create the parallax scrolling effect */
+				background-attachment: scroll;
+			}
+		<?php endif;?>
 
-			/* Set a specific height */
-			height: <?php echo get_theme_mod( 'break_one_height', 40 ) ?>vh;
-		}
-		#break-2{
-			/* The image used */
-			background-image: url(<?php echo esc_url( get_theme_mod( 'break_two_img' ) ); ?>);
-
-			/* Set a specific height */
-			height: <?php echo get_theme_mod( 'break_two_height', 40 ) ?>vh;
-		}
+		/* Break-2 image */
+		<?php if( get_theme_mod( 'parallax_break_two', 'yes' ) == 'yes') : ?>
+			#break-2{
+				/* Create the parallax scrolling effect */
+				background-attachment: fixed;
+			}
+		<?php else : ?>
+			#break-2{
+				/* Create the parallax scrolling effect */
+				background-attachment: scroll;
+			}
+		<?php endif;?>
 	</style>
+
 
 <?php
 }

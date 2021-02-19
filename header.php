@@ -50,9 +50,7 @@
 				<div class="navigation-block">
 					<nav id="site-navigation" class="main-navigation">
 						<button id='navigation-button' class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars fa-2x"></i></button>
-						<!-- <div id="mobile-logo"> -->
-							<!-- <?php //the_custom_logo(); ?> -->
-							<?php
+						<?php
 							$walker = new Nfr_Menu_Walker();
 							wp_nav_menu(
 								array(
@@ -60,8 +58,7 @@
 									'menu_id'        => 'primary-menu',
 									'walker'		 => $walker,
 									)
-								);?>
-						<!-- </div> -->
+						);?>
 					</nav> <!-- #site-navigation -->		
 				</div> <!-- #site-navigation -->
 			</div> <!-- .container -->
@@ -72,19 +69,18 @@
 			<?php //the_header_image_tag(); ?>
 			<?php if ( get_theme_mod( 'section_caret', 'yes' ) == 'yes'): ?>
 				<div id="header-caret">
-					<a id='clicker' href='#'>
+					<a id='caret' href='#'>
 						<i class="fas fa-angle-down fa-4x"></i>
 					</a>
 				</div>
 			<?php endif; ?>
 		</div> <!-- #banner -->
 	<?php endif; ?>
-	<?php if (get_theme_mod( 'display_conditional_text' ) == 1) : ?>
+	<?php if( get_theme_mod( 'parallax_header', 'yes' ) == 'yes') : ?>
 		<p>I am true</p>
 	<?php endif; ?>
-	<!-- <div id='photocount'>
-		<span><?php //echo get_theme_mod( 'header_img_height', 40 ) ?></span>vh
-	</div> -->
-	<div id='photocount'>
-		<span><?php echo get_theme_mod( 'cd_photocount', 0 ) ?></span> photos
-	</div>
+	<!-- <p>Here is the result</p> -->
+	<p>
+	<?php //echo (get_theme_mod( 'section_caret_text' )) ; ?>
+	</p>
+	

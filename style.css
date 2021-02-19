@@ -90,6 +90,11 @@ main {
 	display: block;
 }
 
+/* Add padding to the front page sections */
+#first-section, #second-section{
+	padding: 25px;
+}
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -671,10 +676,7 @@ textarea {
 #site-header{
 	background-color: var(--navbar-color);
 }
-#site-header.menu-color{
-	background-color: var(--navbar-color);
-	position: absolute;
-}
+
 #main-menu{
 	display: flex;
 	align-items: center;
@@ -872,10 +874,7 @@ p.site-description{
     float: right;
 }
 
-.menu-toggle,
-.main-navigation.toggled ul {
-    display: block;
-}
+
 #site-navigation{
 }
 
@@ -919,6 +918,14 @@ p.site-description{
 	#main-menu::-webkit-scrollbar{
 		display: none;
 	}
+	.menu-toggle,
+	.main-navigation.toggled ul {
+		display: block;
+	}
+	#site-header.menu-color{
+		background-color: var(--navbar-color);
+		position: absolute;
+	}
 
 	/*End testing area*/
 
@@ -937,6 +944,9 @@ p.site-description{
 	}
 	#primary-menu{
 		padding-top: 60px;
+	}
+	.navigation-block{
+		width: 100%;
 	}
 }
 .menu-menu-1-container{
