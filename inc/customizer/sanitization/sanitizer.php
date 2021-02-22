@@ -54,7 +54,7 @@ function saturn_sanitize_select( $input, $setting ){
 }
 
 //file input sanitization function
-function saturn_sanitize_file( $file, $setting ) {
+function saturn_sanitize_image( $file, $setting ) {
         
     //allowed file types
     $mimes = array(

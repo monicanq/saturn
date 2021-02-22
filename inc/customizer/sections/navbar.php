@@ -97,7 +97,6 @@ $wp_customize->add_control( 'mobile_logo_position', array(
     'settings' => 'mobile_logo_position',
     'type' => 'radio',
     'choices' => array(
-        // 'right-menu' => 'Right',
         'left' => 'Left',
         'center' => 'Center',
     ),
@@ -136,7 +135,7 @@ $wp_customize->add_control( 'sticky_navbar', array(
     'choices' => array(
         'yes' => 'Yes',
         'no' => 'No',
-),
+    ),
 ) );
 
 // Add bottom border shadow navbar control

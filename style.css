@@ -45,6 +45,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     - Captions
     - Galleries
     - Site title and description.
+	- Columns.
 # plugins
     - Jetpack infinite scroll
 # Utilities..- Accessibility
@@ -93,6 +94,10 @@ main {
 /* Add padding to the front page sections */
 #first-section, #second-section{
 	padding: 25px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 }
 
 /**
@@ -1154,8 +1159,22 @@ p.site-description{
 }
 
 
-
-
+/* Columns
+--------------------------------------------- */
+.row{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+#s1c1, #s1c2, #s1c3, #s2c1, #s2c2, #s2c3{
+	border: solid #333 1px;
+	justify-content: center;
+	/* padding-right: 25px; */
+}
+#s1c1, #s2c1{
+	/* padding-left: 25px; */
+}
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/

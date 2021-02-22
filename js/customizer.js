@@ -67,4 +67,25 @@
 			$( '#break-2' ).height( newval + 'vh');
 		} );
 	} );
+	
+	//Section 1 Column 1 slider
+	// wp.customize( 's1c1_width', function( value ) {
+	// 	value.bind( function( newval ) {
+	// 		$( '#s1c1' ).width( newval + '%');
+	// 	} );
+	// } );
+	//Section 1 Column 2 slider
+	// wp.customize( 's1c2_width', function( value ) {
+	// 	value.bind( function( newval ) {
+	// 		$( '#s1c2' ).width( newval + '%');
+	// 	} );
+	// } );
+	//Section 1 Column 3 slider
+	// wp.customize( 's1c3_width', function( value ) {
+	// 	value.bind( function( newval ) {
+	// 		$( '#s1c3' ).width( newval + '%');
+	// 	} );
+	// } );
+
+
 }( jQuery ) );

@@ -1,0 +1,12 @@
+.customize-control-title{
+    /* background-color: coral;
+    color: blue; */
+}
+#customize-control-menu_position{
+    /* display: flex; */
+}
+
+#customize-control-menu_position span{
+    display: block;
+    /* min-width: 33%; */
+}

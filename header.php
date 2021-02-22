@@ -26,7 +26,11 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'saturn' ); ?></a>
 
-	<header id="top-header" class="clear">
+	<header id="top-header" class="clear" <?php if ( is_front_page() && is_home() 
+											&& get_theme_mod( 'navbar_overlay', 'yes' ) == 'yes' 
+											&& get_theme_mod( 'sticky_navbar', 'yes' ) == 'yes' ) : 
+											echo "style='height: 0'";
+											endif;?>>
 		<div id='site-header'>
 			<div id='main-menu' class='container container--flex <?php echo get_theme_mod( 'menu_position' ) ?>'> 
 				<div class='branding-block '>
@@ -72,15 +76,10 @@
 					<a id='caret' href='#'>
 						<i class="fas fa-angle-down fa-4x"></i>
 					</a>
-				</div>
+				</div> <!-- #header-caret -->
 			<?php endif; ?>
 		</div> <!-- #banner -->
 	<?php endif; ?>
-	<?php if( get_theme_mod( 'parallax_header', 'yes' ) == 'yes') : ?>
-		<p>I am true</p>
-	<?php endif; ?>
-	<!-- <p>Here is the result</p> -->
-	<p>
-	<?php //echo (get_theme_mod( 'section_caret_text' )) ; ?>
-	</p>
+	<!-- echo get_theme_mod( 'cd_photocount', 0 ) -->
+
 	

@@ -13,10 +13,21 @@
  */
 ?>
 <section id='first-section'> 
-    <?php dynamic_sidebar( 'sidebar-2' ); ?>
+    <?php// dynamic_sidebar( 'sidebar-2' ); ?>
+    <?php //dynamic_sidebar( 's1-c1' ); ?>
+    <?php //dynamic_sidebar( 's1-c2' ); ?>
+    <?php //dynamic_sidebar( 's1-c3' ); ?>
+
+    <?php dynamic_sidebar( 's1c1' ); ?>
+    <?php dynamic_sidebar( 's1c2' ); ?>
+    <?php dynamic_sidebar( 's1c3' ); ?>
 </section>
-<div id="break-1"></div>
+<div id="break-1"></div>.
+
 <section id='second-section'> 
-    <?php dynamic_sidebar( 'sidebar-3' ); ?>
+    <?php //dynamic_sidebar( 'sidebar-3' ); ?>
+    <?php dynamic_sidebar( 's2c1' ); ?>
+    <?php dynamic_sidebar( 's2c2' ); ?>
+    <?php dynamic_sidebar( 's2c3' ); ?>
 </section>
 <div id="break-2"></div>
