@@ -67,17 +67,6 @@ function saturn_customize_register( $wp_customize ) {
 		'priority' => 120,
 		) );
 
-	// Add widgets sections
-	$wp_customize->add_section(
-		'first_section',
-		array(
-			'title' => __( 'First Section', 'Saturn' ),
-			'panel' => 'widget_areas',
-			'priority' => 30,
-			'description' => __( 'Enter the URL to your account for each service for the icon to appear in the header.', '_s' )
-			)
-		);	
-	// include get_template_directory() . '/inc/customizer/sections/widgets.php';
 
 	// Add Social Media Section
 	$wp_customize->add_section(

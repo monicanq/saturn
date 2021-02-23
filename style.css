@@ -1,7 +1,7 @@
 /*!
 Theme Name: saturn
 Theme URI: http://coscriber.com/
-Author: Underscores.me
+Author: Coscriber
 Author URI: http://coscriber.com/
 Description: Description
 Version: 1.0.0
@@ -92,7 +92,7 @@ main {
 }
 
 /* Add padding to the front page sections */
-#first-section, #second-section{
+#first-section, #second-section, #footer-section{
 	padding: 25px;
 	width: 100%;
 	display: flex;
@@ -100,6 +100,11 @@ main {
 	justify-content: space-evenly;
 }
 
+.designer-info{
+	text-align: center;
+	padding: 15px;
+	font-size: 1.2em;
+}
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -736,7 +741,7 @@ p.site-description{
 /* End of testing area */
 
 /* The following styles for the menu only apply to big screens */
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 50em) {
 
 	/* Testing area */
 
@@ -830,6 +835,8 @@ p.site-description{
 #main-menu .navigation-block nav div ul li,
 #main-menu .navigation-block nav div ul li ul{
 	background-color: inherit;
+	/* width: 90%;
+	text-align: center; */
 }
 
 
@@ -838,7 +845,7 @@ p.site-description{
     display: block;
 }
 .main-navigation ul ul a {
-    width: 200px;
+    /* width: 200px; */
 }
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -883,15 +890,29 @@ p.site-description{
 #site-navigation{
 }
 
-@media screen and (min-width: 37.5em){
+@media screen and (min-width: 50em){
 	#mobile-logo a{
 		display: none;
 	}
+
 }  
 
-@media screen and (max-width: 37.5em) {
 
+@media screen and (max-width: 50em) {
+	#main-menu,
+	#main-menu .navigation-block,
+	#main-menu .navigation-block nav,
+	#main-menu .navigation-block nav div,
+	#main-menu .navigation-block nav div ul,
+	#main-menu .navigation-block nav div ul li,
+	#main-menu .navigation-block nav div ul li ul{
+		background-color: inherit;
+		width: 100%;
+	}
 	/*Testing area*/
+	.menu-menu-1-container{
+		min-height: 100vh;
+	}
 	#main-menu{
 		flex-direction: column;
 	}
@@ -915,6 +936,7 @@ p.site-description{
 	}
 	#main-menu{
 		overflow-y: scroll;
+		max-height: 100vh; /*We might need to delete this line if it creates problems*/
 		/* IE and Edge */
 		-ms-overflow-style: none;  
 		/*Firefox */
@@ -953,12 +975,14 @@ p.site-description{
 	.navigation-block{
 		width: 100%;
 	}
+
 }
 .menu-menu-1-container{
     text-align: center;
+
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 50em) {
     #site-navigation{
         width: auto;
     }

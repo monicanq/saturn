@@ -37,17 +37,17 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navb
 ) ) );
 
 // Add more navbar border color control
-$wp_customize->add_setting( 'navbar_border' , array(
-    'default'     => '#000000',
-    'transport'   => 'refresh',
-    'sanitize_callback' => 'sanitize_hex_color' //validates 3 or 6 digit HTML hex color code
-) );
+// $wp_customize->add_setting( 'navbar_border' , array(
+//     'default'     => '#000000',
+//     'transport'   => 'refresh',
+//     'sanitize_callback' => 'sanitize_hex_color' 
+// ) );
 
-$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border', array(
-    'label'        => 'Top Navbar Border Color',
-    'section'    => 'navbar',
-    'settings'   => 'navbar_border',
-) ) );
+// $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border', array(
+//     'label'        => 'Top Navbar Border Color',
+//     'section'    => 'navbar',
+//     'settings'   => 'navbar_border',
+// ) ) );
 
 // Add desktop menu position control
 $wp_customize->add_setting( 'menu_position' , array(

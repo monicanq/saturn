@@ -140,6 +140,8 @@ function saturn_widgets_init() {
 			'name'          => esc_html__( 'Section 1 Column 1', 'saturn' ),
 			'id'            => 's1c1',
 			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -151,6 +153,8 @@ function saturn_widgets_init() {
 			'name'          => esc_html__( 'Section 1 Column 2', 'saturn' ),
 			'id'            => 's1c2',
 			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -162,6 +166,8 @@ function saturn_widgets_init() {
 			'name'          => esc_html__( 'Section 1 Column 3', 'saturn' ),
 			'id'            => 's1c3',
 			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -175,6 +181,8 @@ function saturn_widgets_init() {
 			'name'          => esc_html__( 'Section 2 Column 1', 'saturn' ),
 			'id'            => 's2c1',
 			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -186,6 +194,8 @@ function saturn_widgets_init() {
 			'name'          => esc_html__( 'Section 2 Column 2', 'saturn' ),
 			'id'            => 's2c2',
 			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -197,52 +207,69 @@ function saturn_widgets_init() {
 			'name'          => esc_html__( 'Section 2 Column 3', 'saturn' ),
 			'id'            => 's2c3',
 			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 			'container_selector' => '#widget-area',	
 		));
-
-		
-	// register_sidebar(
-	// 	array(
-	// 		'name'          => esc_html__( 'First Widget area', 'saturn' ),
-	// 		'id'            => 'sidebar-2',
-	// 		'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-	// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-	// 		'after_widget'  => '</section>',
-	// 		'before_title'  => '<h2 class="widget-title">',
-	// 		'after_title'   => '</h2>',
-	// 		'container_selector' => '#widget-area',
-	// 	)
-	// );
-	// register_sidebar(
-	// 	array(
-	// 		'name'          => esc_html__( 'Second Widget area', 'saturn' ),
-	// 		'id'            => 'sidebar-3',
-	// 		'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-	// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-	// 		'after_widget'  => '</section>',
-	// 		'before_title'  => '<h2 class="widget-title">',
-	// 		'after_title'   => '</h2>',
-	// 		'container_selector' => '#widget-area',
-	// 	)
-	// );
+	// Columns for the second widget section
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer', 'saturn' ),
-			'id'            => 'footer',
+			'name'          => esc_html__( 'Footer Widgets Column 1', 'saturn' ),
+			'id'            => 's3c1',
 			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 			'container_selector' => '#widget-area',	
-		)
-	);
-
-
+		));
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widgets Column 2', 'saturn' ),
+			'id'            => 's3c2',
+			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+			'container_selector' => '#widget-area',	
+		));
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widgets Column 3', 'saturn' ),
+			'id'            => 's3c3',
+			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'before_sidebar'=> '<div class="column">',
+			'after_sidebar' => '</div>',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+			'container_selector' => '#widget-area',	
+		));
+	register_sidebar(
+		array(
+		'name'          => esc_html__( 'After Footer Widgets', 'saturn' ),
+		'id'            => 's4',
+		'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+		'before_sidebar'=> '<div class="column">',
+		'after_sidebar' => '</div>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+		'container_selector' => '#widget-area',	
+	));
+		
+	
 }
 add_action( 'widgets_init', 'saturn_widgets_init' );
 

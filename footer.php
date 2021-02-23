@@ -12,18 +12,14 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'saturn' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'saturn' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'saturn' ), 'saturn', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
+		<section id='footer-section'> 
+			<?php dynamic_sidebar( 's3c1' ); ?>
+			<?php dynamic_sidebar( 's3c2' ); ?>
+			<?php dynamic_sidebar( 's3c3' ); ?>
+		</section>
+		<?php dynamic_sidebar( 's4' ); ?>
+		<div class="designer-info">
+			<p>Theme Saturn by: <a href="https://coscriber.com/">Coscriber</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
