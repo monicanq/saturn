@@ -328,3 +328,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // Load walker for main menu
 require get_template_directory() . '/inc/walker/walker.php';
+
+
+// Show template loaded
+function show_template() {
+    if( is_super_admin() ){
+        global $template;
+        print_r($template);
+    } 
+}
+add_action('wp_footer', 'show_template');

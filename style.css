@@ -36,6 +36,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     - Forms
 ## Layouts
     -Top Navbar
+	-404
 # Components
     - Navigation
     - Posts and pages
@@ -74,6 +75,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	-webkit-text-size-adjust: 100%;
 }
 
+.clear::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
 /* Sections
 	 ========================================================================== */
 
@@ -104,6 +111,8 @@ main {
 	text-align: center;
 	padding: 15px;
 	font-size: 1.2em;
+	/* background-color: #333;
+	color: #fff; */
 }
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -112,6 +121,9 @@ main {
 h1 {
 	font-size: 2em;
 	margin: 0.67em 0;
+}
+article {
+	padding: 20px;
 }
 
 /* Grouping content
@@ -413,6 +425,7 @@ html {
 	--navbar-color: #ccc;
 	/* --blue: #00b;
 	--fullwidth: 100%; */
+	--boxed-content: 1160px;
 }
 
 
@@ -509,13 +522,14 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul,
+/* ul, */
 ol {
 	margin: 0 0 1.5em 3em;
 }
 
 ul {
 	list-style: disc;
+	padding-inline-start: 0px;
 }
 
 ol {
@@ -713,7 +727,7 @@ p.site-description{
 }
 
 #main-menu{
-	max-width: 1160px;
+	max-width: var(--boxed-content);
 	margin: auto;
 }
 .navigation-block{
@@ -794,8 +808,16 @@ p.site-description{
 
 }
 
-
-
+/* 404
+--------------------------------------------- */
+.error-404{
+	text-align: center;
+}
+.error-404 li{
+	/* text-decoration: none; */
+	list-style-type: none;
+	text-align: center;
+}
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -1073,7 +1095,9 @@ p.site-description{
 	clear: both;
 	margin: 0 0 1.5em;
 }
-
+.post-thumbnail{
+	margin: 20px;
+}
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1084,14 +1108,24 @@ p.site-description{
 	display: block;
 }
 
+#comments{
+	margin: 20px;
+}
+
 /* Widgets
 --------------------------------------------- */
 .widget {
 	margin: 0 0 1.5em;
+	text-align: center;
 }
 
 .widget select {
 	max-width: 100%;
+}
+.widget li{
+	/* text-decoration: none; */
+	list-style-type: none;
+	text-align: center;
 }
 
 /* Media

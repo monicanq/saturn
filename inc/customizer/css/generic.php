@@ -25,4 +25,23 @@
 		/* Style for parallax effect */
 		#header-caret a i{ color : <?php echo get_theme_mod('caret_color', '#fff'); ?>; }
 	</style>
+<?php
+/*Sidebar side*/
+if (get_theme_mod('sidebar_side', 'left') == 'left'):?>
+	<style>
+        @media screen and (min-width: 50em) {
+            .container-flex{
+                flex-direction: row-reverse;
+            }
+        }
+    </style>
+<?php
+else:?>
+    <style>
+        @media screen and (min-width: 50em) {
+            .container-flex{
+                flex-direction: row;
+            }
+    </style> <?php
+endif;
 

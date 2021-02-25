@@ -43,7 +43,7 @@ function saturn_customize_register( $wp_customize ) {
 		
 			
 	/***************************
-	 Add Sections 
+	 Add Panels 
 		***************************/
 	//Add Theme Customization Panel
 	$wp_customize->add_panel( 'theme_options', array(
@@ -53,19 +53,14 @@ function saturn_customize_register( $wp_customize ) {
 		'title'          => __('Theme Options', 'Saturn'),
 		'description'    => '',
 		) );
-	$wp_customize->add_panel( 'widget_areas', array(
-		'priority'       => 20,
-		'capability'     => 'edit_widget_areas',
-		'theme_supports' => '',
-		'title'          => __('Edit Widget Areas', 'Saturn'),
-		'description'    => '',
-		) );
+	// $wp_customize->add_panel( 'widget_areas', array(
+	// 	'priority'       => 20,
+	// 	'capability'     => 'edit_widget_areas',
+	// 	'theme_supports' => '',
+	// 	'title'          => __('Edit Widget Areas', 'Saturn'),
+	// 	'description'    => '',
+	// 	) );
 
-	$wp_customize->add_panel( 'widget_areas', array(
-		'title' => __( 'Edit Widget Areas', 'Saturn' ),
-		'description' => 'Edit the different widget areas that you would like to see in your site',
-		'priority' => 120,
-		) );
 
 
 	// Add Social Media Section
@@ -81,6 +76,18 @@ function saturn_customize_register( $wp_customize ) {
 		//Controls and Settings for Social Media Section
 		// include get_template_directory() . '/inc/customizer/sections/social.php';
 		
+	//Add General Section
+	$wp_customize->add_section(
+		'general',
+		array(
+			'title' => __( 'Global Styles', 'Saturn'),
+			'panel' => 'theme_options',
+			'priority' => 30,
+			'description' => __( 'Customize your global styles in this section' )
+			)
+		);
+	//Controls and Settings for General Section
+	include get_template_directory() . '/inc/customizer/sections/general.php';
 
 	//Add Navbar Section
 	$wp_customize->add_section(
@@ -106,15 +113,24 @@ function saturn_customize_register( $wp_customize ) {
 	include get_template_directory() . '/inc/customizer/sections/breaks.php';
 	
 	
-	//Add testing section
-	$wp_customize->add_section('newTest', array(
-		'title'    => __('New Test', 'Saturn'),
+	//Add Custom Page section
+	$wp_customize->add_section('custom_page', array(
+		'title'    => __(' Custom Page ', 'Saturn'),
 		'panel' => 'theme_options',
         'priority' => 120,
     ));
-	//Controls and Settings for Test Section
-	include get_template_directory() . '/inc/customizer/sections/test.php';
+	//Controls and Settings for Custom Page Section
+	include get_template_directory() . '/inc/customizer/sections/custom-page.php';
 	
+	//Add Post Page section
+	$wp_customize->add_section('post_page', array(
+		'title'    => __(' Post Page ', 'Saturn'),
+		'panel' => 'theme_options',
+		'priority' => 120,
+	));
+	//Controls and Settings for Custom Page Section
+	include get_template_directory() . '/inc/customizer/sections/post-page.php';
+
 	
 	//Include Settings and Controls for Generic Tabs
 	include get_template_directory() . '/inc/customizer/sections/colors.php';
@@ -130,6 +146,9 @@ add_action( 'customize_register', 'saturn_customize_register' );
 function saturn_customizer_css()
 {
 	include get_template_directory() . '/inc/customizer/css/generic.php';
+	include get_template_directory() . '/inc/customizer/css/custom-page.php';
+	include get_template_directory() . '/inc/customizer/css/post-page.php';
+	include get_template_directory() . '/inc/customizer/css/general.php';
 	?>
 	<!-- Styles for colors -->
 	<style type="text/css">

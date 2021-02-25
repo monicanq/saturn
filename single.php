@@ -9,8 +9,8 @@
 
 get_header();
 ?>
-
-	<main id="primary" class="site-main">
+<div class="container-flex">
+	<main id="primary" class="site-main post-page">
 
 		<?php
 		while ( have_posts() ) :
@@ -34,7 +34,13 @@ get_header();
 		?>
 
 	</main><!-- #main -->
-
+	<?php
+	if (get_theme_mod('post_page_sidebar', 'yes') == 'yes'): ?>
+		<div class="post-sidebar clear">
+			<?php get_sidebar(); ?>
+		</div>
+	<?php
+	endif;?>
+</div>
 <?php
-get_sidebar();
 get_footer();

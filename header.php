@@ -79,7 +79,9 @@
 				</div> <!-- #header-caret -->
 			<?php endif; ?>
 		</div> <!-- #banner -->
-	<?php endif; ?>
+	<?php endif; 
+?>
+
 	<!-- echo get_theme_mod( 'cd_photocount', 0 ) -->
 
 	
