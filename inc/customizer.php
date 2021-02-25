@@ -53,14 +53,6 @@ function saturn_customize_register( $wp_customize ) {
 		'title'          => __('Theme Options', 'Saturn'),
 		'description'    => '',
 		) );
-	// $wp_customize->add_panel( 'widget_areas', array(
-	// 	'priority'       => 20,
-	// 	'capability'     => 'edit_widget_areas',
-	// 	'theme_supports' => '',
-	// 	'title'          => __('Edit Widget Areas', 'Saturn'),
-	// 	'description'    => '',
-	// 	) );
-
 
 
 	// Add Social Media Section
@@ -149,6 +141,7 @@ function saturn_customizer_css()
 	include get_template_directory() . '/inc/customizer/css/custom-page.php';
 	include get_template_directory() . '/inc/customizer/css/post-page.php';
 	include get_template_directory() . '/inc/customizer/css/general.php';
+	include get_template_directory() . '/inc/customizer/css/navbar.php';
 	?>
 	<!-- Styles for colors -->
 	<style type="text/css">
@@ -184,81 +177,7 @@ function saturn_customizer_css()
 		}	
 		</style> 
 
-	<!-- Styling for position of logo on mobile menu -->
-	<?php if( get_theme_mod( 'mobile_logo_position', 'center' ) == 'center' ) : ?>
-		<style type="text/css">
-			/* Change position of the logo */
-			.site-branding {
-				align-items: center;
-				justify-content: center;
-			}		
-			</style> 
-	<?php else: ?>
-		<style type="text/css">
-			/* Change position of the logo */
-			.site-branding {
-				align-items: center;
-				justify-content: flex-start;
-			}		
-			</style> 
-	<?php endif; ?>
-
-	<!-- Styling for overlaying top navbar -->
-	<?php if( get_theme_mod( 'navbar_overlay', 'yes' ) == 'yes' ) : ?>
-		<style type="text/css">
-			/* Change position type of navbar and transparency */
-			#site-header { background: transparent;} 	
-			/* #top-header {background: transparent;} */
-			</style> 
-	<?php endif; ?>
-
-	<!-- Styling for sticky & overlay top navbar -->
-	<?php if( get_theme_mod( 'sticky_navbar', 'yes' ) == 'yes' && get_theme_mod( 'navbar_overlay', 'yes' ) == 'yes') : ?>
-		<style type="text/css">
-		 	/* Change position type of navbar */
-			 /* #site-header {	position: fixed; } */
-			 #navigation-button{ position: fixed; }
-			 /* Let's try something new */
-			 #top-header {	
-				 position: sticky; 
-				 top : 0; 
-				 z-index : 10;
-				 background: transparent;
-				 /* height: 0; */
-				}
-				</style> 
-	<?php elseif (get_theme_mod( 'sticky_navbar', 'yes' ) == 'yes' && get_theme_mod( 'navbar_overlay', 'no' ) == 'no') : ?>
-		<style type="text/css">
-		 	/* Change position type of navbar */
-			 #top-header {	
-				 position: sticky; 
-				 top : 0; 
-				 z-index : 10;
-				}
-				#navigation-button{ position: fixed; }
-				</style> 
-	<?php elseif (get_theme_mod( 'sticky_navbar', 'no' ) == 'no' && get_theme_mod( 'navbar_overlay', 'yes' ) == 'yes') : ?>
-		<style type="text/css">
-		 	#site-header { background: transparent;
-				position: absolute;}
-		 </style> 
-	<?php endif;?>
-
-	<!-- Styling for navbar link size -->
-	<style type="text/css">
-	<?php 
-		switch (get_theme_mod( 'navbar_text_size' )) {
-			case 'big':?>
-				.main-navigation a { font-size: 1.5rem; }
-				<?php	break;
-			case 'medium':?>
-				.main-navigation a { font-size: 1.2rem; }
-				<?php	break;
-			case 'small':?>
-				.main-navigation a { font-size: 0.9rem; }
-				<?php	break;
-		}?>
-	</style> 
+	
 	<!-- Styling for parallax effects image -->
 	<?php if( get_theme_mod( 'parallax_header', 'yes' ) == 'yes') : ?>
 		<style type="text/css">

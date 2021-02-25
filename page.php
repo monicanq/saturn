@@ -17,7 +17,6 @@ get_header();
 <div class="container-flex">
 	
 		<main id="primary" class="custom-page clear">
-
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -35,7 +34,7 @@ get_header();
 		</main><!-- #main -->
 
 	<?php
-	if (get_theme_mod('custom_page_sidebar', 'yes') == 'yes'): ?>
+	if (get_theme_mod('custom_page_sidebar') == true): ?>
 		<div class="custom-sidebar clear">
 			<?php get_sidebar(); ?>
 		</div>

@@ -13,7 +13,7 @@
 	<footer id="colophon" class="site-footer">
 	<?php global $template;
 		$myvar = substr($template, -8, 8);
-		if ( get_theme_mod('custom_page_footer', 'yes') == 'yes' || $myvar != 'page.php'): ?>
+		if ( get_theme_mod('custom_page_footer') == true || $myvar != 'page.php'): ?>
 			<section id='footer-section'> 
 				<?php dynamic_sidebar( 's3c1' ); ?>
 				<?php dynamic_sidebar( 's3c2' ); ?>

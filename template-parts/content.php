@@ -18,7 +18,7 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
-		if ( 'post' === get_post_type() ) :
+		if ( 'post' === get_post_type() && get_theme_mod('posted_info') == true) :
 			?>
 			<div class="entry-meta">
 				<?php

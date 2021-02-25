@@ -11,7 +11,7 @@
  */
 
 /*Show sidebar*/
-if (get_theme_mod('post_page_sidebar', 'yes') == 'yes'):?>
+if (get_theme_mod('post_page_sidebar') == true):?>
 	<style>
         @media screen and (min-width: 50em) {
             .container-flex{
@@ -29,3 +29,13 @@ if (get_theme_mod('post_page_sidebar', 'yes') == 'yes'):?>
 
 endif;
 
+if (get_theme_mod('featured_image_fullwidth') == true):?>
+
+    <style>
+            div.post-thumbnail img{
+                width:100%;
+            }
+        </style>
+    <?php
+
+endif;

@@ -11,7 +11,7 @@
  */
 
 /*Show sidebar*/
-if (get_theme_mod('custom_page_sidebar', 'yes') == 'yes'):?>
+if (get_theme_mod('custom_page_sidebar') == true):?>
 	<style>
         @media screen and (min-width: 50em) {
             .container-flex{

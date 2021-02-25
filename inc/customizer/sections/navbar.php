@@ -36,18 +36,36 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navb
     'settings'   => 'navbar_color',
 ) ) );
 
-// Add more navbar border color control
-// $wp_customize->add_setting( 'navbar_border' , array(
-//     'default'     => '#000000',
-//     'transport'   => 'refresh',
-//     'sanitize_callback' => 'sanitize_hex_color' 
-// ) );
 
-// $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border', array(
-//     'label'        => 'Top Navbar Border Color',
-//     'section'    => 'navbar',
-//     'settings'   => 'navbar_border',
-// ) ) );
+/* Add overlaying navbar control */
+//add setting
+$wp_customize->add_setting( 'navbar_overlay', array(
+    'default' => '',
+    'sanitize_callback' => 'saturn_sanitize_checkbox',
+));
+
+//add control
+$wp_customize->add_control( 'navbar_overlay_control', array(
+    'label' => 'Display Transparent navbar',
+    'type'  => 'checkbox', 
+    'section' => 'navbar',
+    'settings' => 'navbar_overlay'
+));
+
+// Add sticky navbar control
+//add setting
+$wp_customize->add_setting( 'sticky_navbar', array(
+    'default' => '',
+    'sanitize_callback' => 'saturn_sanitize_checkbox',
+));
+
+//add control
+$wp_customize->add_control( 'sticky_navbar_control', array(
+    'label' => 'Stick Navbar to top of the page',
+    'type'  => 'checkbox', 
+    'section' => 'navbar',
+    'settings' => 'sticky_navbar'
+));
 
 // Add desktop menu position control
 $wp_customize->add_setting( 'menu_position' , array(
@@ -102,62 +120,7 @@ $wp_customize->add_control( 'mobile_logo_position', array(
     ),
 ) );
 
-// Add overlaying navbar control
-$wp_customize->add_setting( 'navbar_overlay' , array(
-    'default'     => 'no',
-    'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_radio'
-) );
 
-$wp_customize->add_control( 'navbar_overlay', array(
-'label' => 'Transparent navbar',
-'section' => 'navbar',
-'settings' => 'navbar_overlay',
-'type' => 'radio',
-'choices' => array(
-    'yes' => 'Yes',
-    'no' => 'No',
-),
-    ) );
-
-// Add sticky navbar control
-$wp_customize->add_setting( 'sticky_navbar' , array(
-    'default'     => 'yes',
-    'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_radio'
-) );
-
-$wp_customize->add_control( 'sticky_navbar', array(
-    'label' => 'Sticky navbar',
-    'section' => 'navbar',
-    'settings' => 'sticky_navbar',
-    'type' => 'radio',
-    'choices' => array(
-        'yes' => 'Yes',
-        'no' => 'No',
-    ),
-) );
-
-// Add bottom border shadow navbar control
-$wp_customize->add_setting( 'navbar_shadow' , array(
-    'default'     => 'yes',
-    'transport'   => 'refresh',
-    'right-menu' => 'right-menu',
-    'centered-menu' => 'centered-menu',
-    'left-menu' => 'left-menu',
-    'sanitize_callback' => 'saturn_sanitize_radio'
-) );
-
-$wp_customize->add_control( 'navbar_shadow', array(
-    'label' => 'Navbar Bottom Shadow',
-    'section' => 'navbar',
-    'settings' => 'navbar_shadow',
-    'type' => 'radio',
-    'choices' => array(
-        'yes' => 'Yes',
-        'no' => 'No',
-),
-) );
 
 // Add menu text size control
 $wp_customize->add_setting( 'navbar_text_size' , array(

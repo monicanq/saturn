@@ -27,8 +27,8 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'saturn' ); ?></a>
 
 	<header id="top-header" class="clear" <?php if ( is_front_page() && is_home() 
-											&& get_theme_mod( 'navbar_overlay', 'yes' ) == 'yes' 
-											&& get_theme_mod( 'sticky_navbar', 'yes' ) == 'yes' ) : 
+											&& get_theme_mod( 'navbar_overlay' ) == true 
+											&& get_theme_mod( 'sticky_navbar' ) == true ) : 
 											echo "style='height: 0'";
 											endif;?>>
 		<div id='site-header'>

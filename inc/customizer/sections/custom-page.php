@@ -11,41 +11,34 @@
  */
 
  /*Show SideBar*/
-$wp_customize->add_setting( 'custom_page_sidebar' , array(
-    'default'     => 'yes',
-    'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_radio'
-) );
+//add setting
+$wp_customize->add_setting( 'custom_page_sidebar', array(
+    'default' => '',
+    'sanitize_callback' => 'saturn_sanitize_checkbox',
+));
 
-
-$wp_customize->add_control( 'custom_page_sidebar', array(
+//add control
+$wp_customize->add_control( 'custom_page_sidebar_control', array(
     'label' => 'Show Sidebar in custom Page',
+    'type'  => 'checkbox', 
     'section' => 'custom_page',
-    'settings' => 'custom_page_sidebar',
-    'type' => 'radio',
-    'choices' => array(
-        'yes' => 'Yes',
-        'no' => 'No',
-    ),
-) );
+    'settings' => 'custom_page_sidebar'
+));
+
 
  /*Show Footer widgets*/
- $wp_customize->add_setting( 'custom_page_footer' , array(
-    'default'     => 'yes',
-    'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_radio'
-) );
+//add setting
+$wp_customize->add_setting( 'custom_page_footer', array(
+    'default' => '',
+    'sanitize_callback' => 'saturn_sanitize_checkbox',
+));
 
-
-$wp_customize->add_control( 'custom_page_footer', array(
-    'label' => 'Show Footer Widgets in custom Page',
+//add control
+$wp_customize->add_control( 'custom_page_footer_control', array(
+    'label' => 'Display Footer Widgets in custom Page',
+    'type'  => 'checkbox', 
     'section' => 'custom_page',
-    'settings' => 'custom_page_footer',
-    'type' => 'radio',
-    'choices' => array(
-        'yes' => 'Yes',
-        'no' => 'No',
-    ),
-) );
+    'settings' => 'custom_page_footer'
+));
 
 
