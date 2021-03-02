@@ -12,31 +12,43 @@
 
 if( class_exists( 'WP_Customize_Control' ) ) {
 	class WP_Customize_Radio extends WP_Customize_Control {
-		public $type = 'custom-radio';
+		public $type = 'custom_radio';
 
         public function __construct( $manager, $id, $args = array() ) {
             parent::__construct( $manager, $id, $args );
-            $defaults = array(
-                'min' => 0,
-                'max' => 10,
-                'step' => 1
-            );
-            $args = wp_parse_args( $args, $defaults );
-
-            $this->min = $args['min'];
-            $this->max = $args['max'];
-            $this->step = $args['step'];
+            // $defaults = array(
+            //     'a' => 1,
+            //     'b' => 2,
+            //     'c' => 3
+            // );
+            // $args = wp_parse_args( $args, $defaults );
+            $this->args = $args['choices'];
+            $this->img = $args['generic_img'];
+            $this->id = $id;
         }
-
 		public function render_content() {
-		?>
-		<label>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<input class='range-slider' min="<?php echo $this->min ?>" max="<?php echo $this->max ?>" step="<?php echo $this->step ?>" type='range' <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" oninput="jQuery(this).next('input').val( jQuery(this).val() )">
-            <input onKeyUp="jQuery(this).prev('input').val( jQuery(this).val() )" type='text' value='<?php echo esc_attr( $this->value() ); ?>'>
 
-		</label>
+		?>
+        <div class="radio-container">
+            <?php foreach ($this->args as $value){
+                if ($this->img):
+                    $img_src = "/wp-content/themes/saturn/assets/img" . "/" . $value . ".png";
+                else:
+                    $img_src = "/wp-content/themes/saturn/assets/img" . "/" . $this->id . $value . ".png";
+                endif; 
+            ?>
+                <div class="radio">
+                    <img class='radio-image' src='<?php echo ($img_src);?>'>
+                    <input type="radio" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> <?php checked( $this->value() ); ?>/>
+                    
+                    <label for="<?php echo ($this->id . "option_" . $value);?>"><?php echo ($value); ?></label>
+                </div>
+            <?php }?>
+
+            
+        </div>
 		<?php
 		}
 	}
 }
+

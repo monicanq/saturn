@@ -35,7 +35,7 @@ get_header();
 
 	</main><!-- #main -->
 	<?php
-	if (get_theme_mod('post_page_sidebar', 'yes') == 'yes'): ?>
+	if (get_theme_mod('post_page_sidebar') == true): ?>
 		<div class="post-sidebar clear">
 			<?php get_sidebar(); ?>
 		</div>

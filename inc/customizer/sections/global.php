@@ -10,24 +10,22 @@
  *
  */
 
-  /*Show Boxed Content*/
-  $wp_customize->add_setting( 'boxed_content' , array(
-    'default'     => 'yes',
-    'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_radio'
-) );
 
+/*Show Boxed Content*/
+//add setting
+$wp_customize->add_setting( 'boxed_content', array(
+    'default' => '',
+    'sanitize_callback' => 'saturn_sanitize_checkbox',
+));
 
-$wp_customize->add_control( 'boxed_content', array(
-    'label' => 'Set Maximum Width for content on large screens',
+//add control
+$wp_customize->add_control( 'boxed_content_control', array(
+    'label' => 'Display Content within frame',
+    'type'  => 'checkbox', 
     'section' => 'general',
-    'settings' => 'boxed_content',
-    'type' => 'radio',
-    'choices' => array(
-        'yes' => 'Yes',
-        'no' => 'No',
-    ),
-) );
+    'settings' => 'boxed_content'
+));
+
 
 /*SideBar Side*/
 $wp_customize->add_setting( 'sidebar_side' , array(
@@ -38,7 +36,7 @@ $wp_customize->add_setting( 'sidebar_side' , array(
 
 
 $wp_customize->add_control( 'sidebar_side', array(
-    'label' => 'Side of sidebar in custom Page',
+    'label' => 'Side of sidebar Page (if displayed)',
     'section' => 'general',
     'settings' => 'sidebar_side',
     'type' => 'radio',
@@ -47,3 +45,4 @@ $wp_customize->add_control( 'sidebar_side', array(
         'right' => 'Right',
     ),
 ) );
+

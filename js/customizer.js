@@ -40,13 +40,6 @@
 		} );
 	} );
 
-	//Sample slider
-	// wp.customize( 'cd_photocount', function( value ) {
-	// 	value.bind( function( newval ) {
-	// 		$( '#photocount span' ).html( newval );
-	// 	} );
-	// } );
-
 	//Banner slider
 	wp.customize( 'banner_height', function( value ) {
 		value.bind( function( newval ) {
@@ -67,25 +60,13 @@
 			$( '#break-2' ).height( newval + 'vh');
 		} );
 	} );
-	
-	//Section 1 Column 1 slider
-	// wp.customize( 's1c1_width', function( value ) {
-	// 	value.bind( function( newval ) {
-	// 		$( '#s1c1' ).width( newval + '%');
-	// 	} );
-	// } );
-	//Section 1 Column 2 slider
-	// wp.customize( 's1c2_width', function( value ) {
-	// 	value.bind( function( newval ) {
-	// 		$( '#s1c2' ).width( newval + '%');
-	// 	} );
-	// } );
-	//Section 1 Column 3 slider
-	// wp.customize( 's1c3_width', function( value ) {
-	// 	value.bind( function( newval ) {
-	// 		$( '#s1c3' ).width( newval + '%');
-	// 	} );
-	// } );
+
+	//Title Alignment
+	wp.customize( 'post_title_alignment', function( value ) {
+		value.bind( function( newval ) {
+			$( 'h1.entry-title' ).css( 'text-align', newval );
+		} );
+	} );
 
 
 }( jQuery ) );

@@ -11,7 +11,7 @@
  */
 
 /*Boxed content*/
-if (get_theme_mod('boxed_content', 'yes') == 'yes'):?>
+if (get_theme_mod('boxed_content') == true):?>
 	<style>
         @media screen and (min-width: 50em) {
             .container-flex{
@@ -22,3 +22,6 @@ if (get_theme_mod('boxed_content', 'yes') == 'yes'):?>
     </style>
 <?php
 endif;
+
+
+?>

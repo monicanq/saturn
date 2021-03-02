@@ -54,3 +54,70 @@ $wp_customize->add_control( 'posted_info_control', array(
     'section' => 'post_page',
     'settings' => 'posted_info'
 ));
+
+
+/*Post Title Alignment*/
+// $wp_customize->add_setting( 'post_title_alignment' , array(
+//     'type' => 'custom_radio',
+//     'transport' => 'refresh', 
+//     'default' => 'right',
+// ) );
+
+// $wp_customize->add_control( new WP_Customize_Radio( $wp_customize, 'post_title_alignment', array(
+//     'label'	=>  'Title alignment',
+//     'generic_img' => true,
+//     'section' => 'post_page',
+//     'choices' => array(
+//         'center' => 'Center',
+//         'left' => 'Left',
+//         'right' => 'Right',
+//     ),
+// ) ) );
+
+// Add desktop menu position control
+// $wp_customize->add_setting( 'post_title_alignment' , array(
+//     'default'     => 'right',
+//     'transport'   => 'refresh',
+//     'sanitize_callback' => 'saturn_sanitize_radio'
+// ) );
+
+// $wp_customize->add_control( 'post_title_alignment', array(
+//     'label' => 'Title alignment',
+//     'section' => 'post_page',
+//     'settings' => 'post_title_alignment',
+//     'type' => 'radio',
+//     'choices' => array(
+//         'right' => 'Right',
+//         'left' => 'Left',
+//         'center' => 'Center',
+//     ),
+// ) );
+
+$wp_customize->add_setting( 'post_title_alignment',
+	array(
+		'default' => 'left',
+		'transport' => 'refresh',
+		// 'sanitize_callback' => 'skyrocket_text_sanitization'
+	)
+);
+$wp_customize->add_control( new WP_Customize_Radio_Image( $wp_customize, 'post_title_alignment',
+	array(
+		'label' => __( 'Post Title Alignment' ),
+		// 'description' => esc_html__( 'Sample custom control description' ),
+		'section' => 'post_page',
+		'choices' => array(
+			'center' => array( // Required. Setting for this particular radio button choice
+				'image' => trailingslashit( get_template_directory_uri() ) . 'assets/img/Center.png', // Required. URL for the image
+				'name' => __( 'Center' ) // Required. Title text to display
+			),
+			'right' => array(
+				'image' => trailingslashit( get_template_directory_uri() ) . 'assets/img/Right.png',
+				'name' => __( 'Right' )
+			),
+			'left' => array(
+				'image' => trailingslashit( get_template_directory_uri() ) . 'assets/img/Left.png',
+				'name' => __( 'Left' )
+			),
+		)
+	)
+) );

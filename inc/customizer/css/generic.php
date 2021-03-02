@@ -6,26 +6,30 @@
  */
 
 /**
- * Add Styles for Columns
+ * Add Styles for Global
  *
  */
 
 ?>
-	<style type="text/css">
-		/* Change color of the text in the page */
-		body { color: <?php echo get_theme_mod('text_color', '#333'); ?>; }
-		/* Change links color */
-		a { color: <?php echo get_theme_mod('link_color', '#1f6193'); ?>; }
-		/* Change links color */
-		a:visited { color: <?php echo get_theme_mod('visited_link_color', '#1f6193'); ?>; }
-		/* Change main menu links color */
-		.main-navigation a { color: <?php echo get_theme_mod('menu_color', '#666'); ?>; }
-		/* Change navbar background color */
-		:root { --navbar-color: <?php echo get_theme_mod('navbar_color', '#ccc'); ?>; }
-		/* Style for parallax effect */
-		#header-caret a i{ color : <?php echo get_theme_mod('caret_color', '#fff'); ?>; }
-	</style>
+<style type="text/css">
+	/* Change color of the text in the page */
+	body { color: <?php echo get_theme_mod('text_color', '#333'); ?>; }
+	/* Change links color */
+	a { color: <?php echo get_theme_mod('link_color', '#1f6193'); ?>; }
+	/* Change links color */
+	a:visited { color: <?php echo get_theme_mod('visited_link_color', '#1f6193'); ?>; }
+	/* Change main menu links color */
+	.main-navigation a { color: <?php echo get_theme_mod('menu_color', '#666'); ?>; }
+	/* Change navbar background color */
+	:root { --navbar-color: <?php echo get_theme_mod('navbar_color', '#ccc'); ?>; }
+	/* Style for parallax effect */
+	#header-caret a i{ color : <?php echo get_theme_mod('caret_color', '#fff'); ?>; }
+</style>
 <?php
+
+
+
+
 /*Sidebar side*/
 if (get_theme_mod('sidebar_side', 'left') == 'left'):?>
 	<style>
@@ -37,11 +41,14 @@ if (get_theme_mod('sidebar_side', 'left') == 'left'):?>
     </style>
 <?php
 else:?>
-    <style>
+	<style>
         @media screen and (min-width: 50em) {
             .container-flex{
                 flex-direction: row;
             }
-    </style> <?php
+        }
+    </style>
+<?php
 endif;
 
+?>

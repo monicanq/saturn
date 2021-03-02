@@ -39,3 +39,20 @@ if (get_theme_mod('featured_image_fullwidth') == true):?>
     <?php
 
 endif;
+
+// Post Title alignment
+?>
+<style type="text/css">
+<?php 
+    switch (get_theme_mod( 'post_title_alignment' )) {
+        case 'center':?>
+            .post header h1.entry-title { text-align: center; }
+            <?php	break;
+        case 'left':?>
+            .post header h1.entry-title { text-align: left; }
+            <?php	break;
+        case 'right':?>
+            .post header h1.entry-title { text-align: right; }
+            <?php	break;
+    }?>
+</style> 

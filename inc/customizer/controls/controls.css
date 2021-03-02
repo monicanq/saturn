@@ -1,12 +1,4 @@
-.customize-control-title{
-    /* background-color: coral;
-    color: blue; */
-}
-#customize-control-menu_position{
-    /* display: flex; */
-}
-
-
+/* Checkbox styles */
 input[type=checkbox] {
     border-radius: 10px;
     background-color: #eee;
@@ -24,8 +16,6 @@ input[type=checkbox]::before{
     display: block;
     position: absolute;
     cursor: pointer;
-    /* top: 0;
-    left: 0;*/
     width: 18px;
     height: 18px; 
     border-radius: 50%;
@@ -39,4 +29,34 @@ input[type=checkbox]:checked::before{
     margin: 0;
     height:18px;
     width: 18px;
+}
+
+/* Custom Radio button styles */
+.radio{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+.radio-image{
+    max-width: 40% !important;
+    margin-right: 15px;
+}
+.radio label{
+    padding-left: 15px;
+}
+
+/* ==========================================================================
+   Image Radio Buttons
+   ========================================================================== */
+   .image_radio_button_control .radio-button-label > input {
+	display: none;
+}
+
+.image_radio_button_control .radio-button-label > img {
+	cursor: pointer;
+	border: 3px solid #ddd;
+}
+
+.image_radio_button_control .radio-button-label > input:checked + img {
+	border: 3px solid #2885bb;
 }

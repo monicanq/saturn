@@ -28,3 +28,4 @@ if (get_theme_mod('custom_page_sidebar') == true):?>
 <?php
 endif;
 
+?>

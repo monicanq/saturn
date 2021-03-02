@@ -78,8 +78,8 @@ function saturn_customize_register( $wp_customize ) {
 			'description' => __( 'Customize your global styles in this section' )
 			)
 		);
-	//Controls and Settings for General Section
-	include get_template_directory() . '/inc/customizer/sections/general.php';
+	//Controls and Settings for Global Section
+	include get_template_directory() . '/inc/customizer/sections/global.php';
 
 	//Add Navbar Section
 	$wp_customize->add_section(
@@ -88,7 +88,7 @@ function saturn_customize_register( $wp_customize ) {
 			'title' => __( 'Navbar', 'Saturn'),
 			'panel' => 'theme_options',
 			'priority' => 30,
-			'description' => __( 'Customize your navbar in this section' )
+			'description' => __( 'Customize your navbar styles in this section' )
 			)
 		);
 	//Controls and Settings for Navbar Section
@@ -140,7 +140,7 @@ function saturn_customizer_css()
 	include get_template_directory() . '/inc/customizer/css/generic.php';
 	include get_template_directory() . '/inc/customizer/css/custom-page.php';
 	include get_template_directory() . '/inc/customizer/css/post-page.php';
-	include get_template_directory() . '/inc/customizer/css/general.php';
+	include get_template_directory() . '/inc/customizer/css/global.php';
 	include get_template_directory() . '/inc/customizer/css/navbar.php';
 	?>
 	<!-- Styles for colors -->
@@ -263,6 +263,7 @@ add_action( 'customize_preview_init', 'saturn_customize_preview_js' );
  */
 
 include get_template_directory() . '/inc/customizer/extensions/radio.php';
+include get_template_directory() . '/inc/customizer/extensions/radio-img.php';
 include get_template_directory() . '/inc/customizer/extensions/slider.php';
 
 // include get_template_directory() . '/inc/customizer/widgets/widgets-add.php';
