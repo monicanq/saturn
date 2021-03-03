@@ -50,21 +50,21 @@ function saturn_customize_register( $wp_customize ) {
 		'priority'       => 10,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
-		'title'          => __('Theme Options', 'Saturn'),
+		'title'          => __('Theme Options', 'saturn'),
 		'description'    => '',
 		) );
 
 
 	// Add Social Media Section
-	$wp_customize->add_section(
-		'social-media',
-		array(
-			'title' => __( 'Social Media', 'Saturn' ),
-			'panel' => 'theme_options',
-			'priority' => 30,
-			'description' => __( 'Enter the URL to your account for each service for the icon to appear in the header.', '_s' )
-			)
-		);
+	// $wp_customize->add_section(
+	// 	'social-media',
+	// 	array(
+	// 		'title' => __( 'Social Media', 'Saturn' ),
+	// 		'panel' => 'theme_options',
+	// 		'priority' => 30,
+	// 		'description' => __( 'Enter the URL to your account for each service for the icon to appear in the header.', '_s' )
+	// 		)
+	// 	);
 		//Controls and Settings for Social Media Section
 		// include get_template_directory() . '/inc/customizer/sections/social.php';
 		
@@ -72,10 +72,10 @@ function saturn_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'general',
 		array(
-			'title' => __( 'Global Styles', 'Saturn'),
+			'title' => __( 'Global Styles', 'saturn'),
 			'panel' => 'theme_options',
 			'priority' => 30,
-			'description' => __( 'Customize your global styles in this section' )
+			'description' => __( 'Customize your global styles in this section', 'saturn' )
 			)
 		);
 	//Controls and Settings for Global Section
@@ -85,10 +85,10 @@ function saturn_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'navbar',
 		array(
-			'title' => __( 'Navbar', 'Saturn'),
+			'title' => __( 'Navbar', 'saturn'),
 			'panel' => 'theme_options',
 			'priority' => 30,
-			'description' => __( 'Customize your navbar styles in this section' )
+			'description' => __( 'Customize your navbar styles in this section', 'saturn' )
 			)
 		);
 	//Controls and Settings for Navbar Section
@@ -97,7 +97,7 @@ function saturn_customize_register( $wp_customize ) {
 	
 	//Add Section Breaks Section
 	$wp_customize->add_section('section_breaks', array(
-		'title'    => __('Section Breaks', 'Saturn'),
+		'title'    => __('Section Breaks', 'saturn'),
 		'panel' => 'theme_options',
 		// 'priority' => 70,
     ));
@@ -107,7 +107,7 @@ function saturn_customize_register( $wp_customize ) {
 	
 	//Add Custom Page section
 	$wp_customize->add_section('custom_page', array(
-		'title'    => __(' Custom Page ', 'Saturn'),
+		'title'    => __(' Custom Page ', 'saturn'),
 		'panel' => 'theme_options',
         'priority' => 120,
     ));
@@ -116,18 +116,36 @@ function saturn_customize_register( $wp_customize ) {
 	
 	//Add Post Page section
 	$wp_customize->add_section('post_page', array(
-		'title'    => __(' Post Page ', 'Saturn'),
+		'title'    => __(' Post Page ', 'saturn'),
 		'panel' => 'theme_options',
 		'priority' => 120,
 	));
 	//Controls and Settings for Custom Page Section
 	include get_template_directory() . '/inc/customizer/sections/post-page.php';
+	
+	//Add Font section
+	$wp_customize->add_section('typography', array(
+		'title'    => __(' Typography ', 'saturn'),
+		'panel' => 'theme_options',
+		'priority' => 120,
+	));
+	//Controls and Settings for Typography Section
+	// Add in future because enqueueing problems need to be solved
+	// include get_template_directory() . '/inc/customizer/sections/typography.php';
 
+	//Add Test section
+	$wp_customize->add_section('test', array(
+		'title'    => __(' Test ', 'saturn'),
+		'panel' => 'theme_options',
+		'priority' => 120,
+	));
+	//Controls and Settings for Custom Page Section
+	include get_template_directory() . '/inc/customizer/sections/test.php';
+	
 	
 	//Include Settings and Controls for Generic Tabs
 	include get_template_directory() . '/inc/customizer/sections/colors.php';
 	include get_template_directory() . '/inc/customizer/sections/header-image.php';
-	
 	
 }
 add_action( 'customize_register', 'saturn_customize_register' );
@@ -147,7 +165,7 @@ function saturn_customizer_css()
 	<style type="text/css">
 		#banner{
 			background-image: url(<?php echo esc_url( get_header_image() ); ?>);
-			height: <?php echo get_theme_mod( 'header_img_height', 40 ) ?>vh;
+			height: <?php echo (esc_html(get_theme_mod( 'header_img_height', 40 ))) ?>vh;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
@@ -157,7 +175,7 @@ function saturn_customizer_css()
 		}
 		#break-1{
 			background-image: url(<?php echo esc_url( get_theme_mod( 'break_one_img' ) ); ?>);
-			height: <?php echo get_theme_mod( 'break_one_height', 40 ) ?>vh;
+			height: <?php echo (esc_html(get_theme_mod( 'break_one_height', 40 ))) ?>vh;
 			background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -167,7 +185,7 @@ function saturn_customizer_css()
 		}
 		#break-2{
 			background-image: url(<?php echo esc_url( get_theme_mod( 'break_two_img' ) ); ?>);
-			height: <?php echo get_theme_mod( 'break_two_height', 40 ) ?>vh;
+			height: <?php echo (esc_html(get_theme_mod( 'break_two_height', 40 ))) ?>vh;
 			background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -265,5 +283,6 @@ add_action( 'customize_preview_init', 'saturn_customize_preview_js' );
 include get_template_directory() . '/inc/customizer/extensions/radio.php';
 include get_template_directory() . '/inc/customizer/extensions/radio-img.php';
 include get_template_directory() . '/inc/customizer/extensions/slider.php';
+include get_template_directory() . '/inc/customizer/extensions/custom-controls.php';
 
 // include get_template_directory() . '/inc/customizer/widgets/widgets-add.php';

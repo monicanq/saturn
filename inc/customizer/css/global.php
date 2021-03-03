@@ -23,5 +23,10 @@ if (get_theme_mod('boxed_content') == true):?>
 <?php
 endif;
 
-
+// $fontStyles = json_decode( get_theme_mod( 'sample_google_font_select'), true);
 ?>
+<!-- <style>
+    body {
+        font-family: <?php //echo($fontStyles['font']); ?>;
+    }
+</style> -->

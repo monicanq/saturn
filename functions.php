@@ -298,7 +298,6 @@ function saturn_cust_scripts() {
 }
 add_action( 'customize_controls_enqueue_scripts', 'saturn_cust_scripts' );
 
-
 /**
  * Implement the Custom Header feature.
  */
@@ -338,3 +337,123 @@ function show_template() {
     } 
 }
 add_action('wp_footer', 'show_template');
+
+
+/**
+* Set our Customizer default options
+*/
+if ( ! function_exists( 'saturn_generate_defaults' ) ) {
+	function saturn_generate_defaults() {
+		$customizer_defaults = array(
+			'social_newtab' => 0,
+			'social_urls' => '',
+			'social_alignment' => 'alignright',
+			'social_rss' => 0,
+			'social_url_icons' => '',
+			'contact_phone' => '',
+			'search_menu_icon' => 0,
+			'woocommerce_shop_sidebar' => 1,
+			'woocommerce_product_sidebar' => 0,
+			'sample_toggle_switch' => 0,
+			'sample_slider_control' => 48,
+			'sample_slider_control_small_step' => 2,
+			'sample_sortable_repeater_control' => '',
+			'sample_image_radio_button' => 'sidebarright',
+			'sample_text_radio_button' => 'right',
+			'sample_image_checkbox' => 'stylebold,styleallcaps',
+			'sample_single_accordion' => '',
+			'sample_alpha_color' => 'rgba(209,0,55,0.7)',
+			'sample_wpcolorpicker_alpha_color' => 'rgba(55,55,55,0.5)',
+			'sample_wpcolorpicker_alpha_color2' => 'rgba(33,33,33,0.8)',
+			'sample_pill_checkbox' => 'tiger,elephant,hippo',
+			'sample_pill_checkbox2' => 'captainmarvel,msmarvel,squirrelgirl',
+			'sample_pill_checkbox3' => 'author,categories,comments',
+			'sample_simple_notice' => '',
+			'sample_dropdown_select2_control_single' => 'vic',
+			'sample_dropdown_select2_control_multi' => 'Antarctica/McMurdo,Australia/Melbourne,Australia/Broken_Hill',
+			'sample_dropdown_select2_control_multi2' => 'Atlantic/Stanley,Australia/Darwin',
+			'sample_dropdown_posts_control' => '',
+			'sample_tinymce_editor' => '',
+			'sample_google_font_select' => json_encode(
+				array(
+					'font' => 'Open Sans',
+					'regularweight' => 'regular',
+					'italicweight' => 'italic',
+					'boldweight' => '700',
+					'category' => 'sans-serif'
+				)
+			),
+			'sample_default_text' => '',
+			'sample_email_text' => '',
+			'sample_url_text' => '',
+			'sample_number_text' => '',
+			'sample_hidden_text' => '',
+			'sample_date_text' => '',
+			'sample_default_checkbox' => 0,
+			'sample_default_select' => 'jet-fuel',
+			'sample_default_radio' => 'spider-man',
+			'sample_default_dropdownpages' => '1548',
+			'sample_default_textarea' => '',
+			'sample_default_color' => '#333',
+			'sample_default_media' => '',
+			'sample_default_image' => '',
+			'sample_default_cropped_image' => '',
+			'sample_date_only' => '2017-08-28',
+			'sample_date_time' => '2017-08-28 16:30:00',
+			'sample_date_time_no_past_date' => date( 'Y-m-d' ),
+		);
+
+		return apply_filters( 'saturn_customizer_defaults', $customizer_defaults );
+	}
+}
+
+
+
+
+
+/**
+ * Return the Google font stylesheet URL if available.
+ *
+ * The use of Open Sans by default is localized. For languages that use
+ * characters not supported by the font, the font can be disabled.
+ *
+ * @since Twenty Twelve 1.2
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function saturn_get_font_url() {
+	$fonts_url = '';
+	$subsets = 'latin';
+	$defaults = saturn_generate_defaults();
+
+	/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'.
+	 * Do not translate into your own language.
+	 */
+	$bodyFont = json_decode( get_theme_mod( 'body_font', $defaults['sample_google_font_select'] ), true );
+
+	/* translators: If there are characters in your language that are not supported by Dosis, translate this to 'off'.
+	 * Do not translate into your own language.
+	 */
+	$headerFont = json_decode( get_theme_mod( 'sample_heading_font', $defaults['sample_heading_font'] ), true );
+
+	if ( 'off' !== $bodyFont || 'off' !== $headerFont ) {
+		$font_families = array();
+
+		if ( 'off' !== $bodyFont )
+			$font_families[] = $bodyFont['font'] . ':' . $bodyFont['regularweight'] . ',' . $bodyFont['italicweight'] . ',' . $bodyFont['boldweight'];
+
+		if ( 'off' !== $headerFont )
+			$font_families[] = $headerFont['font'] . ':' . $headerFont['regularweight'] . ',' . $headerFont['italicweight'] . ',' . $headerFont['boldweight'];
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( $subsets ),
+			'display' => urlencode( 'fallback' ),
+		);
+		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+
+

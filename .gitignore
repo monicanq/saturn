@@ -39,3 +39,4 @@ Thumbs.db
 # Ignore the files in the custom controls folder #
 ##################################################
 inc/customizer/custom-controls.*
+inc/customizer/custom-controls/customizer-custom-controls-master/style.css

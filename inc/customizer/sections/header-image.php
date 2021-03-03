@@ -14,10 +14,11 @@
 $wp_customize->add_setting( 'banner_height' , array(
     'default'     => 100,
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'absint',
 ) );
 
 $wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'banner_height', array(
-    'label'	=>  'Height of the banner',
+    'label'	=>  esc_html__( 'Height of the banner', 'saturn' ),
     'min' => 0,
     'max' => 100,
     'step' => 1,
@@ -32,7 +33,7 @@ $wp_customize->add_setting( 'section_caret' , array(
 ) );
 
 $wp_customize->add_control( 'section_caret', array(
-    'label' => 'Show Next Section Arrow',
+    'label' => esc_html__( 'Show Next Section Arrow', 'saturn' ),
     'section' => 'header_image',
     'settings' => 'section_caret',
     'type' => 'radio',
@@ -50,7 +51,7 @@ $wp_customize->add_setting( 'caret_color' , array(
 ) );
 
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_color', array(
-    'label'        => 'Arrow Color',
+    'label'        => esc_html__( 'Arrow Color', 'saturn' ),
     'section'    => 'header_image',
     'settings'   => 'caret_color',
 ) ) );
@@ -63,7 +64,7 @@ $wp_customize->add_setting( 'parallax_header' , array(
 ) );
 
 $wp_customize->add_control( 'parallax_header', array(
-    'label' => 'Header Image Fixed',
+    'label' => esc_html__( 'Header Image Fixed', 'saturn' ),
     'section' => 'header_image',
     'settings' => 'parallax_header',
     'type' => 'radio',

@@ -1,3 +1,7 @@
+.customize-control{
+    padding-bottom: 15px;
+}
+
 /* Checkbox styles */
 input[type=checkbox] {
     border-radius: 10px;

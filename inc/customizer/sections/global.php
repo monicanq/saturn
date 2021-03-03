@@ -20,7 +20,7 @@ $wp_customize->add_setting( 'boxed_content', array(
 
 //add control
 $wp_customize->add_control( 'boxed_content_control', array(
-    'label' => 'Display Content within frame',
+    'label' => esc_html__( 'Display Content within frame', 'saturn' ),
     'type'  => 'checkbox', 
     'section' => 'general',
     'settings' => 'boxed_content'
@@ -36,7 +36,7 @@ $wp_customize->add_setting( 'sidebar_side' , array(
 
 
 $wp_customize->add_control( 'sidebar_side', array(
-    'label' => 'Side of sidebar Page (if displayed)',
+    'label' => esc_html__( 'Side of sidebar Page (if displayed)', 'saturn' ),
     'section' => 'general',
     'settings' => 'sidebar_side',
     'type' => 'radio',

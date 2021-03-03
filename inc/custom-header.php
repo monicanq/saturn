@@ -32,9 +32,19 @@ function saturn_custom_header_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'saturn_custom_header_setup' );
+
+//Do not enqueue until problems with fonts are solved
+// add_action( 'after_setup_theme', 'saturn_custom_header_setup' );
+
+// function saturn_add_google_fonts() {
+// 	$font_url = saturn_get_font_url();
+// 	wp_enqueue_style( 'saturn-google-fonts', esc_url_raw( $font_url ), false ); 
+// }
+	
+// add_action( 'wp_enqueue_scripts', 'saturn_add_google_fonts' );
 
 if ( ! function_exists( 'saturn_header_style' ) ) :
+	
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *

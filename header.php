@@ -32,7 +32,7 @@
 											echo "style='height: 0'";
 											endif;?>>
 		<div id='site-header'>
-			<div id='main-menu' class='container container--flex <?php echo get_theme_mod( 'menu_position' ) ?>'> 
+			<div id='main-menu' class='container container--flex <?php echo (esc_html( get_theme_mod( 'menu_position' ))) ?>'> 
 				<div class='branding-block '>
 					<div class="site-branding ">
 						<?php the_custom_logo(); ?>
@@ -80,8 +80,14 @@
 			<?php endif; ?>
 		</div> <!-- #banner -->
 	<?php endif; 
+		// echo get_theme_mod( 'toggle_switch');
+		// echo('<p> Font:  </p>');
+		// $myobject = json_decode( get_theme_mod( 'sample_google_font_select'), true);
+		// var_dump( $myobject );
+		// echo( $myobject['font']);
+		// $myobject = json_decode( get_theme_mod( 'sample_body_text_font' ), true );
+
 ?>
 
-	<!-- echo get_theme_mod( 'cd_photocount', 0 ) -->
 
 	
