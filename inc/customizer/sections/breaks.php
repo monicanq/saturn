@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -20,7 +20,7 @@ $wp_customize->add_setting( 'break_one_height' , array(
 ) );
     
 $wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'break_one_height', array(
-    'label'	=>  esc_html__( 'Height of the first section break', 'saturn' ),
+    'label'	=>  esc_html__( 'Height of the first section break', 'caper' ),
     'min' => 0,
     'max' => 100,
     'step' => 1,
@@ -34,10 +34,10 @@ $wp_customize->add_setting('break_one_img', array(
     'type' => 'theme_mod',
     'capability' => 'edit_theme_options',
     'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_image',
+    'sanitize_callback' => 'caper_sanitize_image',
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'break_one_img', array(
-    'label' => esc_html__( 'Background Image for first break', 'saturn' ),
+    'label' => esc_html__( 'Background Image for first break', 'caper' ),
     'section' => 'section_breaks',
     'settings' => 'break_one_img',
     ))
@@ -47,12 +47,12 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'brea
 $wp_customize->add_setting( 'parallax_break_one' , array(
     'default'     => 'yes',
     'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_radio'
+    'sanitize_callback' => 'caper_sanitize_radio'
 ) );
 
 
 $wp_customize->add_control( 'parallax_break_one', array(
-    'label' => esc_html__( 'Make first image fixed', 'saturn' ),
+    'label' => esc_html__( 'Make first image fixed', 'caper' ),
     'section' => 'section_breaks',
     'settings' => 'parallax_break_one',
     'type' => 'radio',
@@ -74,7 +74,7 @@ $wp_customize->add_setting( 'break_two_height' , array(
 ) );
     
 $wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'break_two_height', array(
-    'label'	=>  esc_html__( 'Height of the second section break', 'saturn' ),
+    'label'	=>  esc_html__( 'Height of the second section break', 'caper' ),
     'min' => 0,
     'max' => 100,
     'step' => 1,
@@ -87,10 +87,10 @@ $wp_customize->add_setting('break_two_img', array(
     'type' => 'theme_mod',
     'capability' => 'edit_theme_options',
     'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_image',
+    'sanitize_callback' => 'caper_sanitize_image',
 ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'break_two_img', array(
-    'label' => esc_html__( 'Background Image for second break', 'saturn' ),
+    'label' => esc_html__( 'Background Image for second break', 'caper' ),
     'section' => 'section_breaks',
     'settings' => 'break_two_img',
 ))
@@ -100,10 +100,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'brea
 $wp_customize->add_setting( 'parallax_break_two' , array(
     'default'     => 'yes',
     'transport'   => 'refresh',
-    'sanitize_callback' => 'saturn_sanitize_radio'
+    'sanitize_callback' => 'caper_sanitize_radio'
 ) );
 $wp_customize->add_control( 'parallax_break_two', array(
-    'label' => esc_html__( 'Make second image fixed', 'saturn' ),
+    'label' => esc_html__( 'Make second image fixed', 'caper' ),
     'section' => 'section_breaks',
     'settings' => 'parallax_break_two',
     'type' => 'radio',

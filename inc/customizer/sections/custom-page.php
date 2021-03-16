@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -16,13 +16,13 @@ $wp_customize->add_setting( 'custom_page_sidebar',
 	array(
 		'default' => 0,
         'transport' => 'refresh',
-        'sanitize_callback' => 'saturn_sanitize_checkbox'
+        'sanitize_callback' => 'caper_sanitize_checkbox'
 	)
 );
 //add control
-$wp_customize->add_control( new Saturn_Toggle_Switch_Custom_control( $wp_customize, 'custom_page_sidebar',
+$wp_customize->add_control( new Caper_Toggle_Switch_Custom_control( $wp_customize, 'custom_page_sidebar',
 	array(
-		'label' => esc_html__( 'Show Sidebar in custom Page', 'saturn' ),
+		'label' => esc_html__( 'Show Sidebar in custom Page', 'caper' ),
 		'section' => 'custom_page'
 	)
 ) );
@@ -33,13 +33,13 @@ $wp_customize->add_setting( 'custom_page_footer',
 	array(
 		'default' => 0,
         'transport' => 'refresh',
-        'sanitize_callback' => 'saturn_sanitize_checkbox'
+        'sanitize_callback' => 'caper_sanitize_checkbox'
 	)
 );
 //add control
-$wp_customize->add_control( new Saturn_Toggle_Switch_Custom_control( $wp_customize, 'custom_page_footer',
+$wp_customize->add_control( new Caper_Toggle_Switch_Custom_control( $wp_customize, 'custom_page_footer',
 	array(
-		'label' => esc_html__( 'Display Footer Widgets in custom Page', 'saturn' ),
+		'label' => esc_html__( 'Display Footer Widgets in custom Page', 'caper' ),
 		'section' => 'custom_page'
 	)
 ) );

@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -51,7 +51,6 @@
                 top : 0; 
                 z-index : 10;
                 background: transparent;
-                /* height: 0; */
             }
         </style> 
 <?php elseif (get_theme_mod( 'sticky_navbar' ) == true && get_theme_mod( 'navbar_overlay' ) == false) : ?>

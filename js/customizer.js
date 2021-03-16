@@ -61,20 +61,19 @@
 		} );
 	} );
 
+	//Box Width slider
+	wp.customize( 'box_width', function( value ) {
+		value.bind( function( newval ) {
+			$( '.container-flex' ).css( "maxWidth", ( newval + "px" ));
+		} );
+	} );
+
 	//Title Alignment
 	wp.customize( 'post_title_alignment', function( value ) {
 		value.bind( function( newval ) {
 			$( 'h1.entry-title' ).css( 'text-align', newval );
 		} );
 	} );
-
-
-	//Google Fonts Options
-	$('.google-fonts-list').each(function (i, obj) {
-		if (!$(obj).hasClass('select2-hidden-accessible')) {
-			$(obj).select2();
-		}
-	});
 
 
 }( jQuery ) );
@@ -104,7 +103,7 @@ jQuery( document ).ready(function($) {
 			if(numRepeaterItems > 1) {
 				var i;
 				for (i = 1; i < numRepeaterItems; ++i) {
-					saturnAppendRow($(this), defaultValuesArray[i]);
+					caperAppendRow($(this), defaultValuesArray[i]);
 				}
 			}
 		}
@@ -113,7 +112,7 @@ jQuery( document ).ready(function($) {
 	// Make our Repeater fields sortable
 	$(this).find('.sortable_repeater.sortable').sortable({
 		update: function(event, ui) {
-			saturnGetAllInputs($(this).parent());
+			caperGetAllInputs($(this).parent());
 		}
 	});
 
@@ -126,25 +125,25 @@ jQuery( document ).ready(function($) {
 			$(this).parent().slideUp('fast', function() {
 				var parentContainer = $(this).parent().parent();
 				$(this).remove();
-				saturnGetAllInputs(parentContainer);
+				caperGetAllInputs(parentContainer);
 			})
 		}
 		else {
 			$(this).parent().find('.repeater-input').val('');
-			saturnGetAllInputs($(this).parent().parent().parent());
+			caperGetAllInputs($(this).parent().parent().parent());
 		}
 	});
 
 	// Add new item
 	$('.customize-control-sortable-repeater-add').click(function(event) {
 		event.preventDefault();
-		saturnAppendRow($(this).parent());
-		saturnGetAllInputs($(this).parent());
+		caperAppendRow($(this).parent());
+		caperGetAllInputs($(this).parent());
 	});
 
 	// Refresh our hidden field if any fields change
 	$('.sortable_repeater.sortable').change(function() {
-		saturnGetAllInputs($(this).parent());
+		caperGetAllInputs($(this).parent());
 	})
 
 	// Add https:// to the start of the URL if it doesn't have it
@@ -158,7 +157,7 @@ jQuery( document ).ready(function($) {
 	});
 
 	// Append a new row to our list of elements
-	function saturnAppendRow($element, defaultValue = '') {
+	function caperAppendRow($element, defaultValue = '') {
 		var newRow = '<div class="repeater" style="display:none"><input type="text" value="' + defaultValue + '" class="repeater-input" placeholder="https://" /><span class="dashicons dashicons-sort"></span><a class="customize-control-sortable-repeater-delete" href="#"><span class="dashicons dashicons-no-alt"></span></a></div>';
 
 		$element.find('.sortable').append(newRow);
@@ -168,7 +167,7 @@ jQuery( document ).ready(function($) {
 	}
 
 	// Get the values from the repeater input fields and add to our hidden field
-	function saturnGetAllInputs($element) {
+	function caperGetAllInputs($element) {
 		var inputValues = $element.find('.repeater-input').map(function() {
 			return $(this).val();
 		}).toArray();
@@ -261,11 +260,11 @@ jQuery( document ).ready(function($) {
 	 */
 
 	$('.multi-image-checkbox').on('change', function () {
-	  saturnGetAllImageCheckboxes($(this).parent().parent());
+	  caperGetAllImageCheckboxes($(this).parent().parent());
 	});
 
 	// Get the values from the checkboxes and add to our hidden field
-	function saturnGetAllImageCheckboxes($element) {
+	function caperGetAllImageCheckboxes($element) {
 	  var inputValues = $element.find('.multi-image-checkbox').map(function() {
 	    if( $(this).is(':checked') ) {
 	      return $(this).val();
@@ -286,16 +285,16 @@ jQuery( document ).ready(function($) {
 	$( ".pill_checkbox_control .sortable" ).sortable({
 		placeholder: "pill-ui-state-highlight",
 		update: function( event, ui ) {
-			saturnGetAllPillCheckboxes($(this).parent());
+			caperGetAllPillCheckboxes($(this).parent());
 		}
 	});
 
 	$('.pill_checkbox_control .sortable-pill-checkbox').on('change', function () {
-		saturnGetAllPillCheckboxes($(this).parent().parent().parent());
+		caperGetAllPillCheckboxes($(this).parent().parent().parent());
 	});
 
 	// Get the values from the checkboxes and add to our hidden field
-	function saturnGetAllPillCheckboxes($element) {
+	function caperGetAllPillCheckboxes($element) {
 		var inputValues = $element.find('.sortable-pill-checkbox').map(function() {
 			if( $(this).is(':checked') ) {
 				return $(this).val();
@@ -323,101 +322,6 @@ jQuery( document ).ready(function($) {
 		$(this).parent().find('.customize-control-dropdown-select2').val(select2Val).trigger('change');
 	});
 
-	/**
-	 * Googe Font Select Custom Control
-	 *
-	 * @author Anthony Hortin <http://maddisondesigns.com>
-	 * @license http://www.gnu.org/licenses/gpl-2.0.html
-	 * @link https://github.com/maddisondesigns
-	 */
-
-	$('.google-fonts-list').each(function (i, obj) {
-		if (!$(obj).hasClass('select2-hidden-accessible')) {
-			$(obj).select2();
-		}
-	});
-
-	$('.google-fonts-list').on('change', function() {
-		var elementRegularWeight = $(this).parent().parent().find('.google-fonts-regularweight-style');
-		var elementItalicWeight = $(this).parent().parent().find('.google-fonts-italicweight-style');
-		var elementBoldWeight = $(this).parent().parent().find('.google-fonts-boldweight-style');
-		var selectedFont = $(this).val();
-		var customizerControlName = $(this).attr('control-name');
-		var elementItalicWeightCount = 0;
-		var elementBoldWeightCount = 0;
-
-		// Clear Weight/Style dropdowns
-		elementRegularWeight.empty();
-		elementItalicWeight.empty();
-		elementBoldWeight.empty();
-		// Make sure Italic & Bold dropdowns are enabled
-		elementItalicWeight.prop('disabled', false);
-		elementBoldWeight.prop('disabled', false);
-
-		// Get the Google Fonts control object
-		var bodyfontcontrol = _wpCustomizeSettings.controls[customizerControlName];
-
-		// Find the index of the selected font
-		var indexes = $.map(bodyfontcontrol.saturnfontslist, function(obj, index) {
-			if(obj.family === selectedFont) {
-				return index;
-			}
-		});
-		var index = indexes[0];
-
-		// For the selected Google font show the available weight/style variants
-		$.each(bodyfontcontrol.saturnfontslist[index].variants, function(val, text) {
-			elementRegularWeight.append(
-				$('<option></option>').val(text).html(text)
-			);
-			if (text.indexOf("italic") >= 0) {
-				elementItalicWeight.append(
-					$('<option></option>').val(text).html(text)
-				);
-				elementItalicWeightCount++;
-			} else {
-				elementBoldWeight.append(
-					$('<option></option>').val(text).html(text)
-				);
-				elementBoldWeightCount++;
-			}
-		});
-
-		if(elementItalicWeightCount == 0) {
-			elementItalicWeight.append(
-				$('<option></option>').val('').html('Not Available for this font')
-			);
-			elementItalicWeight.prop('disabled', 'disabled');
-		}
-		if(elementBoldWeightCount == 0) {
-			elementBoldWeight.append(
-				$('<option></option>').val('').html('Not Available for this font')
-			);
-			elementBoldWeight.prop('disabled', 'disabled');
-		}
-
-		// Update the font category based on the selected font
-		$(this).parent().parent().find('.google-fonts-category').val(bodyfontcontrol.saturnfontslist[index].category);
-
-		saturnGetAllSelects($(this).parent().parent());
-	});
-
-	$('.google_fonts_select_control select').on('change', function() {
-		saturnGetAllSelects($(this).parent().parent());
-	});
-
-	function saturnGetAllSelects($element) {
-		var selectedFont = {
-			font: $element.find('.google-fonts-list').val(),
-			regularweight: $element.find('.google-fonts-regularweight-style').val(),
-			italicweight: $element.find('.google-fonts-italicweight-style').val(),
-			boldweight: $element.find('.google-fonts-boldweight-style').val(),
-			category: $element.find('.google-fonts-category').val()
-		};
-
-		// Important! Make sure to trigger change event so Customizer knows it has to save the field
-		$element.find('.customize-control-google-font-selection').val(JSON.stringify(selectedFont)).trigger('change');
-	}
 
 	/**
 	 * TinyMCE Custom Control
@@ -429,9 +333,9 @@ jQuery( document ).ready(function($) {
 
 	$('.customize-control-tinymce-editor').each(function(){
 		// Get the toolbar strings that were passed from the PHP Class
-		var tinyMCEToolbar1String = _wpCustomizeSettings.controls[$(this).attr('id')].saturntinymcetoolbar1;
-		var tinyMCEToolbar2String = _wpCustomizeSettings.controls[$(this).attr('id')].saturntinymcetoolbar2;
-		var tinyMCEMediaButtons = _wpCustomizeSettings.controls[$(this).attr('id')].saturnmediabuttons;
+		var tinyMCEToolbar1String = _wpCustomizeSettings.controls[$(this).attr('id')].capertinymcetoolbar1;
+		var tinyMCEToolbar2String = _wpCustomizeSettings.controls[$(this).attr('id')].capertinymcetoolbar2;
+		var tinyMCEMediaButtons = _wpCustomizeSettings.controls[$(this).attr('id')].capermediabuttons;
 
 		wp.editor.initialize( $(this).attr('id'), {
 			tinymce: {
@@ -736,7 +640,7 @@ jQuery( document ).ready(function($) {
  * Remove attached events from the Upsell Section to stop panel from being able to open/close
  */
 ( function( $, api ) {
-	api.sectionConstructor['saturn-upsell'] = api.Section.extend( {
+	api.sectionConstructor['caper-upsell'] = api.Section.extend( {
 
 		// Remove events for this type of section.
 		attachEvents: function () {},

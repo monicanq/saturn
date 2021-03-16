@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  */
 if( class_exists( 'WP_Customize_Control' ) ) {
-	class WP_Customize_Radio_Image extends WP_Customize_Control {
+	class Caper_Image_Radio_Button_Custom_Control extends WP_Customize_Control {
 
         /**
          * The type of control being rendered

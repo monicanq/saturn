@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Saturn
+ * @package Caper
  */
 
 get_header();
 ?>
-<div class="container-flex">
+<div class="container-flex search">
 	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -18,7 +18,7 @@ get_header();
 				<h1 class="page-title">
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'saturn' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Search Results for: %s', 'caper' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
 			</header><!-- .page-header -->
@@ -34,6 +34,8 @@ get_header();
 				 * called content-search.php and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', 'search' );
+				
+				?> <hr> <?php
 
 			endwhile;
 
@@ -47,7 +49,10 @@ get_header();
 		?>
 
 	</main><!-- #main -->
+	<div class="sidebar clear">
+			<?php get_sidebar(); ?>
+	</div>
 </div>
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -34,7 +34,10 @@
 if (get_theme_mod('sidebar_side', 'left') == 'left'):?>
 	<style>
         @media screen and (min-width: 50em) {
-            .container-flex{
+            .container-flex .custom-page,
+			.container-flex .post-page,
+			.container-flex .search,
+			.container-flex .archive{
                 flex-direction: row-reverse;
             }
         }
@@ -43,7 +46,10 @@ if (get_theme_mod('sidebar_side', 'left') == 'left'):?>
 else:?>
 	<style>
         @media screen and (min-width: 50em) {
-            .container-flex{
+            .container-flex .custom-page,
+			.container-flex .post-page,
+			.container-flex .search,
+			.container-flex .archive{
                 flex-direction: row;
             }
         }

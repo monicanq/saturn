@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -14,19 +14,17 @@
 if (get_theme_mod('boxed_content') == true):?>
 	<style>
         @media screen and (min-width: 50em) {
-            .container-flex{
+            .container-flex, .boxed-content{
                 max-width: var(--boxed-content);
                 margin: auto;
             }
+        }
+        :root{
+        	--boxed-content: <?php echo ( esc_html ( get_theme_mod('box_width'))); ?>px;
         }
     </style>
 <?php
 endif;
 
-// $fontStyles = json_decode( get_theme_mod( 'sample_google_font_select'), true);
 ?>
-<!-- <style>
-    body {
-        font-family: <?php //echo($fontStyles['font']); ?>;
-    }
-</style> -->
+

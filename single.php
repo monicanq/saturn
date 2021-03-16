@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Saturn
+ * @package Caper
  */
 
 get_header();
 ?>
-<div class="container-flex">
-	<main id="primary" class="site-main post-page">
+<div class="container-flex post-page">
+	<main id="primary" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
@@ -20,8 +20,8 @@ get_header();
 
 			the_post_navigation(
 				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'saturn' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'saturn' ) . '</span> <span class="nav-title">%title</span>',
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'caper' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'caper' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
 
@@ -36,7 +36,7 @@ get_header();
 	</main><!-- #main -->
 	<?php
 	if (get_theme_mod('post_page_sidebar') == true): ?>
-		<div class="post-sidebar clear">
+		<div class="sidebar clear">
 			<?php get_sidebar(); ?>
 		</div>
 	<?php

@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function saturn_jetpack_setup() {
+function caper_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'saturn_infinite_scroll_render',
+			'render'    => 'caper_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function saturn_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'saturn-style',
+				'stylesheet' => 'caper-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,12 +48,12 @@ function saturn_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'saturn_jetpack_setup' );
+add_action( 'after_setup_theme', 'caper_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function saturn_infinite_scroll_render() {
+function caper_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

@@ -1,6 +1,6 @@
 /*!
-Theme Name: saturn
-Theme URI: http://coscriber.com/saturn
+Theme Name: caper
+Theme URI: http://coscriber.com/caper
 Author: Coscriber
 Author URI: http://coscriber.com/
 Description: Description
@@ -9,7 +9,7 @@ Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: saturn
+Text Domain: caper
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -37,6 +37,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 ## Layouts
     -Top Navbar
 	-404
+	-Archive/Search
 # Components
     - Navigation
     - Posts and pages
@@ -47,6 +48,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     - Galleries
     - Site title and description.
 	- Columns.
+	- Sidebar
 # plugins
     - Jetpack infinite scroll
 # Utilities..- Accessibility
@@ -123,7 +125,7 @@ h1 {
 	margin: 0.67em 0;
 }
 article {
-	padding: 20px;
+	/* padding: 20px; */
 }
 
 /* Grouping content
@@ -425,9 +427,26 @@ html {
 	--navbar-color: #ccc;
 	/* --blue: #00b;
 	--fullwidth: 100%; */
+	--background-color: #ddd;
 	--boxed-content: 1160px;
+	--body-text-color: #333;
+	--mobile-navbar-height: 80px;
+	--banner-height: 100vh;
 }
-
+.container-flex:not(#main-menu){
+	padding: 20px;
+}
+.big-screen{
+	display: none;
+}
+@media screen and (min-width: 50em) {
+	.big-screen{
+		display: block;
+	}
+	.mobile-screen{
+		display: none;
+	}
+}
 
 
 /*--------------------------------------------------------------
@@ -694,9 +713,7 @@ textarea {
     width: 100%;
     z-index: 9;
 }
-/* #site-header.menu-color{
-	background-color: var(--navbar-color);
-} */
+
 #site-header{
 	background-color: var(--navbar-color);
 }
@@ -727,7 +744,6 @@ p.site-description{
 }
 
 #main-menu{
-	max-width: var(--boxed-content);
 	margin: auto;
 }
 .navigation-block{
@@ -747,19 +763,10 @@ p.site-description{
 .site-info{
 	display: block;
 }
-#primary-menu{
-	/* flex-wrap: wrap; */
-}
-/* Testing area */
-
-/* End of testing area */
 
 /* The following styles for the menu only apply to big screens */
 @media screen and (min-width: 50em) {
 
-	/* Testing area */
-
-	/* End of testing area */
     #main-menu{
 		justify-content: space-between;
 	}
@@ -814,9 +821,22 @@ p.site-description{
 	text-align: center;
 }
 .error-404 li{
-	/* text-decoration: none; */
 	list-style-type: none;
 	text-align: center;
+}
+
+/* Archive/Search
+--------------------------------------------- */
+@media screen and (min-width: 50em){
+	.container-flex{
+		display: flex;
+	}
+	.archive main, .search main{
+		width: 75%;
+	}
+	.archive .sidebar, .search .sidebar{
+		width: 25%;
+	}
 }
 /*--------------------------------------------------------------
 # Components
@@ -857,17 +877,12 @@ p.site-description{
 #main-menu .navigation-block nav div ul li,
 #main-menu .navigation-block nav div ul li ul{
 	background-color: inherit;
-	/* width: 90%;
-	text-align: center; */
 }
 
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
     display: block;
-}
-.main-navigation ul ul a {
-    /* width: 200px; */
 }
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -909,14 +924,15 @@ p.site-description{
 }
 
 
-#site-navigation{
-}
+
 
 @media screen and (min-width: 50em){
 	#mobile-logo a{
 		display: none;
 	}
-
+	.custom-logo-link{
+		padding: 15px;;
+	}
 }  
 
 
@@ -931,8 +947,25 @@ p.site-description{
 		background-color: inherit;
 		width: 100%;
 	}
-	/*Testing area*/
-	.menu-menu-1-container{
+	.custom-logo{
+		max-height: 100%;
+		width: auto;
+	}
+	.site-branding{
+		height: var(--mobile-navbar-height);
+	}
+	.site-branding a{
+		height: 100%;
+	}
+	.mobile-screen{
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+	.mobile-screen img{
+		max-height: 90%;
+	}
+	.toggled .menu-menu-1-container{
 		min-height: 100vh;
 	}
 	#main-menu{
@@ -976,8 +1009,6 @@ p.site-description{
 		position: absolute;
 	}
 
-	/*End testing area*/
-
 	#navigation-button{
 		border: none;
 		background-color: transparent;
@@ -992,11 +1023,12 @@ p.site-description{
 		max-width: 60%;
 	}
 	#primary-menu{
-		padding-top: 60px;
+		padding-top: var(--mobile-navbar-height);
 	}
 	.navigation-block{
 		width: 100%;
 	}
+
 
 }
 .menu-menu-1-container{
@@ -1095,9 +1127,7 @@ p.site-description{
 	clear: both;
 	margin: 0 0 1.5em;
 }
-.post-thumbnail{
-	margin: 20px;
-}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1123,9 +1153,11 @@ p.site-description{
 	max-width: 100%;
 }
 .widget li{
-	/* text-decoration: none; */
 	list-style-type: none;
 	text-align: center;
+}
+.column{
+	flex: auto;
 }
 
 /* Media
@@ -1142,7 +1174,6 @@ p.site-description{
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link{
     display: inline-block;
-    padding: 15px;
 }
 
 /* Captions
@@ -1226,13 +1257,17 @@ p.site-description{
 	justify-content: space-between;
 }
 #s1c1, #s1c2, #s1c3, #s2c1, #s2c2, #s2c3{
-	border: solid #333 1px;
+	/* border: solid #333 1px; */
 	justify-content: center;
-	/* padding-right: 25px; */
 }
-#s1c1, #s2c1{
-	/* padding-left: 25px; */
+
+/* Sidebar
+--------------------------------------------- */
+.sidebar{
+	padding: 15px;
 }
+
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/

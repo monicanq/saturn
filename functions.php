@@ -1,18 +1,18 @@
 <?php
 /**
- * Saturn functions and definitions
+ * Caper functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Saturn
+ * @package Caper
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'CAPER_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'CAPER_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'saturn_setup' ) ) :
+if ( ! function_exists( 'caper_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'saturn_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function saturn_setup() {
+	function caper_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Saturn, use a find and replace
-		 * to change 'saturn' to the name of your theme in all the template files.
+		 * If you're building a theme based on Caper, use a find and replace
+		 * to change 'caper' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'saturn', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'caper', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'saturn_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'saturn' ),
+				'menu-1' => esc_html__( 'Primary', 'caper' ),
 			)
 		);
 
@@ -75,7 +75,7 @@ if ( ! function_exists( 'saturn_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'saturn_custom_background_args',
+				'caper_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -100,9 +100,10 @@ if ( ! function_exists( 'saturn_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+		add_editor_style();
 	}
 endif;
-add_action( 'after_setup_theme', 'saturn_setup' );
+add_action( 'after_setup_theme', 'caper_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,22 +112,22 @@ add_action( 'after_setup_theme', 'saturn_setup' );
  *
  * @global int $content_width
  */
-function saturn_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'saturn_content_width', 640 );
+function caper_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'caper_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'saturn_content_width', 0 );
+add_action( 'after_setup_theme', 'caper_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function saturn_widgets_init() {
+function caper_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'saturn' ),
+			'name'          => esc_html__( 'Sidebar', 'caper' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -137,11 +138,9 @@ function saturn_widgets_init() {
 	// Columns for the first widget section
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Section 1 Column 1', 'saturn' ),
+			'name'          => esc_html__( 'Section 1 Column 1', 'caper' ),
 			'id'            => 's1c1',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -150,11 +149,9 @@ function saturn_widgets_init() {
 		));
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Section 1 Column 2', 'saturn' ),
+			'name'          => esc_html__( 'Section 1 Column 2', 'caper' ),
 			'id'            => 's1c2',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -163,11 +160,9 @@ function saturn_widgets_init() {
 		));
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Section 1 Column 3', 'saturn' ),
+			'name'          => esc_html__( 'Section 1 Column 3', 'caper' ),
 			'id'            => 's1c3',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -178,11 +173,9 @@ function saturn_widgets_init() {
 	// Columns for the second widget section
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Section 2 Column 1', 'saturn' ),
+			'name'          => esc_html__( 'Section 2 Column 1', 'caper' ),
 			'id'            => 's2c1',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -191,11 +184,9 @@ function saturn_widgets_init() {
 		));
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Section 2 Column 2', 'saturn' ),
+			'name'          => esc_html__( 'Section 2 Column 2', 'caper' ),
 			'id'            => 's2c2',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -204,11 +195,9 @@ function saturn_widgets_init() {
 		));
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Section 2 Column 3', 'saturn' ),
+			'name'          => esc_html__( 'Section 2 Column 3', 'caper' ),
 			'id'            => 's2c3',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -218,11 +207,9 @@ function saturn_widgets_init() {
 	// Columns for the second widget section
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer Widgets Column 1', 'saturn' ),
+			'name'          => esc_html__( 'Footer Widgets Column 1', 'caper' ),
 			'id'            => 's3c1',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -231,11 +218,9 @@ function saturn_widgets_init() {
 		));
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer Widgets Column 2', 'saturn' ),
+			'name'          => esc_html__( 'Footer Widgets Column 2', 'caper' ),
 			'id'            => 's3c2',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -244,11 +229,9 @@ function saturn_widgets_init() {
 		));
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer Widgets Column 3', 'saturn' ),
+			'name'          => esc_html__( 'Footer Widgets Column 3', 'caper' ),
 			'id'            => 's3c3',
-			'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-			'before_sidebar'=> '<div class="column">',
-			'after_sidebar' => '</div>',
+			'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -257,11 +240,9 @@ function saturn_widgets_init() {
 		));
 	register_sidebar(
 		array(
-		'name'          => esc_html__( 'After Footer Widgets', 'saturn' ),
+		'name'          => esc_html__( 'After Footer Widgets', 'caper' ),
 		'id'            => 's4',
-		'description'   => esc_html__( 'Add widgets here.', 'saturn' ),
-		'before_sidebar'=> '<div class="column">',
-		'after_sidebar' => '</div>',
+		'description'   => esc_html__( 'Add widgets here.', 'caper' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -271,32 +252,32 @@ function saturn_widgets_init() {
 		
 	
 }
-add_action( 'widgets_init', 'saturn_widgets_init' );
+add_action( 'widgets_init', 'caper_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function saturn_scripts() {
-	wp_enqueue_style( 'saturn-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'saturn-style', 'rtl', 'replace' );
+function caper_scripts() {
+	wp_enqueue_style( 'caper-style', get_stylesheet_uri(), array(), CAPER_VERSION );
+	wp_style_add_data( 'caper-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'saturn-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'saturn-index', get_template_directory_uri() . '/js/index.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'caper-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAPER_VERSION, true );
+	wp_enqueue_script( 'caper-index', get_template_directory_uri() . '/js/index.js', array(), CAPER_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'saturn_scripts' );
+add_action( 'wp_enqueue_scripts', 'caper_scripts' );
 
 /**
  * Enqueue styles for customizer.
  */
-function saturn_cust_scripts() {
-	wp_enqueue_style( 'saturn-customizer-style', get_template_directory_uri() . '/inc/customizer/controls/controls.css', array(), _S_VERSION );
+function caper_cust_scripts() {
+	wp_enqueue_style( 'caper-customizer-style', get_template_directory_uri() . '/inc/customizer/controls/controls.css', array(), CAPER_VERSION );
 
 }
-add_action( 'customize_controls_enqueue_scripts', 'saturn_cust_scripts' );
+add_action( 'customize_controls_enqueue_scripts', 'caper_cust_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -330,130 +311,17 @@ require get_template_directory() . '/inc/walker/walker.php';
 
 
 // Show template loaded
-function show_template() {
-    if( is_super_admin() ){
-        global $template;
-        print_r($template);
-    } 
+// function show_template() {
+//     if( is_super_admin() ){
+//         global $template;
+//         print_r($template);
+//     } 
+// }
+// add_action('wp_footer', 'show_template');
+
+
+function caper_filter_front_page_template( $template ) {
+    return is_home() ? '' : $template;
 }
-add_action('wp_footer', 'show_template');
-
-
-/**
-* Set our Customizer default options
-*/
-if ( ! function_exists( 'saturn_generate_defaults' ) ) {
-	function saturn_generate_defaults() {
-		$customizer_defaults = array(
-			'social_newtab' => 0,
-			'social_urls' => '',
-			'social_alignment' => 'alignright',
-			'social_rss' => 0,
-			'social_url_icons' => '',
-			'contact_phone' => '',
-			'search_menu_icon' => 0,
-			'woocommerce_shop_sidebar' => 1,
-			'woocommerce_product_sidebar' => 0,
-			'sample_toggle_switch' => 0,
-			'sample_slider_control' => 48,
-			'sample_slider_control_small_step' => 2,
-			'sample_sortable_repeater_control' => '',
-			'sample_image_radio_button' => 'sidebarright',
-			'sample_text_radio_button' => 'right',
-			'sample_image_checkbox' => 'stylebold,styleallcaps',
-			'sample_single_accordion' => '',
-			'sample_alpha_color' => 'rgba(209,0,55,0.7)',
-			'sample_wpcolorpicker_alpha_color' => 'rgba(55,55,55,0.5)',
-			'sample_wpcolorpicker_alpha_color2' => 'rgba(33,33,33,0.8)',
-			'sample_pill_checkbox' => 'tiger,elephant,hippo',
-			'sample_pill_checkbox2' => 'captainmarvel,msmarvel,squirrelgirl',
-			'sample_pill_checkbox3' => 'author,categories,comments',
-			'sample_simple_notice' => '',
-			'sample_dropdown_select2_control_single' => 'vic',
-			'sample_dropdown_select2_control_multi' => 'Antarctica/McMurdo,Australia/Melbourne,Australia/Broken_Hill',
-			'sample_dropdown_select2_control_multi2' => 'Atlantic/Stanley,Australia/Darwin',
-			'sample_dropdown_posts_control' => '',
-			'sample_tinymce_editor' => '',
-			'sample_google_font_select' => json_encode(
-				array(
-					'font' => 'Open Sans',
-					'regularweight' => 'regular',
-					'italicweight' => 'italic',
-					'boldweight' => '700',
-					'category' => 'sans-serif'
-				)
-			),
-			'sample_default_text' => '',
-			'sample_email_text' => '',
-			'sample_url_text' => '',
-			'sample_number_text' => '',
-			'sample_hidden_text' => '',
-			'sample_date_text' => '',
-			'sample_default_checkbox' => 0,
-			'sample_default_select' => 'jet-fuel',
-			'sample_default_radio' => 'spider-man',
-			'sample_default_dropdownpages' => '1548',
-			'sample_default_textarea' => '',
-			'sample_default_color' => '#333',
-			'sample_default_media' => '',
-			'sample_default_image' => '',
-			'sample_default_cropped_image' => '',
-			'sample_date_only' => '2017-08-28',
-			'sample_date_time' => '2017-08-28 16:30:00',
-			'sample_date_time_no_past_date' => date( 'Y-m-d' ),
-		);
-
-		return apply_filters( 'saturn_customizer_defaults', $customizer_defaults );
-	}
-}
-
-
-
-
-
-/**
- * Return the Google font stylesheet URL if available.
- *
- * The use of Open Sans by default is localized. For languages that use
- * characters not supported by the font, the font can be disabled.
- *
- * @since Twenty Twelve 1.2
- *
- * @return string Font stylesheet or empty string if disabled.
- */
-function saturn_get_font_url() {
-	$fonts_url = '';
-	$subsets = 'latin';
-	$defaults = saturn_generate_defaults();
-
-	/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'.
-	 * Do not translate into your own language.
-	 */
-	$bodyFont = json_decode( get_theme_mod( 'body_font', $defaults['sample_google_font_select'] ), true );
-
-	/* translators: If there are characters in your language that are not supported by Dosis, translate this to 'off'.
-	 * Do not translate into your own language.
-	 */
-	$headerFont = json_decode( get_theme_mod( 'sample_heading_font', $defaults['sample_heading_font'] ), true );
-
-	if ( 'off' !== $bodyFont || 'off' !== $headerFont ) {
-		$font_families = array();
-
-		if ( 'off' !== $bodyFont )
-			$font_families[] = $bodyFont['font'] . ':' . $bodyFont['regularweight'] . ',' . $bodyFont['italicweight'] . ',' . $bodyFont['boldweight'];
-
-		if ( 'off' !== $headerFont )
-			$font_families[] = $headerFont['font'] . ':' . $headerFont['regularweight'] . ',' . $headerFont['italicweight'] . ',' . $headerFont['boldweight'];
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( $subsets ),
-			'display' => urlencode( 'fallback' ),
-		);
-		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
-	}
-
-	return esc_url_raw( $fonts_url );
-}
-
+add_filter( 'frontpage_template', 'caper_filter_front_page_template' );
 

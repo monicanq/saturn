@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -12,7 +12,7 @@
  
 //radio box sanitization function
 
-function saturn_sanitize_radio( $input, $setting ){
+function caper_sanitize_radio( $input, $setting ){
 
     //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
     $input = sanitize_key($input);
@@ -28,7 +28,7 @@ function saturn_sanitize_radio( $input, $setting ){
 
 
 //checkbox sanitization function
-function saturn_sanitize_checkbox( $input ){
+function caper_sanitize_checkbox( $input ){
     if ( $input === true || $input === '1' ) :
         return true;
     else:
@@ -40,7 +40,7 @@ function saturn_sanitize_checkbox( $input ){
 
 
 //select sanitization function
-function saturn_sanitize_select( $input, $setting ){
+function caper_sanitize_select( $input, $setting ){
         
     //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
     $input = sanitize_key($input);
@@ -54,7 +54,7 @@ function saturn_sanitize_select( $input, $setting ){
 }
 
 //file input sanitization function
-function saturn_sanitize_image( $file, $setting ) {
+function caper_sanitize_image( $file, $setting ) {
         
     //allowed file types
     $mimes = array(

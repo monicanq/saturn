@@ -1,6 +1,6 @@
 <?php
 /**
- * saturn Customizer Custom Controls
+ * caper Customizer Custom Controls
  *
  */
 
@@ -12,8 +12,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Custom_Control extends WP_Customize_Control {
-		protected function get_saturn_resource_url() {
+	class Caper_Custom_Control extends WP_Customize_Control {
+		protected function get_caper_resource_url() {
 			if( strpos( wp_normalize_path( __DIR__ ), wp_normalize_path( WP_PLUGIN_DIR ) ) === 0 ) {
 				// We're in a plugin directory and need to determine the url accordingly.
 				return plugin_dir_url( __DIR__ );
@@ -30,8 +30,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Custom_Section extends WP_Customize_Section {
-		protected function get_saturn_resource_url() {
+	class Caper_Custom_Section extends WP_Customize_Section {
+		protected function get_caper_resource_url() {
 			if( strpos( wp_normalize_path( __DIR__ ), wp_normalize_path( WP_PLUGIN_DIR ) ) === 0 ) {
 				// We're in a plugin directory and need to determine the url accordingly.
 				return plugin_dir_url( __DIR__ );
@@ -48,7 +48,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	 class Saturn_Image_Checkbox_Custom_Control extends saturn_Custom_Control {
+	 class Caper_Image_Checkbox_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -57,7 +57,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -91,7 +91,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	 class Saturn_Text_Radio_Button_Custom_Control extends saturn_Custom_Control {
+	 class Caper_Text_Radio_Button_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -100,7 +100,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -135,7 +135,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Image_Radio_Button_Custom_Control extends saturn_Custom_Control {
+	class Caper_Image_Radio_Button_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -144,7 +144,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -177,7 +177,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Single_Accordion_Custom_Control extends saturn_Custom_Control {
+	class Caper_Single_Accordion_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -186,8 +186,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'jquery' ), '1.0', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'jquery' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -236,7 +236,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Simple_Notice_Custom_Control extends saturn_Custom_Control {
+	class Caper_Simple_Notice_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -283,7 +283,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Slider_Custom_Control extends saturn_Custom_Control {
+	class Caper_Slider_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -292,8 +292,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -315,7 +315,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Toggle_Switch_Custom_control extends saturn_Custom_Control {
+	class Caper_Toggle_Switch_Custom_control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -324,7 +324,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue(){
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -355,7 +355,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Sortable_Repeater_Custom_Control extends saturn_Custom_Control {
+	class Caper_Sortable_Repeater_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -372,7 +372,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			// Merge the passed button labels with our default labels
 			$this->button_labels = wp_parse_args( $this->button_labels,
 				array(
-					'add' => __( 'Add', 'saturn' ),
+					'add' => __( 'Add', 'caper' ),
 				)
 			);
 		}
@@ -380,8 +380,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -414,7 +414,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Dropdown_Select2_Custom_Control extends saturn_Custom_Control {
+	class Caper_Dropdown_Select2_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -445,10 +445,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'saturn-select2-js', $this->get_saturn_resource_url() . 'js/select2.full.min.js', array( 'jquery' ), '4.0.13', true );
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'saturn-select2-js' ), '1.0', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.1', 'all' );
-			wp_enqueue_style( 'saturn-select2-css', $this->get_saturn_resource_url() . 'css/select2.min.css', array(), '4.0.13', 'all' );
+			wp_enqueue_script( 'caper-select2-js', $this->get_caper_resource_url() . 'js/select2.full.min.js', array( 'jquery' ), '4.0.13', true );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'caper-select2-js' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.1', 'all' );
+			wp_enqueue_style( 'caper-select2-css', $this->get_caper_resource_url() . 'css/select2.min.css', array(), '4.0.13', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -511,7 +511,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Dropdown_Posts_Custom_Control extends saturn_Custom_Control {
+	class Caper_Dropdown_Posts_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -567,7 +567,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_TinyMCE_Custom_control extends saturn_Custom_Control {
+	class Caper_TinyMCE_Custom_control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -576,8 +576,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue(){
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'jquery' ), '1.0', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'jquery' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 			wp_enqueue_editor();
 		}
 		/**
@@ -585,9 +585,9 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 */
 		public function to_json() {
 			parent::to_json();
-			$this->json['saturntinymcetoolbar1'] = isset( $this->input_attrs['toolbar1'] ) ? esc_attr( $this->input_attrs['toolbar1'] ) : 'bold italic bullist numlist alignleft aligncenter alignright link';
-			$this->json['saturntinymcetoolbar2'] = isset( $this->input_attrs['toolbar2'] ) ? esc_attr( $this->input_attrs['toolbar2'] ) : '';
-			$this->json['saturnmediabuttons'] = isset( $this->input_attrs['mediaButtons'] ) && ( $this->input_attrs['mediaButtons'] === true ) ? true : false;
+			$this->json['capertinymcetoolbar1'] = isset( $this->input_attrs['toolbar1'] ) ? esc_attr( $this->input_attrs['toolbar1'] ) : 'bold italic bullist numlist alignleft aligncenter alignright link';
+			$this->json['capertinymcetoolbar2'] = isset( $this->input_attrs['toolbar2'] ) ? esc_attr( $this->input_attrs['toolbar2'] ) : '';
+			$this->json['capermediabuttons'] = isset( $this->input_attrs['mediaButtons'] ) && ( $this->input_attrs['mediaButtons'] === true ) ? true : false;
 		}
 		/**
 		 * Render the control in the customizer
@@ -612,7 +612,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Google_Font_Select_Custom_Control extends saturn_Custom_Control {
+	class Caper_Google_Font_Select_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -652,27 +652,27 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					$this->fontCount = ( abs( (int) $this->input_attrs['font_count'] ) > 0 ? abs( (int) $this->input_attrs['font_count'] ) : 'all' );
 				}
 			}
-			$this->fontList = $this->saturn_getGoogleFonts( 'all' );
+			$this->fontList = $this->caper_getGoogleFonts( 'all' );
 			// Decode the default json font value
 			$this->fontValues = json_decode( $this->value() );
 			// Find the index of our default font within our list of Google fonts
-			$this->fontListIndex = $this->saturn_getFontIndex( $this->fontList, $this->fontValues->font );
+			$this->fontListIndex = $this->caper_getFontIndex( $this->fontList, $this->fontValues->font );
 		}
 		/**
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'saturn-select2-js', $this->get_saturn_resource_url() . 'js/select2.full.min.js', array( 'jquery' ), '4.0.13', true );
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'saturn-select2-js' ), '1.0', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.1', 'all' );
-			wp_enqueue_style( 'saturn-select2-css', $this->get_saturn_resource_url() . 'css/select2.min.css', array(), '4.0.13', 'all' );
+			wp_enqueue_script( 'caper-select2-js', $this->get_caper_resource_url() . 'js/select2.full.min.js', array( 'jquery' ), '4.0.13', true );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'caper-select2-js' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.1', 'all' );
+			wp_enqueue_style( 'caper-select2-css', $this->get_caper_resource_url() . 'css/select2.min.css', array(), '4.0.13', 'all' );
 		}
 		/**
 		 * Export our List of Google Fonts to JavaScript
 		 */
 		public function to_json() {
 			parent::to_json();
-			$this->json['saturnfontslist'] = $this->fontList;
+			$this->json['caperfontslist'] = $this->fontList;
 		}
 		/**
 		 * Render the control in the customizer
@@ -714,7 +714,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight & style for regular text', 'saturn' ) ?></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight & style for regular text', 'caper' ) ?></div>
 					<div class="weight-style">
 						<select class="google-fonts-regularweight-style">
 							<?php
@@ -724,7 +724,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'saturn' ) ?> <italic><?php esc_html_e( 'italic text', 'saturn' ) ?></italic></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'caper' ) ?> <italic><?php esc_html_e( 'italic text', 'caper' ) ?></italic></div>
 					<div class="weight-style">
 						<select class="google-fonts-italicweight-style" <?php disabled( in_array( 'italic', $this->fontList[$this->fontListIndex]->variants ), false ); ?>>
 							<?php
@@ -742,7 +742,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'saturn' ) ?> <strong><?php esc_html_e( 'bold text', 'saturn' ) ?></strong></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'caper' ) ?> <strong><?php esc_html_e( 'bold text', 'caper' ) ?></strong></div>
 					<div class="weight-style">
 						<select class="google-fonts-boldweight-style">
 							<?php
@@ -770,7 +770,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		/**
 		 * Find the index of the saved font in our multidimensional array of Google Fonts
 		 */
-		public function saturn_getFontIndex( $haystack, $needle ) {
+		public function caper_getFontIndex( $haystack, $needle ) {
 			foreach( $haystack as $key => $value ) {
 				if( $value->family == $needle ) {
 					return $key;
@@ -782,11 +782,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		/**
 		 * Return the list of Google Fonts from our json file. Unless otherwise specfied, list will be limited to 30 fonts.
 		 */
-		public function saturn_getGoogleFonts( $count = 30 ) {
+		public function caper_getGoogleFonts( $count = 30 ) {
 			// Google Fonts json generated from https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=YOUR-API-KEY
-			$fontFile = $this->get_saturn_resource_url() . 'inc/google-fonts-alphabetical.json';
+			$fontFile = $this->get_caper_resource_url() . 'inc/google-fonts-alphabetical.json';
 			if ( $this->fontOrderBy === 'popular' ) {
-				$fontFile = $this->get_saturn_resource_url() . 'inc/google-fonts-popularity.json';
+				$fontFile = $this->get_caper_resource_url() . 'inc/google-fonts-popularity.json';
 			}
 
 			$request = wp_remote_get( $fontFile );
@@ -812,7 +812,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-3.0.html
 	 * @link https://github.com/BraadMartin/components/tree/master/customizer/alpha-color-picker
 	 */
-	class Saturn_Customize_Alpha_Color_Control extends saturn_Custom_Control {
+	class Caper_Customize_Alpha_Color_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -831,8 +831,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'jquery', 'wp-color-picker' ), '1.0', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array( 'wp-color-picker' ), '1.0', 'all' );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'jquery', 'wp-color-picker' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array( 'wp-color-picker' ), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -878,7 +878,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-3.0.html
 	 * @link https://github.com/kallookoo/wp-color-picker-alpha
 	 */
-	class Saturn_Alpha_Color_Control extends saturn_Custom_Control {
+	class Caper_Alpha_Color_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -914,8 +914,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
-			wp_enqueue_script( 'wp-color-picker-alpha', $this->get_saturn_resource_url() . 'js/wp-color-picker-alpha-min.js', array( 'wp-color-picker' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'wp-color-picker-alpha', $this->get_caper_resource_url() . 'js/wp-color-picker-alpha-min.js', array( 'wp-color-picker' ), '1.0', true );
 			wp_enqueue_style( 'wp-color-picker' );
 		}
 		/**
@@ -950,7 +950,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Saturn_Pill_Checkbox_Custom_Control extends saturn_Custom_Control {
+	class Caper_Pill_Checkbox_Custom_Control extends caper_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -980,8 +980,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.1', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.1', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
@@ -1035,11 +1035,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @link https://github.com/maddisondesigns
 	 *
 	 */
-	class Saturn_Upsell_Section extends saturn_Custom_Section {
+	class Caper_Upsell_Section extends caper_Custom_Section {
 		/**
 		 * The type of control being rendered
 		 */
-		public $type = 'saturn-upsell';
+		public $type = 'caper-upsell';
 		/**
 		 * The Upsell URL
 		 */
@@ -1056,8 +1056,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'saturn-custom-controls-js', $this->get_saturn_resource_url() . 'js/customizer.js', array( 'jquery' ), '1.0', true );
-			wp_enqueue_style( 'saturn-custom-controls-css', $this->get_saturn_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'jquery' ), '1.0', true );
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the section, and the controls that have been added to it.
@@ -1066,7 +1066,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			$bkgrndcolor = !empty( $this->backgroundcolor ) ? esc_attr( $this->backgroundcolor ) : '#fff';
 			$color = !empty( $this->textcolor ) ? esc_attr( $this->textcolor ) : '#555d66';
 			?>
-			<li id="accordion-section-<?php echo esc_attr( $this->id ); ?>" class="saturn_upsell_section accordion-section control-section control-section-<?php echo esc_attr( $this->id ); ?> cannot-expand">
+			<li id="accordion-section-<?php echo esc_attr( $this->id ); ?>" class="caper_upsell_section accordion-section control-section control-section-<?php echo esc_attr( $this->id ); ?> cannot-expand">
 				<h3 class="upsell-section-title" <?php echo ' style="color:' . $color . ';border-left-color:' . $bkgrndcolor .';border-right-color:' . $bkgrndcolor .';"'; ?>>
 					<a href="<?php echo esc_url( $this->url); ?>" target="_blank"<?php echo ' style="background-color:' . $bkgrndcolor . ';color:' . $color .';"'; ?>><?php echo esc_html( $this->title ); ?></a>
 				</h3>
@@ -1081,8 +1081,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string	Input to be sanitized (either a string containing a single url or multiple, separated by commas)
 	 * @return string	Sanitized input
 	 */
-	if ( ! function_exists( 'saturn_url_sanitization' ) ) {
-		function saturn_url_sanitization( $input ) {
+	if ( ! function_exists( 'caper_url_sanitization' ) ) {
+		function caper_url_sanitization( $input ) {
 			if ( strpos( $input, ',' ) !== false) {
 				$input = explode( ',', $input );
 			}
@@ -1105,8 +1105,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string		Switch value
 	 * @return integer	Sanitized value
 	 */
-	if ( ! function_exists( 'saturn_switch_sanitization' ) ) {
-		function saturn_switch_sanitization( $input ) {
+	if ( ! function_exists( 'caper_switch_sanitization' ) ) {
+		function caper_switch_sanitization( $input ) {
 			if ( true === $input ) {
 				return 1;
 			} else {
@@ -1121,8 +1121,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string		Radio Button value
 	 * @return integer	Sanitized value
 	 */
-	if ( ! function_exists( 'saturn_radio_sanitization' ) ) {
-		function saturn_radio_sanitization( $input, $setting ) {
+	if ( ! function_exists( 'caper_radio_sanitization' ) ) {
+		function caper_radio_sanitization( $input, $setting ) {
 			//get the list of possible radio box or select options
 		 $choices = $setting->manager->get_control( $setting->id )->choices;
 
@@ -1140,8 +1140,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string		Input value to check
 	 * @return integer	Returned integer value
 	 */
-	if ( ! function_exists( 'saturn_sanitize_integer' ) ) {
-		function saturn_sanitize_integer( $input ) {
+	if ( ! function_exists( 'caper_sanitize_integer' ) ) {
+		function caper_sanitize_integer( $input ) {
 			return (int) $input;
 		}
 	}
@@ -1152,8 +1152,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string	Input to be sanitized (either a string containing a single string or multiple, separated by commas)
 	 * @return string	Sanitized input
 	 */
-	if ( ! function_exists( 'saturn_text_sanitization' ) ) {
-		function saturn_text_sanitization( $input ) {
+	if ( ! function_exists( 'caper_text_sanitization' ) ) {
+		function caper_text_sanitization( $input ) {
 			if ( strpos( $input, ',' ) !== false) {
 				$input = explode( ',', $input );
 			}
@@ -1176,8 +1176,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  array	Input to be sanitized
 	 * @return array	Sanitized input
 	 */
-	if ( ! function_exists( 'saturn_array_sanitization' ) ) {
-		function saturn_array_sanitization( $input ) {
+	if ( ! function_exists( 'caper_array_sanitization' ) ) {
+		function caper_array_sanitization( $input ) {
 			if( is_array( $input ) ) {
 				foreach ( $input as $key => $value ) {
 					$input[$key] = sanitize_text_field( $value );
@@ -1196,8 +1196,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string	Input to be sanitized
 	 * @return string	Sanitized input
 	 */
-	if ( ! function_exists( 'saturn_hex_rgba_sanitization' ) ) {
-		function saturn_hex_rgba_sanitization( $input, $setting ) {
+	if ( ! function_exists( 'caper_hex_rgba_sanitization' ) ) {
+		function caper_hex_rgba_sanitization( $input, $setting ) {
 			if ( empty( $input ) || is_array( $input ) ) {
 				return $setting->default;
 			}
@@ -1210,13 +1210,13 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					// Sanitize as RGB color
 					$input = str_replace( ' ', '', $input );
 					sscanf( $input, 'rgb(%d,%d,%d)', $red, $green, $blue );
-					$input = 'rgb(' . saturn_in_range( $red, 0, 255 ) . ',' . saturn_in_range( $green, 0, 255 ) . ',' . saturn_in_range( $blue, 0, 255 ) . ')';
+					$input = 'rgb(' . caper_in_range( $red, 0, 255 ) . ',' . caper_in_range( $green, 0, 255 ) . ',' . caper_in_range( $blue, 0, 255 ) . ')';
 				}
 				else {
 					// Sanitize as RGBa color
 					$input = str_replace( ' ', '', $input );
 					sscanf( $input, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
-					$input = 'rgba(' . saturn_in_range( $red, 0, 255 ) . ',' . saturn_in_range( $green, 0, 255 ) . ',' . saturn_in_range( $blue, 0, 255 ) . ',' . saturn_in_range( $alpha, 0, 1 ) . ')';
+					$input = 'rgba(' . caper_in_range( $red, 0, 255 ) . ',' . caper_in_range( $green, 0, 255 ) . ',' . caper_in_range( $blue, 0, 255 ) . ',' . caper_in_range( $alpha, 0, 1 ) . ')';
 				}
 			}
 			return $input;
@@ -1229,8 +1229,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  number	Input to be sanitized
 	 * @return number	Sanitized input
 	 */
-	if ( ! function_exists( 'saturn_in_range' ) ) {
-		function saturn_in_range( $input, $min, $max ){
+	if ( ! function_exists( 'caper_in_range' ) ) {
+		function caper_in_range( $input, $min, $max ){
 			if ( $input < $min ) {
 				$input = $min;
 			}
@@ -1247,8 +1247,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string	JSON string to be sanitized
 	 * @return string	Sanitized input
 	 */
-	if ( ! function_exists( 'saturn_google_font_sanitization' ) ) {
-		function saturn_google_font_sanitization( $input ) {
+	if ( ! function_exists( 'caper_google_font_sanitization' ) ) {
+		function caper_google_font_sanitization( $input ) {
 			$val =  json_decode( $input, true );
 			if( is_array( $val ) ) {
 				foreach ( $val as $key => $value ) {
@@ -1269,8 +1269,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string	Date/Time string to be sanitized
 	 * @return string	Sanitized input
 	 */
-	if ( ! function_exists( 'saturn_date_time_sanitization' ) ) {
-		function saturn_date_time_sanitization( $input, $setting ) {
+	if ( ! function_exists( 'caper_date_time_sanitization' ) ) {
+		function caper_date_time_sanitization( $input, $setting ) {
 			$datetimeformat = 'Y-m-d';
 			if ( $setting->manager->get_control( $setting->id )->include_time ) {
 				$datetimeformat = 'Y-m-d H:i:s';
@@ -1289,8 +1289,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @param  string	Slider value to be sanitized
 	 * @return string	Sanitized input
 	 */
-	if ( ! function_exists( 'saturn_range_sanitization' ) ) {
-		function saturn_range_sanitization( $input, $setting ) {
+	if ( ! function_exists( 'caper_range_sanitization' ) ) {
+		function caper_range_sanitization( $input, $setting ) {
 			$attrs = $setting->manager->get_control( $setting->id )->input_attrs;
 
 			$min = ( isset( $attrs['min'] ) ? $attrs['min'] : $input );
@@ -1299,7 +1299,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 			$number = floor( $input / $attrs['step'] ) * $attrs['step'];
 
-			return saturn_in_range( $number, $min, $max );
+			return caper_in_range( $number, $min, $max );
 		}
 	}
 

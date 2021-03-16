@@ -8,49 +8,49 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses saturn_header_style()
+ * @uses caper_header_style()
  */
-function saturn_custom_header_setup() {
+function caper_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'saturn_custom_header_args',
+			'caper_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'saturn_header_style',
+				'wp-head-callback'   => 'caper_header_style',
 			)
 		)
 	);
 }
+add_action( 'after_setup_theme', 'caper_custom_header_setup' );
+
 
 //Do not enqueue until problems with fonts are solved
-// add_action( 'after_setup_theme', 'saturn_custom_header_setup' );
-
-// function saturn_add_google_fonts() {
-// 	$font_url = saturn_get_font_url();
-// 	wp_enqueue_style( 'saturn-google-fonts', esc_url_raw( $font_url ), false ); 
+// function caper_add_google_fonts() {
+// 	$font_url = caper_get_font_url();
+// 	wp_enqueue_style( 'caper-google-fonts', esc_url_raw( $font_url ), false ); 
 // }
 	
-// add_action( 'wp_enqueue_scripts', 'saturn_add_google_fonts' );
+// add_action( 'wp_enqueue_scripts', 'caper_add_google_fonts' );
 
-if ( ! function_exists( 'saturn_header_style' ) ) :
+if ( ! function_exists( 'caper_header_style' ) ) :
 	
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see saturn_custom_header_setup().
+	 * @see caper_custom_header_setup().
 	 */
-	function saturn_header_style() {
+	function caper_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

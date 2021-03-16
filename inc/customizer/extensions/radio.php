@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -32,9 +32,9 @@ if( class_exists( 'WP_Customize_Control' ) ) {
         <div class="radio-container">
             <?php foreach ($this->args as $value){
                 if ($this->img):
-                    $img_src = "/wp-content/themes/saturn/assets/img" . "/" . $value . ".png";
+                    $img_src = "/wp-content/themes/caper/assets/img" . "/" . $value . ".png";
                 else:
-                    $img_src = "/wp-content/themes/saturn/assets/img" . "/" . $this->id . $value . ".png";
+                    $img_src = "/wp-content/themes/caper/assets/img" . "/" . $this->id . $value . ".png";
                 endif; 
             ?>
                 <div class="radio">

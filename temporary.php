@@ -1,1 +1,0 @@
-<input <?php $this->link(); ?> name='<?php echo($this->id); ?>' id='<?php echo ($this->id . "option_" . $value);?>' type='radio' value="<?php echo esc_attr( $this->value() ); ?>" oninput="jQuery(this).next('input').val( jQuery(this).val() )">

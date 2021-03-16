@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -14,13 +14,13 @@
 if (get_theme_mod('post_page_sidebar') == true):?>
 	<style>
         @media screen and (min-width: 50em) {
-            .container-flex{
+            /* .container-flex .post-page{
                 display: flex;
-            }
-            .post-page{
+            } */
+            .post-page main{
                 width: 75%;
             }
-            .post-sidebar{
+            .post-page .sidebar{
                 width: 25%;
             }
         }

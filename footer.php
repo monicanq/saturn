@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Saturn
+ * @package Caper
  */
 
 ?>
@@ -26,7 +26,7 @@
 		endif; 
 		?>
 		<div class="designer-info">
-			<p>Theme Saturn by: <a href="https://coscriber.com/">Coscriber</a></p>
+			<p>Theme Caper by: <a href="https://coscriber.com/">Coscriber</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

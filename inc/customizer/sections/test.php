@@ -1,8 +1,8 @@
 <?php 
 /**
- * Saturn Theme Customizer
+ * Caper Theme Customizer
  *
- * @package Saturn
+ * @package Caper
  */
 
 /**
@@ -14,12 +14,12 @@ $wp_customize->add_setting( 'toggle_switch',
 	array(
 		'default' => 0,
 		'transport' => 'refresh',
-		'sanitize_callback' => 'saturn_sanitize_checkbox'
+		'sanitize_callback' => 'caper_sanitize_checkbox'
 	)
 );
-$wp_customize->add_control( new Saturn_Toggle_Switch_Custom_control( $wp_customize, 'toggle_switch',
+$wp_customize->add_control( new Caper_Toggle_Switch_Custom_control( $wp_customize, 'toggle_switch',
 	array(
-		'label' => esc_html__( 'Toggle switch', 'saturn' ),
+		'label' => esc_html__( 'Toggle switch', 'caper' ),
 		'section' => 'test'
 	)
 ) );

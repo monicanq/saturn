@@ -9,14 +9,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package saturn
+ * @package caper
  */
 
 get_header();
 ?>
-<div class="container-flex">
+<div class="container-flex custom-page">
 	
-		<main id="primary" class="custom-page clear">
+		<main id="primary" class="clear">
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -35,7 +35,7 @@ get_header();
 
 	<?php
 	if (get_theme_mod('custom_page_sidebar') == true): ?>
-		<div class="custom-sidebar clear">
+		<div class="sidebar clear">
 			<?php get_sidebar(); ?>
 		</div>
 	<?php
