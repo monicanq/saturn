@@ -259,7 +259,7 @@ add_action( 'widgets_init', 'caper_widgets_init' );
  */
 function caper_scripts() {
 	wp_enqueue_style( 'caper-style', get_stylesheet_uri(), array(), CAPER_VERSION );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/fontawesome/css/all.css' );
 	wp_style_add_data( 'caper-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'caper-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAPER_VERSION, true );
