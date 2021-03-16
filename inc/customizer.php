@@ -157,6 +157,17 @@ function caper_customizer_css()
 						else:	
 							echo (esc_html(get_theme_mod( 'banner_height', 40 ))) ?>vh;
 						<?php endif; ?>
+		}
+		#break-1{
+			background-image: url(<?php echo esc_url( get_theme_mod( 'break_one_img' ) ); ?>);
+			height: <?php echo (esc_html(get_theme_mod( 'break_one_height', 40 ))) ?>vh;
+		}
+		#break-2{
+			background-image: url(<?php echo esc_url( get_theme_mod( 'break_two_img' ) ); ?>);
+			height: <?php echo (esc_html(get_theme_mod( 'break_two_height', 40 ))) ?>vh;
+		}	
+
+		#banner, #break-1, #break-2{
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
@@ -164,27 +175,7 @@ function caper_customizer_css()
 			-webkit-background-size: cover;
 			-o-background-size: cover;
 		}
-		#break-1{
-			background-image: url(<?php echo esc_url( get_theme_mod( 'break_one_img' ) ); ?>);
-			height: <?php echo (esc_html(get_theme_mod( 'break_one_height', 40 ))) ?>vh;
-			background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            -moz-background-size: cover;
-            -webkit-background-size: cover;
-            -o-background-size: cover;
-		}
-		#break-2{
-			background-image: url(<?php echo esc_url( get_theme_mod( 'break_two_img' ) ); ?>);
-			height: <?php echo (esc_html(get_theme_mod( 'break_two_height', 40 ))) ?>vh;
-			background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            -moz-background-size: cover;
-            -webkit-background-size: cover;
-            -o-background-size: cover;
-		}	
-		</style> 
+	</style> 
 
 	
 	<!-- Styling for parallax effects image -->
@@ -212,32 +203,31 @@ function caper_customizer_css()
 				/* Create the parallax scrolling effect */
 				background-attachment: fixed;
 			}
-			<?php else : ?>
-				#break-1{
-					/* Create the parallax scrolling effect */
-					background-attachment: scroll;
-				}
-				<?php endif;?>
-				
-				/* Break-2 image */
-				<?php if( get_theme_mod( 'parallax_break_two', 'yes' ) == 'yes') : ?>
-					#break-2{
-						/* Create the parallax scrolling effect */
-						background-attachment: fixed;
-					}
-					<?php else : ?>
-						#break-2{
-							/* Create the parallax scrolling effect */
-							background-attachment: scroll;
-						}
-						<?php endif;?>
-						</style>
+		<?php else : ?>
+			#break-1{
+				/* Create the parallax scrolling effect */
+				background-attachment: scroll;
+			}
+		<?php endif;?>
+		
+		/* Break-2 image */
+		<?php if( get_theme_mod( 'parallax_break_two', 'yes' ) == 'yes') : ?>
+			#break-2{
+				/* Create the parallax scrolling effect */
+				background-attachment: fixed;
+			}
+		<?php else : ?>
+			#break-2{
+				/* Create the parallax scrolling effect */
+				background-attachment: scroll;
+			}
+		<?php endif;?>
+	</style>
 
 
 <?php
 }
 add_action( 'wp_head', 'caper_customizer_css');
-
 
 
 /**
@@ -271,9 +261,7 @@ add_action( 'customize_preview_init', 'caper_customize_preview_js' );
  * Include Custom Controls for Customizer
  */
 
-// include get_template_directory() . '/inc/customizer/extensions/radio.php';
-// include get_template_directory() . '/inc/customizer/extensions/radio-img.php';
 include get_template_directory() . '/inc/customizer/extensions/slider.php';
 include get_template_directory() . '/inc/customizer/extensions/custom-controls.php';
 
-// include get_template_directory() . '/inc/customizer/widgets/widgets-add.php';
+

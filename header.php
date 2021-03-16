@@ -17,7 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<!-- Load fontawesome in a non blocking way to improve page loading time -->
-    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    <!-- <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script> -->
 	<?php wp_head(); ?>
 </head>
 
@@ -25,13 +25,13 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'caper' ); ?></a>
-
-	<header id="top-header" class="clear" <?php if ( (is_front_page() || get_theme_mod( 'home_page_header' ) == true )
-											&& get_theme_mod( 'navbar_overlay' ) == true 
-											&& get_theme_mod( 'sticky_navbar' ) == true  
-											&& !get_header_image() == false ): 
-											echo "style='height: 0'";
-											endif;?>>
+	<?php 	if ( (is_front_page() || get_theme_mod( 'home_page_header' ) == true )
+				&& get_theme_mod( 'navbar_overlay' ) == true 
+				&& get_theme_mod( 'sticky_navbar' ) == true  
+				&& !get_header_image() == false ): 
+					$caper_navbar_height = 'no-height';
+	endif; ?>
+	<header id="top-header" class="<?php echo (esc_html($caper_navbar_height));?>">
 		<div id='site-header'>
 			<div id='main-menu' class='container-flex <?php echo (esc_html( get_theme_mod( 'menu_position' ))) ?>'> 
 				<div class='branding-block '>
@@ -53,7 +53,7 @@
 							$caper_description = get_bloginfo( 'description', 'display' );
 							if ( $caper_description || is_customize_preview() ) :
 								?>
-								<p class="site-description"><?php echo $caper_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+								<p class="site-description"><?php echo esc_html($caper_description); ?></p>
 							<?php endif; ?>
 						</div> <!-- .site-info -->
 					</div> <!-- .site-branding -->

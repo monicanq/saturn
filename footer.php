@@ -14,10 +14,16 @@
 	<?php global $template;
 		$myvar = substr($template, -8, 8);
 		if ( get_theme_mod('custom_page_footer') == true || $myvar != 'page.php'): ?>
-			<section id='footer-section'> 
-				<?php dynamic_sidebar( 's3c1' ); ?>
-				<?php dynamic_sidebar( 's3c2' ); ?>
-				<?php dynamic_sidebar( 's3c3' ); ?>
+			<section id='footer-section' class='container-flex'> 
+				<?php
+				$arr = array( 's3c1', 's3c2', 's3c3');
+				foreach ($arr as &$value) {
+					if (is_active_sidebar($value)) :?>
+						<div class="column">
+							<?php dynamic_sidebar( $value); ?>	
+						</div>  
+					<?php endif;
+				}?>
 			</section>
 		<?php 
 		endif;
@@ -26,7 +32,7 @@
 		endif; 
 		?>
 		<div class="designer-info">
-			<p>Theme Caper by: <a href="https://coscriber.com/">Coscriber</a></p>
+			<p>Theme Caper by  <span>&#169;</span>coscriber, 2021</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

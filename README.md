@@ -3,7 +3,7 @@ Contributors: kurlcode
 Tags: left-sidebar, right-sidebar, centered-sidebar, parallax, fixed-width, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,8 +25,8 @@ There are three possibilities for the position of the menu: centered, right and 
 
 == Upgrade Notice ==
 
-= 1.0 =
-* No upgrades yet.
+= 1.1.0 =
+* Fixed problems with columns in front page widgets.
 
 
 == Resources ==

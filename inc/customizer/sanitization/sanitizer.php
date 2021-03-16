@@ -25,8 +25,6 @@ function caper_sanitize_radio( $input, $setting ){
     
 }
 
-
-
 //checkbox sanitization function
 function caper_sanitize_checkbox( $input ){
     if ( $input === true || $input === '1' ) :
@@ -34,8 +32,6 @@ function caper_sanitize_checkbox( $input ){
     else:
         return false;
     endif;
-    //returns true if checkbox is checked
-    // return ( isset( $input ) ? true : false );
 }
 
 

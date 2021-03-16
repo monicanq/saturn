@@ -28,7 +28,6 @@ $wp_customize->add_control( new WP_Customize_Range( $wp_customize, 'break_one_he
 ) ) );
         
 // Break One Image
-// $wp_customize->get_setting( 'break_one_img' )->transport = 'postMessage';
 $wp_customize->add_setting('break_one_img', array(
     'default' => '',
     'type' => 'theme_mod',
@@ -43,26 +42,22 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'brea
     ))
 );
 
-    /*Image One*/
-$wp_customize->add_setting( 'parallax_break_one' , array(
-    'default'     => 'yes',
-    'transport'   => 'refresh',
-    'sanitize_callback' => 'caper_sanitize_radio'
+//Image Two Parallax
+$wp_customize->add_setting( 'parallax_break_one',
+array(
+    'default' => 0,
+    'transport' => 'refresh',
+    'sanitize_callback' => 'caper_sanitize_checkbox'
+	)
+);
+$wp_customize->add_control( new Caper_Toggle_Switch_Custom_control( $wp_customize, 'parallax_break_one',
+array(
+    'label' => esc_html__( ' Make First Break Background Image fixed ' , 'caper' ),
+    'section' => 'section_breaks'
+	)
 ) );
 
-
-$wp_customize->add_control( 'parallax_break_one', array(
-    'label' => esc_html__( 'Make first image fixed', 'caper' ),
-    'section' => 'section_breaks',
-    'settings' => 'parallax_break_one',
-    'type' => 'radio',
-    'choices' => array(
-        'yes' => 'Yes',
-        'no' => 'No',
-    ),
-) );
-
-
+        
 
 /*********** Break Two Customization ***********/
 
@@ -96,19 +91,17 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'brea
 ))
 );
         
-/*Image Two*/
-$wp_customize->add_setting( 'parallax_break_two' , array(
-    'default'     => 'yes',
-    'transport'   => 'refresh',
-    'sanitize_callback' => 'caper_sanitize_radio'
-) );
-$wp_customize->add_control( 'parallax_break_two', array(
-    'label' => esc_html__( 'Make second image fixed', 'caper' ),
-    'section' => 'section_breaks',
-    'settings' => 'parallax_break_two',
-    'type' => 'radio',
-    'choices' => array(
-        'yes' => 'Yes',
-        'no' => 'No',
-    ),
+//Image Two Parallax
+$wp_customize->add_setting( 'parallax_break_two',
+array(
+    'default' => 0,
+    'transport' => 'refresh',
+    'sanitize_callback' => 'caper_sanitize_checkbox'
+	)
+);
+$wp_customize->add_control( new Caper_Toggle_Switch_Custom_control( $wp_customize, 'parallax_break_two',
+array(
+    'label' => esc_html__( ' Make Second Break Background Image fixed ' , 'caper' ),
+    'section' => 'section_breaks'
+	)
 ) );

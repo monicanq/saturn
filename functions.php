@@ -259,6 +259,7 @@ add_action( 'widgets_init', 'caper_widgets_init' );
  */
 function caper_scripts() {
 	wp_enqueue_style( 'caper-style', get_stylesheet_uri(), array(), CAPER_VERSION );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/font-awesome/css/font-awesome.min.css' );
 	wp_style_add_data( 'caper-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'caper-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAPER_VERSION, true );
@@ -308,16 +309,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // Load walker for main menu
 require get_template_directory() . '/inc/walker/walker.php';
-
-
-// Show template loaded
-// function show_template() {
-//     if( is_super_admin() ){
-//         global $template;
-//         print_r($template);
-//     } 
-// }
-// add_action('wp_footer', 'show_template');
 
 
 function caper_filter_front_page_template( $template ) {

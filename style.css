@@ -4,7 +4,7 @@ Theme URI: http://coscriber.com/caper
 Author: Coscriber
 Author URI: http://coscriber.com/
 Description: Description
-Version: 1.0.0
+Version: 1.1.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -709,6 +709,9 @@ textarea {
 	position: relative;
 	z-index: 1;
 }
+#top-header.no-height{
+	height: 0;
+}
 .top-nav{
     width: 100%;
     z-index: 9;
@@ -1266,6 +1269,7 @@ p.site-description{
 .sidebar{
 	padding: 15px;
 }
+
 
 
 /*--------------------------------------------------------------

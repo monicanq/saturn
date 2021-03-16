@@ -13,46 +13,40 @@
  */
 
 
-// if ( 'posts' == get_option( 'show_on_front' ) ) {
-//         include( get_home_template() );
-//     } else {
-//     include( get_template_directory() . '/custom-front.php' );
-    
-    get_header();
-        ?>
+get_header();
+    ?>
 
-        <main id="primary" class="site-main">
-        <section id='first-section'> 
-            <?php
-                $arr = array( 's1c1', 's1c2', 's1c3');
-                foreach ($arr as &$value) {
-                    if (is_active_sidebar($value)) :?>
-                        <div class="column">
-                            <?php dynamic_sidebar( $value); ?>	
-                        </div>  
-                    <?php endif;
-                }
-            ?>
-        </section>
-        </section>
-        <div id="break-1" class='break'></div>.
-
-        <section id='second-section'> 
+    <main id="primary" class="site-main">
+    <section id='first-section' class='container-flex'> 
         <?php
-            $arr = array( 's2c1', 's2c2', 's2c3');
+            $arr = array( 's1c1', 's1c2', 's1c3');
             foreach ($arr as &$value) {
                 if (is_active_sidebar($value)) :?>
                     <div class="column">
                         <?php dynamic_sidebar( $value); ?>	
                     </div>  
                 <?php endif;
-            }?>
-        </section>
-        <div id="break-2" class='break'></div>
+            }
+        ?>
+    </section>
+    </section>
+    <div id="break-1" class='break'></div>.
 
-        </main><!-- #main -->
+    <section id='second-section' class='container-flex'> 
+    <?php
+        $arr = array( 's2c1', 's2c2', 's2c3');
+        foreach ($arr as &$value) {
+            if (is_active_sidebar($value)) :?>
+                <div class="column">
+                    <?php dynamic_sidebar( $value); ?>	
+                </div>  
+            <?php endif;
+        }?>
+    </section>
+    <div id="break-2" class='break'></div>
 
-        <?php
+    </main><!-- #main -->
 
-    get_footer();
-// }
+    <?php
+
+get_footer();
