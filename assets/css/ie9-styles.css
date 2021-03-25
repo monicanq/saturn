@@ -1,0 +1,56 @@
+body, section{
+    max-width: 100vw;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border-color: #ccc;
+	color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	border-bottom: 1px solid #999;
+}
+
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #777;
+}
+
+
+#site-header{
+	background-color: #ccc;
+}
+.site-branding{
+    height: 80px;
+}
+
+#site-header.menu-color{
+    background-color: #ccc;
+    position: absolute;
+}
+@media screen and (max-width: 50em){
+    #primary-menu{
+        padding-top: 80px;
+    }
+}
+
+#header-caret{
+    display: none;
+}

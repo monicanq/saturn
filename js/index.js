@@ -11,11 +11,13 @@
     const caret = document.getElementById('caret');
     const element = document.getElementById('primary');
 
-    caret.addEventListener ('click', e => {
-        e.preventDefault();
-        console.log(element);
-        console.log('I clicked the caret');
-        element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    })
+    if ( caret != null){
+        caret.addEventListener ('click', e => {
+            e.preventDefault();
+            // console.log(element);
+            // console.log('I clicked the caret');
+            element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        })
+    }
 
 }() );

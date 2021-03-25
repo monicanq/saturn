@@ -85,6 +85,50 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	}
 
 	/**
+	 * Text Radio Button Custom Control
+	 *
+	 * @author Anthony Hortin <http://maddisondesigns.com>
+	 * @license http://www.gnu.org/licenses/gpl-2.0.html
+	 * @link https://github.com/maddisondesigns
+	 */
+	 class Caper_Text_Radio_Button_Custom_Control extends caper_Custom_Control {
+		/**
+		 * The type of control being rendered
+		 */
+		public $type = 'text_radio_button';
+		/**
+		 * Enqueue our scripts and styles
+		 */
+		public function enqueue() {
+			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/css/customizer.css', array(), '1.0', 'all' );
+		}
+		/**
+		 * Render the control in the customizer
+		 */
+		public function render_content() {
+		?>
+			<div class="text_radio_button_control">
+				<?php if( !empty( $this->label ) ) { ?>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<?php } ?>
+				<?php if( !empty( $this->description ) ) { ?>
+					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+				<?php } ?>
+
+				<div class="radio-buttons">
+					<?php foreach ( $this->choices as $key => $value ) { ?>
+						<label class="radio-button-label">
+							<input type="radio" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php $this->link(); ?> <?php checked( esc_attr( $key ), $this->value() ); ?>/>
+							<span><?php echo esc_html( $value ); ?></span>
+						</label>
+					<?php	} ?>
+				</div>
+			</div>
+		<?php
+		}
+	}
+
+	/**
 	 * Image Radio Button Custom Control
 	 *
 	 * @author Anthony Hortin <http://maddisondesigns.com>
@@ -126,39 +170,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		}
 	}
 
-
-	/**
-	 * Slider Custom Control
-	 *
-	 * @author Anthony Hortin <http://maddisondesigns.com>
-	 * @license http://www.gnu.org/licenses/gpl-2.0.html
-	 * @link https://github.com/maddisondesigns
-	 */
-	class Caper_Slider_Custom_Control extends caper_Custom_Control {
-		/**
-		 * The type of control being rendered
-		 */
-		public $type = 'slider_control';
-		/**
-		 * Enqueue our scripts and styles
-		 */
-		public function enqueue() {
-			wp_enqueue_script( 'caper-custom-controls-js', $this->get_caper_resource_url() . 'js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
-			wp_enqueue_style( 'caper-custom-controls-css', $this->get_caper_resource_url() . 'inc/customizer/inc/customizer/css/customizer.css', array(), '1.0', 'all' );
-		}
-		/**
-		 * Render the control in the customizer
-		 */
-		public function render_content() {
-		?>
-			<div class="slider-custom-control">
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span><input type="number" id="<?php echo esc_attr( $this->id ); ?>" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $this->value() ); ?>" class="customize-control-slider-value" <?php $this->link(); ?> />
-				<div class="slider" slider-min-value="<?php echo esc_attr( $this->input_attrs['min'] ); ?>" slider-max-value="<?php echo esc_attr( $this->input_attrs['max'] ); ?>" slider-step-value="<?php echo esc_attr( $this->input_attrs['step'] ); ?>"></div><span class="slider-reset dashicons dashicons-image-rotate" slider-reset-value="<?php echo esc_attr( $this->value() ); ?>"></span>
-			</div>
-		<?php
-		}
-	}
-
+	
 	/**
 	 * Toggle Switch Custom Control
 	 *
@@ -198,6 +210,4 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		<?php
 		}
 	}
-
-
 }

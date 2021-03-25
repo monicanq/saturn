@@ -29,7 +29,6 @@ get_header();
             }
         ?>
     </section>
-    </section>
     <div id="break-1" class='break'></div>.
 
     <section id='second-section' class='container-flex'> 

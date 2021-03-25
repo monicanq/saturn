@@ -28,12 +28,17 @@
 	<?php 	if ( (is_front_page() || get_theme_mod( 'home_page_header' ) == true )
 				&& get_theme_mod( 'navbar_overlay' ) == true 
 				&& get_theme_mod( 'sticky_navbar' ) == true  
-				&& !get_header_image() == false ): 
+				&& get_header_image() == true ): 
 					$caper_navbar_height = 'no-height';
+			elseif (get_header_image() == false
+				&& get_theme_mod( 'sticky_navbar' ) == false ): 
+				$caper_navbar_height = 'height';
+			else:
+				$caper_navbar_height = '';
 	endif; ?>
 	<header id="top-header" class="<?php echo (esc_html($caper_navbar_height));?>">
 		<div id='site-header'>
-			<div id='main-menu' class='container-flex <?php echo (esc_html( get_theme_mod( 'menu_position' ))) ?>'> 
+			<div id='main-menu' class='container-flex <?php echo (esc_attr( get_theme_mod( 'menu_position' ))) ?>'> 
 				<div class='branding-block '>
 					<div class="site-branding ">
 						<?php if (get_theme_mod('logo_mobile') != ''): ?>
@@ -41,7 +46,9 @@
 								<?php the_custom_logo(); ?>
 							</div>
 							<div class="mobile-screen">
-								<img src="<?php echo esc_url( get_theme_mod( 'logo_mobile' ) ); ?>" alt="Logo">
+								<a href="/" class='mobile-logo'> 
+									<img src="<?php echo esc_url( get_theme_mod( 'logo_mobile' ) ); ?>" alt="Logo">
+								</a>
 							</div>
 						<?php else: ?>
 							<?php the_custom_logo(); ?>

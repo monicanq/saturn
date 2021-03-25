@@ -110,25 +110,16 @@ function caper_customize_register( $wp_customize ) {
 	//Controls and Settings for Custom Page Section
 	include get_template_directory() . '/inc/customizer/sections/post-page.php';
 	
-	//Add Font section
-	$wp_customize->add_section('typography', array(
-		'title'    => __(' Typography ', 'caper'),
-		'panel' => 'theme_options',
-		'priority' => 120,
-	));
-	//Controls and Settings for Typography Section
-	// Add in future because enqueueing problems need to be solved
-	// include get_template_directory() . '/inc/customizer/sections/typography.php';
-
-	//Add Test section
-	$wp_customize->add_section('test', array(
-		'title'    => __(' Test ', 'caper'),
+	//Add Post Page section
+	$wp_customize->add_section('columns', array(
+		'title'    => __(' Widget Columns Width ', 'caper'),
 		'panel' => 'theme_options',
 		'priority' => 120,
 	));
 	//Controls and Settings for Custom Page Section
-	// include get_template_directory() . '/inc/customizer/sections/test.php';
-	
+	include get_template_directory() . '/inc/customizer/sections/columns.php';
+
+
 	
 	//Include Settings and Controls for Generic Tabs
 	include get_template_directory() . '/inc/customizer/sections/colors.php';
@@ -138,96 +129,36 @@ function caper_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'caper_customize_register' );
 
 /**
- * Add css for the new color controls in the customizer
+ * Add css for the customizer
  */
-function caper_customizer_css()
-{
-	include get_template_directory() . '/inc/customizer/css/generic.php';
-	include get_template_directory() . '/inc/customizer/css/custom-page.php';
-	include get_template_directory() . '/inc/customizer/css/post-page.php';
-	include get_template_directory() . '/inc/customizer/css/global.php';
-	include get_template_directory() . '/inc/customizer/css/navbar.php';
-	?>
-	<!-- Styles for colors -->
-	<style type="text/css">
-		#banner{
-			background-image: url(<?php echo esc_url( get_header_image() ); ?>);
-			height: <?php if ( !get_header_image() ):?>
-							0vh; <?php
-						else:	
-							echo (esc_html(get_theme_mod( 'banner_height', 40 ))) ?>vh;
-						<?php endif; ?>
-		}
-		#break-1{
-			background-image: url(<?php echo esc_url( get_theme_mod( 'break_one_img' ) ); ?>);
-			height: <?php echo (esc_html(get_theme_mod( 'break_one_height', 40 ))) ?>vh;
-		}
-		#break-2{
-			background-image: url(<?php echo esc_url( get_theme_mod( 'break_two_img' ) ); ?>);
-			height: <?php echo (esc_html(get_theme_mod( 'break_two_height', 40 ))) ?>vh;
-		}	
+function caper_add_css(){
 
-		#banner, #break-1, #break-2{
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			-moz-background-size: cover;
-			-webkit-background-size: cover;
-			-o-background-size: cover;
-		}
-	</style> 
-
+	$css = '';
 	
-	<!-- Styling for parallax effects image -->
-	<?php if( get_theme_mod( 'parallax_header', 'yes' ) == 'yes') : ?>
-		<style type="text/css">
-			 #banner{
-				 /* Create the parallax scrolling effect */
-				 background-attachment: fixed;
-				}
-				
-				</style> 
-	<?php else : ?>
-		<style type="text/css">
-			#banner{
-				/* Create the parallax scrolling effect */
-				background-attachment: scroll;
-			}
-			</style> 
-	<?php endif;?>
-	<style>
-		/* Styling for parallax effects */
-		/* Break-1 image */
-		<?php if( get_theme_mod( 'parallax_break_one', 'yes' ) == 'yes') : ?>
-			#break-1{
-				/* Create the parallax scrolling effect */
-				background-attachment: fixed;
-			}
-		<?php else : ?>
-			#break-1{
-				/* Create the parallax scrolling effect */
-				background-attachment: scroll;
-			}
-		<?php endif;?>
-		
-		/* Break-2 image */
-		<?php if( get_theme_mod( 'parallax_break_two', 'yes' ) == 'yes') : ?>
-			#break-2{
-				/* Create the parallax scrolling effect */
-				background-attachment: fixed;
-			}
-		<?php else : ?>
-			#break-2{
-				/* Create the parallax scrolling effect */
-				background-attachment: scroll;
-			}
-		<?php endif;?>
-	</style>
+	include get_template_directory() . '/inc/customizer/styles/header-breaks-images.php';
+	$css .= caper_header_breaks_images();
+	
+	include get_template_directory() . '/inc/customizer/styles/generic.php';
+	$css .= caper_generic();
 
+	include get_template_directory() . '/inc/customizer/styles/navbar.php';
+	$css .= caper_navbar_styles();
 
-<?php
+	include get_template_directory() . '/inc/customizer/styles/custom-page.php';
+	$css .= caper_custompage_styles();
+
+	include get_template_directory() . '/inc/customizer/styles/global.php';
+	$css .= caper_global_styles();
+
+	include get_template_directory() . '/inc/customizer/styles/post-page.php';
+	$css .= caper_postpage_styles();
+
+	include get_template_directory() . '/inc/customizer/styles/columns.php';
+	$css .= caper_column_styles();
+
+	wp_add_inline_style( 'caper-style', $css );
 }
-add_action( 'wp_head', 'caper_customizer_css');
+add_action( 'wp_enqueue_scripts', 'caper_add_css' );
 
 
 /**
@@ -255,7 +186,6 @@ function caper_customize_preview_js() {
 	wp_enqueue_script( 'caper-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), CAPER_VERSION, true );
 }
 add_action( 'customize_preview_init', 'caper_customize_preview_js' );
-
 
 /**
  * Include Custom Controls for Customizer

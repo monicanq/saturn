@@ -1,6 +1,5 @@
 /*!
 Theme Name: caper
-Theme URI: http://coscriber.com/caper
 Author: Coscriber
 Author URI: http://coscriber.com/
 Description: Description
@@ -107,6 +106,7 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+	align-items: center;
 }
 
 .designer-info{
@@ -425,8 +425,6 @@ html {
 --------------------------------------------- */
 :root{
 	--navbar-color: #ccc;
-	/* --blue: #00b;
-	--fullwidth: 100%; */
 	--background-color: #ddd;
 	--boxed-content: 1160px;
 	--body-text-color: #333;
@@ -461,8 +459,9 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	/* color: var(--body-text-color) */
+	/* color: #404040; */
+	font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -622,14 +621,14 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
+	border-color: #ccc;
 	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	/* background: transparent; */
+	color: var(--body-text-color);
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.6em 1em 0.4em; 
 }
-
+	
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -664,11 +663,29 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+	color: transparent;
+	border-bottom: 1px solid var(--body-text-color);
 	padding: 3px;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color:  var(--body-text-color);
+	opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: var(--body-text-color);;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+	color: var(--body-text-color);;
+}
+
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -689,8 +706,46 @@ textarea:focus {
 	color: #111;
 }
 
+/* Support for IE */
+select::-ms-expand {
+	display: none;
+}
 select {
-	border: 1px solid #ccc;
+	/* Reset styles */
+	position: relative;
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	padding: 0 1em 0 0;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+	color: inherit;
+	outline: none;
+	border-bottom: 1px solid #333;
+	border-bottom: 1px solid var(--body-text-color);
+	behavior:url(border-radius.htc);
+	background:
+    linear-gradient(45deg, transparent 50%, var(--body-text-color) 50%),
+    linear-gradient(135deg, var(--body-text-color) 50%, transparent 50%);
+	background: -ms-linear-gradient(45deg, transparent 50%, #333 50%),
+	-ms-linear-gradient(-45deg, #333 50%, transparent 50%);
+	background-position:
+	calc(100% - 21px) calc(1em - 4px),
+	calc(100% - 16px) calc(1em - 4px),
+	100% 0;
+	background-size:
+	5px 5px,
+	5px 5px,
+	2.5em 2.5em;
+	background-repeat: no-repeat;
+}
+
+
+select:hover{
+	cursor: pointer;
 }
 
 textarea {
@@ -964,10 +1019,12 @@ p.site-description{
 		height: 100%;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 	}
 	.mobile-screen img{
 		max-height: 90%;
-	}
+		padding-top: 5px;
+	}	
 	.toggled .menu-menu-1-container{
 		min-height: 100vh;
 	}
@@ -1161,6 +1218,8 @@ p.site-description{
 }
 .column{
 	flex: auto;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 /* Media

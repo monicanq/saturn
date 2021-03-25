@@ -27,23 +27,6 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo
 ))
 );
 
-/*Show Boxed Content*/
-//add setting
-$wp_customize->add_setting( 'boxed_content',
-	array(
-		'default' => 0,
-        'transport' => 'refresh',
-        'sanitize_callback' => 'caper_sanitize_checkbox'
-	)
-);
-//add control
-$wp_customize->add_control( new Caper_Toggle_Switch_Custom_control( $wp_customize, 'boxed_content',
-	array(
-		'label' => esc_html__( 'Display Content within frame', 'caper' ),
-		'section' => 'general'
-	)
-) );
-
 
 /*Boxed Content Width*/
 $wp_customize->add_setting( 'box_width' , array(

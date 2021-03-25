@@ -23,6 +23,19 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text
     'settings'   => 'text_color',
 ) ) );
 
+// Add General buttons color control
+$wp_customize->add_setting( 'button_color' , array(
+    'default'     => '#ccc',
+    'transport'   => 'refresh',
+    'sanitize_callback' => 'sanitize_hex_color' //validates 3 or 6 digit HTML hex color code
+) );
+
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'button_color', array(
+    'label'        => 'Buttons Color',
+    'section'    => 'colors',
+    'settings'   => 'button_color',
+) ) );
+
 // Add General links color control
 $wp_customize->add_setting( 'link_color' , array(
     'default'     => '#555',
@@ -48,3 +61,4 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'visi
     'section'    => 'colors',
     'settings'   => 'visited_link_color',
 ) ) );
+

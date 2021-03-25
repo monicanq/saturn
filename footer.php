@@ -10,7 +10,7 @@
  */
 
 ?>
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer .mycolor">
 	<?php global $template;
 		$myvar = substr($template, -8, 8);
 		if ( get_theme_mod('custom_page_footer') == true || $myvar != 'page.php'): ?>
@@ -32,7 +32,7 @@
 		endif; 
 		?>
 		<div class="designer-info">
-			<p>Theme Caper by  <span>&#169;</span>coscriber, 2021</p>
+			<p>Theme Caper by coscriber, 2021</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

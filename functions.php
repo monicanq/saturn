@@ -262,21 +262,23 @@ function caper_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/fontawesome/css/all.css' );
 	wp_style_add_data( 'caper-style', 'rtl', 'replace' );
 
+
 	wp_enqueue_script( 'caper-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAPER_VERSION, true );
 	wp_enqueue_script( 'caper-index', get_template_directory_uri() . '/js/index.js', array(), CAPER_VERSION, true );
-
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'caper_scripts' );
 
+
 /**
  * Enqueue styles for customizer.
  */
 function caper_cust_scripts() {
 	wp_enqueue_style( 'caper-customizer-style', get_template_directory_uri() . '/inc/customizer/controls/controls.css', array(), CAPER_VERSION );
-
+	
 }
 add_action( 'customize_controls_enqueue_scripts', 'caper_cust_scripts' );
 
@@ -312,7 +314,27 @@ require get_template_directory() . '/inc/walker/walker.php';
 
 
 function caper_filter_front_page_template( $template ) {
-    return is_home() ? '' : $template;
+	return is_home() ? '' : $template;
 }
 add_filter( 'frontpage_template', 'caper_filter_front_page_template' );
 
+function caper_enqueue_ie_scripts() {
+	global $is_IE;
+	
+	// Script for Internet Explorer compatibility
+	if($is_IE) {
+		wp_enqueue_style('caper-ie', get_template_directory_uri() . '/assets/css/ie9-styles.css');
+		wp_enqueue_script( 'caper-index', get_template_directory_uri() . '/js/modernizr-custom.js', array(), CAPER_VERSION, true );
+		wp_enqueue_script( 'caper-navigation', get_template_directory_uri() . '/js/navigation-ie.js', array(), CAPER_VERSION, true );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'caper_enqueue_ie_scripts' );
+
+
+// Add google fonts
+// function caper_add_google_fonts() {
+// 	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Architects+Daughter:300italic,400italic,700italic,400,700,300', false ); 
+// 	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300', false ); 
+// }
+	 
+// add_action( 'wp_enqueue_scripts', 'caper_add_google_fonts' );
