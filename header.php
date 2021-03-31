@@ -66,7 +66,7 @@
 					</div> <!-- .site-branding -->
 				</div> <!-- .branding-block -->
 				<div class="navigation-block">
-					<nav id="site-navigation" class="main-navigation">
+					<nav id="site-navigation" class="main-navigation" role='navigation' aria-label='Primary menu'>
 						<button id='navigation-button' class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars fa-2x"></i></button>
 						<?php
 							$walker = new Nfr_Menu_Walker();
@@ -78,7 +78,7 @@
 									)
 						);?>
 					</nav> <!-- #site-navigation -->		
-				</div> <!-- #site-navigation -->
+				</div> <!--#navigation-block -->
 			</div> <!-- .container -->
 		</div>	<!-- #site-header -->
 	</header><!-- #top-header -->

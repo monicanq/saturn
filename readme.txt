@@ -13,8 +13,7 @@ License URI: LICENSE
 A starter theme called Caper.
 
 == Description ==
-
-Description
+Versatile theme with different navbar options and personalized front page with parallax effects.
 
 == Installation ==
 
@@ -24,14 +23,26 @@ Description
 
 == Frequently Asked Questions ==
 
+= Can I change the position of the menu in the navbar? =
+
+There are three possibilities for the position of the menu: centered, right and left.
+
 = Does this theme support any plugins? =
 
 Caper includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
-* Initial release
+= 1.0 =
+* First Release
+
+== Upgrade Notice ==
+
+= 1.1.0 =
+* Fixed problems with columns in front page widgets.
+
+= 1.2.0 =
+* Changes to navbar, screenshot, and php variables.
 
 == Credits ==
 Images
@@ -53,9 +64,10 @@ Images
 *Photo by Mareefe from Pexels
 *Photo by Jill Wellington from Pexels
 *Photo by Alexander Mils from Pexels
-  
 
 
-Code 
+
+Code
 * Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* https://github.com/maddisondesigns
